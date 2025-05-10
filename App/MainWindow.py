@@ -9,17 +9,21 @@ from DataProcessing.missing_values import HandleMissingValues
 from DataProcessing.outliers import DetectAndRemoveOutliers
 from DataProcessing.scaling import NormalizeData, StandardizeData
 
+
 class DataProcessingApp(QMainWindow):
+
+    __APP__ = QApplication(sys.argv)
+
+
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Data Processing Tool")
         self.setGeometry(100, 100, 1000, 700)
         self.current_data = None
         self.init_ui()
-        self.app = QApplication(sys.argv)
 
     def exec(self):
-        sys.exit(self.app.exec_())
+        sys.exit(self.__APP__.exec_())
 
     def init_ui(self):
         # Главный виджет и layout
