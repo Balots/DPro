@@ -4,11 +4,12 @@ from ydata_profiling import ProfileReport
 import json
 
 class Detector:
-    def __init__(self, check_abnormal:bool, check_missing:bool, check_duplicates:bool, hampel_threshold:float = 3.0,
+    def __init__(self, check_abnormal:bool, check_missing:bool, check_duplicates:bool, check_scaling:bool, hampel_threshold:float = 3.0,
                  iqr_multiplier:float = 1.5, skewness_threshold:float = 2.0, kurtosis_threshold:float = 3.5):
         self.check_abnormal = check_abnormal
         self.check_missing = check_missing
         self.check_duplicates = check_duplicates
+        self.check_scaling = check_scaling
         self.hampel_threshold = hampel_threshold
         self.iqr_multiplier = iqr_multiplier
         self.skewness_threshold = skewness_threshold
@@ -28,6 +29,7 @@ class Detector:
                    'Duplicate values/Дубликаты значений ': self.find_duplicates(profile)}
 
         abnormal = self.find_abnormal(profile, df, self.hampel_threshold, self.iqr_multiplier, self.skewness_threshold, self.kurtosis_threshold)
+        scaling = self.recommend_scaling_methods(df, profile)
 #        for col, data in abnormal.items():
 #            print(f'результат для колонки {col}')
 
@@ -44,7 +46,7 @@ class Detector:
 
 #        recommendations = self.recommend_scaling_methods(df, profile)
 #        print(recommendations)
-        return outcome, abnormal
+        return outcome, abnormal, scaling
 
     def increase_threshold(self, increasing_multiplier:int):
         self.hampel_threshold += 0.2 * increasing_multiplier
@@ -125,7 +127,7 @@ class Detector:
                 modified_z = 0.6745 * (col_data - median) / mad
                 hampel_outliers = col_data[np.abs(modified_z) > hampel_threshold]
 
-                # 4. Процентили (P5-P95)
+                # 3. Процентили (P5-P95)
                 p5, p95 = stats['5%'], stats['95%']
                 percentile_outliers = col_data[(col_data < p5) | (col_data > p95)]
 
@@ -246,13 +248,13 @@ class Detector:
 
 
 class IDet:
-    def __init__(self, check_abnormal: bool, check_missing: bool, check_duplicates: bool, *args):
+    def __init__(self, check_abnormal: bool, check_missing: bool, check_duplicates: bool, check_scaling: bool,  *args):
         self.standart_settings = args
-        self.detector = Detector(check_abnormal, check_missing, check_duplicates, *self.standart_settings)
+        self.detector = Detector(check_abnormal, check_missing, check_duplicates, check_scaling, *self.standart_settings)
 
     def logging_results(self, filename):
         return self.detector.check_dataframe(filename)
 
 
 if __name__ == '__main__':
-    print(IDet(True, True, True).logging_results('Accidents.csv'))
+    print(IDet(True, True, True, True).logging_results('Accidents.csv'))
