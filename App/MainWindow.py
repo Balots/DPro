@@ -16,6 +16,10 @@ class DataProcessingApp(QMainWindow):
         self.setGeometry(100, 100, 1000, 700)
         self.current_data = None
         self.init_ui()
+        self.app = QApplication(sys.argv)
+
+    def exec(self):
+        sys.exit(self.app.exec_())
 
     def init_ui(self):
         # Главный виджет и layout
@@ -186,7 +190,5 @@ class DataProcessingApp(QMainWindow):
             self.log.append(message)
 
 if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    window = DataProcessingApp()
-    window.show()
-    sys.exit(app.exec_())
+    print('This is not a lib')
+
