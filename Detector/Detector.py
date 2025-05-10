@@ -3,62 +3,48 @@ import numpy as np
 from ydata_profiling import ProfileReport
 import json
 
-
 class Detector:
-    def __init__(self, check_abnormal:bool, check_missing:bool, check_duplicates:bool):
-
+    def __init__(self, check_abnormal:bool, check_missing:bool, check_duplicates:bool, hampel_threshold:float = 3.0,
+                 iqr_multiplier:float = 1.5, skewness_threshold:float = 2.0, kurtosis_threshold:float = 3.5):
         self.check_abnormal = check_abnormal
         self.check_missing = check_missing
         self.check_duplicates = check_duplicates
-        self.hampel_threshold = 3.0
-        self.iqr_multiplier = 1.5
-        self.skewness_threshold = 2.0
-        self.kurtosis_threshold = 3.5
+        self.hampel_threshold = hampel_threshold
+        self.iqr_multiplier = iqr_multiplier
+        self.skewness_threshold = skewness_threshold
+        self.kurtosis_threshold = kurtosis_threshold
 
 
-    def check_dataframe(self, path):
+    def check_dataframe(self, filename):
 
         '''Проверка на наличие пропущенные значений, дубликатов, выбросов и рекомендации по нормализации/
         стандартизации данных в столбцах'''
 
-        df = pd.read_csv(path)
+        df = pd.read_csv(filename)
         profile = ProfileReport(df, title="to check")
 
-        outcome = []
+        outcome = {'Overall alerts/Общие проблемы': json.loads(profile.to_json())['alerts'],
+                   'Missing values/Пропущенные значения': self.find_missing(profile),
+                   'Duplicate values/Дубликаты значений ': self.find_duplicates(profile)}
 
-        overall_alerts = json.loads(profile.to_json())['alerts']
-        outcome.append(f'Overall alerts/Общие проблемы: {overall_alerts}')
+        abnormal = self.find_abnormal(profile, df, self.hampel_threshold, self.iqr_multiplier, self.skewness_threshold, self.kurtosis_threshold)
+#        for col, data in abnormal.items():
+#            print(f'результат для колонки {col}')
 
-        if self.check_missing:
-            missing = self.find_missing(profile)
-            outcome.append(missing)
+#            for method in ['IQR', 'Modified_Z_score', 'Skewness_Method', 'Percentile', 'Kurtosis_Method']:
+#                m = data[method]
+#                if m['count'] != 0:
+#                    print(f"\n{method.replace('_', ' ')}:")
+#                    print(f"Метод: {m['method']}")
+#                    if 'threshold' in m:
+#                        print(f" Порог: {m['threshold']}")
+#                    if 'direction' in m:
+#                        print(f" Направление: {m['direction']}")
+#                    print(f" Найдено выбросов: {m['count']} ({m['count'] / len(df) * 100:.1f}%)")
 
-        if self.check_duplicates:
-            duplicates = self.find_duplicates(profile)
-            outcome.append(duplicates)
-
-        print('Результат обнаружения пропущенных значений и дубликатов:')
-        for item in outcome:
-            print(item)
-
-        if self.check_abnormal:
-            abnormal = self.find_abnormal(profile, df, self.hampel_threshold, self.iqr_multiplier, self.skewness_threshold, self.kurtosis_threshold)
-            for col, data in abnormal.items():
-                print(col)
-
-                print("Результаты обнаружения выбросов:")
-                for method in ['IQR', 'Modified_Z_score', 'Skewness_Method', 'Percentile', 'Kurtosis_Method']:
-                    m = data[method]
-                    print(f"\n{method.replace('_', ' ')}:")
-                    print(f"Метод: {m['method']}")
-                    if 'threshold' in m:
-                        print(f" Порог: {m['threshold']}")
-                    if 'direction' in m:
-                        print(f" Направление: {m['direction']}")
-                    print(f" Найдено выбросов: {m['count']} ({m['count'] / len(df) * 100:.1f}%)")
-
-        recommendations = self.recommend_scaling_methods(df, profile)
-        print(recommendations)
+#        recommendations = self.recommend_scaling_methods(df, profile)
+#        print(recommendations)
+        return outcome, abnormal
 
     def increase_threshold(self, increasing_multiplier:int):
         self.hampel_threshold += 0.2 * increasing_multiplier
@@ -133,17 +119,17 @@ class Detector:
                 upper_iqr = q3 + iqr_multiplier * iqr
                 iqr_outliers = col_data[(col_data < lower_iqr) | (col_data > upper_iqr)]
 
-                # 2. модифицированный Z-score (фильтр Хемпеля)
+                # 2. Модифицированный Z-score (фильтр Хемпеля)
                 median = stats['50%']
                 mad = stats['mad']
                 modified_z = 0.6745 * (col_data - median) / mad
                 hampel_outliers = col_data[np.abs(modified_z) > hampel_threshold]
 
-                # 3. процентили (P5-P95)
+                # 4. Процентили (P5-P95)
                 p5, p95 = stats['5%'], stats['95%']
                 percentile_outliers = col_data[(col_data < p5) | (col_data > p95)]
 
-                # 4. метод на основе коэффициента асимметрии
+                # 4. Метод на основе коэффициента асимметрии
                 skewness = stats['skewness']
                 if abs(skewness) > skewness_threshold:
                     skewness_dir = 'right' if skewness > 0 else 'left'
@@ -154,7 +140,7 @@ class Detector:
                 else:
                     skewness_outliers = pd.Series(dtype=float)
 
-                # 5. метод на основе эксцесса
+                # 5. Метод на основе эксцесса
                 kurtosis = stats['kurtosis']
 
                 if kurtosis > kurtosis_threshold:
@@ -162,7 +148,7 @@ class Detector:
                 else:
                     kurtosis_outliers = pd.Series(dtype=float)
 
-                # сохраняем результаты
+                # Сохраняем результаты
                 result[column_name] = {
                     'IQR': {
                         'method': f'IQR ({iqr_multiplier}×)',
@@ -247,18 +233,26 @@ class Detector:
                     reasons.append("сильная скошенность")
 
                 if has_outliers or not is_symmetric or is_high_variability or is_highly_skewed:
-                    recommendation = "standardize"
+                    recommendation = "стандартизировать"
                 else:
-                    recommendation = "normalize"
+                    recommendation = "нормализовать"
 
                 recommendations[column_name] = {
-                    'recommendation': recommendation,
-                    'reasons': reasons if reasons else ["равномерное распределение без выбросов"]
+                    'Рекомендация': recommendation,
+                    'причина': reasons if reasons else ["равномерное распределение без выбросов"]
                 }
 
         return recommendations
 
-detector = Detector(True, True, True)
-detector.check_dataframe('accident.csv')
-#detector.increase_threshold(30)
-#detector.decrease_threshold(5)
+
+class IDet:
+    def __init__(self, check_abnormal: bool, check_missing: bool, check_duplicates: bool, *args):
+        self.standart_settings = args
+        self.detector = Detector(check_abnormal, check_missing, check_duplicates, *self.standart_settings)
+
+    def logging_results(self, filename):
+        return self.detector.check_dataframe(filename)
+
+
+if __name__ == '__main__':
+    print(IDet(True, True, True).logging_results('Accidents.csv'))
