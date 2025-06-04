@@ -160,7 +160,7 @@
 
 ---
 
-### `Detecor.py`
+### `Detector.py`
 
 #### `Detector`
 
