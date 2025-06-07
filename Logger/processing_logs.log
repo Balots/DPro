@@ -4,3 +4,11 @@
 2025-06-07 23:37:26,000 get_answ started.
 2025-06-07 23:37:26,002 <function StandardizeData.get_answ at 0x769c5eafe660> finished.
 2025-06-07 23:37:26,002 <function IDProcessing.get at 0x769cdebd8cc0> finished.
+2025-06-07 23:41:16,444 get started.
+2025-06-07 23:41:16,444 run started.
+2025-06-07 23:41:16,444 run_iqr started.
+2025-06-07 23:41:16,446 <function DetectAndRemoveOutliers.run_iqr at 0x71e3bfebe840> finished.
+2025-06-07 23:41:16,447 <function DetectAndRemoveOutliers.run at 0x71e4011f5260> finished.
+2025-06-07 23:41:16,447 get_answ started.
+2025-06-07 23:41:16,447 <function DetectAndRemoveOutliers.get_answ at 0x71e3bfebefc0> finished.
+2025-06-07 23:41:16,448 <function IDProcessing.get at 0x71e43ff80cc0> finished.
