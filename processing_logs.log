@@ -1,0 +1,5 @@
+Sat Jun  7 23:37:25 2025	get started.
+Sat Jun  7 23:37:26 2025	<function IDProcessing.get at 0x769cdebd8cc0> result: {"name": {"0": "Peter", "1": "Ivan"}, "Age": {"0": -1.0, "1": 1.0}}
+Sat Jun  7 23:37:26 2025	<function IDProcessing.get at 0x769cdebd8cc0> finished.
+
+

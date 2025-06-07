@@ -4,10 +4,10 @@ from PyQt5.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout, QH
                              QPushButton, QLabel, QFileDialog, QTabWidget, QTextEdit, 
                              QComboBox, QLineEdit, QTableWidget, QTableWidgetItem)
 from PyQt5.QtCore import Qt
-from DataProcessing.cleaning import CleanData
-from DataProcessing.missing_values import HandleMissingValues
-from DataProcessing.outliers import DetectAndRemoveOutliers
-from DataProcessing.scaling import NormalizeData, StandardizeData
+from DataProcessing import CleanData
+from DataProcessing import HandleMissingValues
+from DataProcessing import DetectAndRemoveOutliers
+from DataProcessing import NormalizeData, StandardizeData
 
 
 class DataProcessingApp(QMainWindow):

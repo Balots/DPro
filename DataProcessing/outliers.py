@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 from .base import DataProcessing
+from Logger import *
 
 class DetectAndRemoveOutliers(DataProcessing):
     def __init__(self, data: pd.DataFrame, columns: list = None, method: str = 'IQR', 
@@ -14,6 +15,7 @@ class DetectAndRemoveOutliers(DataProcessing):
         self.skewness_threshold = skewness_threshold
         self.kurtosis_threshold = kurtosis_threshold
 
+    @decorator
     def run(self) -> pd.DataFrame:
         if self.method == 'IQR':
             return self.run_iqr()
@@ -28,6 +30,7 @@ class DetectAndRemoveOutliers(DataProcessing):
         else:
             raise ValueError(f"Метод обнаружения выбросов '{self.method}' не поддерживается")
 
+    @decorator
     def run_iqr(self) -> pd.DataFrame:
         """Метод межквартильного размаха (IQR)"""
         df = self.data.copy()
@@ -42,6 +45,7 @@ class DetectAndRemoveOutliers(DataProcessing):
         self.result = df
         return self.result
 
+    @decorator
     def run_hampel(self) -> pd.DataFrame:
         """Модифицированный Z-score (фильтр Хемпеля)"""
         df = self.data.copy()
@@ -55,6 +59,7 @@ class DetectAndRemoveOutliers(DataProcessing):
         self.result = df
         return self.result
 
+    @decorator
     def run_percentile(self) -> pd.DataFrame:
         """Метод процентилей (P5-P95)"""
         df = self.data.copy()
@@ -66,6 +71,7 @@ class DetectAndRemoveOutliers(DataProcessing):
         self.result = df
         return self.result
 
+    @decorator
     def run_skewness(self) -> pd.DataFrame:
         """Метод на основе коэффициента асимметрии"""
         df = self.data.copy()
@@ -84,6 +90,7 @@ class DetectAndRemoveOutliers(DataProcessing):
         self.result = df
         return self.result
 
+    @decorator
     def run_kurtosis(self) -> pd.DataFrame:
         """Метод на основе эксцесса"""
         df = self.data.copy()
@@ -100,6 +107,7 @@ class DetectAndRemoveOutliers(DataProcessing):
         self.result = df
         return self.result
 
+    @decorator
     def info(self) -> str:
         info_msg = f"Удаление выбросов методом {self.method} для столбцов {self.columns}\n"
         if self.method == 'IQR':
@@ -112,6 +120,7 @@ class DetectAndRemoveOutliers(DataProcessing):
             info_msg += f"Порог эксцесса: {self.kurtosis_threshold}"
         return info_msg
 
+    @decorator
     def get_answ(self) -> pd.DataFrame:
         if self.result is None:
             self.run()

@@ -1,0 +1,6 @@
+2025-06-07 23:37:25,998 get started.
+2025-06-07 23:37:25,998 run started.
+2025-06-07 23:37:26,000 <function StandardizeData.run at 0x769c5eafe2a0> finished.
+2025-06-07 23:37:26,000 get_answ started.
+2025-06-07 23:37:26,002 <function StandardizeData.get_answ at 0x769c5eafe660> finished.
+2025-06-07 23:37:26,002 <function IDProcessing.get at 0x769cdebd8cc0> finished.

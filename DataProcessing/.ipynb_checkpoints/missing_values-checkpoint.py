@@ -1,7 +1,9 @@
 import pandas as pd
+import numpy as np
+import logging
 from .base import DataProcessing
-from Logger import *
 
+logging.basicConfig(level=logging.INFO)
 
 class HandleMissingValues(DataProcessing):
     def __init__(self, data: pd.DataFrame, numeric_strategy: str = 'mean',
@@ -12,7 +14,6 @@ class HandleMissingValues(DataProcessing):
         self.fill_value = fill_value or {}
         self.columns = columns or self.data.columns.tolist()
 
-    @decorator
     def run(self) -> pd.DataFrame:
         df = self.data.copy()
         for col in self.columns:
@@ -46,11 +47,9 @@ class HandleMissingValues(DataProcessing):
         self.result = df
         return self.result
 
-    @decorator
     def info(self) -> str:
         return f"Обработка пропущенных значений: числовые - {self.numeric_strategy}, категориальные - {self.categorical_strategy}"
 
-    @decorator
     def get_answ(self) -> pd.DataFrame:
         if self.result is None:
             self.run()

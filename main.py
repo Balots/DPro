@@ -1,10 +1,12 @@
-import App
+import uvicorn
+import logging
+from webserver import *
+logger = logging.getLogger(__name__)
 
-"""
-If you wished to use App interface to analyse your data instead of Method. Just run file. 
-"""
+def main():
+    logging.basicConfig(filename='logs.txt', level=logging.INFO)
+    uvicorn.run('main:app', reload=True)
+    logger.info('stared')
 
 if __name__ == '__main__':
-    window = App.DataProcessingApp()
-    window.show()
-    window.exec()
+    main()
