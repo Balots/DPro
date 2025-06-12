@@ -1,8 +1,27 @@
-Sat Jun  7 23:41:16 2025	get started.
-Sat Jun  7 23:41:16 2025	<function IDProcessing.get at 0x71e43ff80cc0> result: {"name": {"0": "Peter", "1": "Ivan"}, "Age": {"0": 12, "1": 13}}
-Sat Jun  7 23:41:16 2025	<function IDProcessing.get at 0x71e43ff80cc0> finished.
+Thu Jun 12 17:07:11 2025	run_iqr started.
+Thu Jun 12 17:07:11 2025	<function DetectAndRemoveOutliers.run_iqr at 0x73ab226de840> result:     name  Age
+0  Peter   12
+1   Ivan   13
+Thu Jun 12 17:07:11 2025	<function DetectAndRemoveOutliers.run_iqr at 0x73ab226de840> finished.
 
 
-> finished.
+Thu Jun 12 17:07:11 2025	run started.
+Thu Jun 12 17:07:11 2025	<function DetectAndRemoveOutliers.run at 0x73ab67d01260> result:     name  Age
+0  Peter   12
+1   Ivan   13
+Thu Jun 12 17:07:11 2025	<function DetectAndRemoveOutliers.run at 0x73ab67d01260> finished.
+
+
+Thu Jun 12 17:07:11 2025	get_answ started.
+Thu Jun 12 17:07:11 2025	<function DetectAndRemoveOutliers.get_answ at 0x73ab226defc0> result:     name  Age
+0  Peter   12
+1   Ivan   13
+Thu Jun 12 17:07:11 2025	<function DetectAndRemoveOutliers.get_answ at 0x73ab226defc0> finished.
+
+
+Thu Jun 12 17:07:00 2025	get started.
+Thu Jun 12 17:07:11 2025	get started.
+Thu Jun 12 17:07:11 2025	<function IDProcessing.get at 0x73aba27d8cc0> result: {"name": {"0": "Peter", "1": "Ivan"}, "Age": {"0": 12, "1": 13}}
+Thu Jun 12 17:07:11 2025	<function IDProcessing.get at 0x73aba27d8cc0> finished.
 
 

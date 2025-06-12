@@ -12,3 +12,143 @@
 2025-06-07 23:41:16,447 get_answ started.
 2025-06-07 23:41:16,447 <function DetectAndRemoveOutliers.get_answ at 0x71e3bfebefc0> finished.
 2025-06-07 23:41:16,448 <function IDProcessing.get at 0x71e43ff80cc0> finished.
+2025-06-12 16:56:57,701 get started.
+2025-06-12 16:56:57,702 run started.
+2025-06-12 16:56:57,702 run_iqr started.
+2025-06-12 16:56:57,705 <function DetectAndRemoveOutliers.run_iqr at 0x7729ba56e840> finished.
+2025-06-12 16:56:57,706 <function DetectAndRemoveOutliers.run at 0x772a02505260> finished.
+2025-06-12 16:56:57,706 get_answ started.
+2025-06-12 16:56:57,707 <function DetectAndRemoveOutliers.get_answ at 0x7729ba56efc0> finished.
+2025-06-12 16:56:57,708 <function IDProcessing.get at 0x772a3a684cc0> finished.
+2025-06-12 16:57:29,177 get started.
+2025-06-12 17:00:00,399 get started.
+2025-06-12 17:02:24,627 get started.
+2025-06-12 17:07:00,604 get started.
+2025-06-12 17:07:11,566 get started.
+2025-06-12 17:07:11,566 run started.
+2025-06-12 17:07:11,566 run_iqr started.
+2025-06-12 17:07:11,567 <function DetectAndRemoveOutliers.run_iqr at 0x73ab226de840> finished.
+2025-06-12 17:07:11,568 <function DetectAndRemoveOutliers.run at 0x73ab67d01260> finished.
+2025-06-12 17:07:11,568 get_answ started.
+2025-06-12 17:07:11,569 <function DetectAndRemoveOutliers.get_answ at 0x73ab226defc0> finished.
+2025-06-12 17:07:11,569 <function IDProcessing.get at 0x73aba27d8cc0> finished.
+2025-06-12 17:07:18,323 get started.
+2025-06-12 17:08:09,647 get started.
+2025-06-12 17:08:09,647 run started.
+2025-06-12 17:08:09,650 <function NormalizeData.run at 0x7c5ba3105440> finished.
+2025-06-12 17:08:09,650 get_answ started.
+2025-06-12 17:08:09,650 <function NormalizeData.get_answ at 0x7c5b5875a0c0> finished.
+2025-06-12 17:08:09,651 <function IDProcessing.get at 0x7c5bd8ae0cc0> finished.
+2025-06-12 17:08:16,509 get started.
+2025-06-12 17:08:16,509 run started.
+2025-06-12 17:08:16,509 <function HandleMissingValues.run at 0x7c5ba3104e00> finished.
+2025-06-12 17:08:16,509 get_answ started.
+2025-06-12 17:08:16,509 <function HandleMissingValues.get_answ at 0x7c5ba3105080> finished.
+2025-06-12 17:08:16,509 <function IDProcessing.get at 0x7c5bd8ae0cc0> finished.
+2025-06-12 17:08:22,299 get started.
+2025-06-12 17:08:22,299 run started.
+2025-06-12 17:08:22,299 run_iqr started.
+2025-06-12 17:08:22,300 <function DetectAndRemoveOutliers.run_iqr at 0x7c5b5875a700> finished.
+2025-06-12 17:08:22,300 <function DetectAndRemoveOutliers.run at 0x7c5ba3105260> finished.
+2025-06-12 17:08:22,300 get_answ started.
+2025-06-12 17:08:22,300 <function DetectAndRemoveOutliers.get_answ at 0x7c5b5875ae80> finished.
+2025-06-12 17:08:22,300 <function IDProcessing.get at 0x7c5bd8ae0cc0> finished.
+2025-06-12 18:46:55,945 stared
+2025-06-12 19:19:31,070 stared
+2025-06-12 19:59:34,211 get started.
+2025-06-12 19:59:34,211 run started.
+2025-06-12 19:59:34,255 <function CleanData.run at 0x7905070391c0> finished.
+2025-06-12 19:59:34,255 get_answ started.
+2025-06-12 19:59:34,255 <function CleanData.get_answ at 0x7904c875c900> finished.
+2025-06-12 19:59:34,255 <function IDProcessing.get at 0x790507038e00> finished.
+2025-06-12 19:59:45,291 get started.
+2025-06-12 19:59:45,291 run started.
+2025-06-12 19:59:45,291 <function HandleMissingValues.run at 0x7904c875cc20> finished.
+2025-06-12 19:59:45,291 get_answ started.
+2025-06-12 19:59:45,291 <function HandleMissingValues.get_answ at 0x7904c875cea0> finished.
+2025-06-12 19:59:45,291 <function IDProcessing.get at 0x790507038e00> finished.
+2025-06-12 20:02:04,052 get started.
+2025-06-12 20:02:04,052 run started.
+2025-06-12 20:02:04,052 <function CleanData.run at 0x750010cd11c0> finished.
+2025-06-12 20:02:04,052 get_answ started.
+2025-06-12 20:02:04,052 <function CleanData.get_answ at 0x74ffd8d4c900> finished.
+2025-06-12 20:02:04,053 <function IDProcessing.get at 0x750010cd0e00> finished.
+2025-06-12 20:03:46,964 get started.
+2025-06-12 20:03:46,964 run started.
+2025-06-12 20:03:46,964 <function CleanData.run at 0x750010cd11c0> finished.
+2025-06-12 20:03:46,964 get_answ started.
+2025-06-12 20:03:46,964 <function CleanData.get_answ at 0x74ffd8d4c900> finished.
+2025-06-12 20:03:46,964 <function IDProcessing.get at 0x750010cd0e00> finished.
+2025-06-12 20:03:55,909 get started.
+2025-06-12 20:03:55,909 run started.
+2025-06-12 20:03:55,909 <function CleanData.run at 0x750010cd11c0> finished.
+2025-06-12 20:03:55,909 get_answ started.
+2025-06-12 20:03:55,909 <function CleanData.get_answ at 0x74ffd8d4c900> finished.
+2025-06-12 20:03:55,909 <function IDProcessing.get at 0x750010cd0e00> finished.
+2025-06-12 20:08:59,127 get started.
+2025-06-12 20:08:59,127 run started.
+2025-06-12 20:08:59,127 <function CleanData.run at 0x750010cd11c0> finished.
+2025-06-12 20:08:59,128 get_answ started.
+2025-06-12 20:08:59,128 <function CleanData.get_answ at 0x74ffd8d4c900> finished.
+2025-06-12 20:08:59,128 <function IDProcessing.get at 0x750010cd0e00> finished.
+2025-06-12 20:09:55,464 get started.
+2025-06-12 20:09:55,465 run started.
+2025-06-12 20:09:55,465 <function CleanData.run at 0x750010cd11c0> finished.
+2025-06-12 20:09:55,465 get_answ started.
+2025-06-12 20:09:55,465 <function CleanData.get_answ at 0x74ffd8d4c900> finished.
+2025-06-12 20:09:55,465 <function IDProcessing.get at 0x750010cd0e00> finished.
+2025-06-12 20:10:48,370 get started.
+2025-06-12 20:10:48,370 run started.
+2025-06-12 20:10:48,370 <function CleanData.run at 0x7a32386311c0> finished.
+2025-06-12 20:10:48,370 get_answ started.
+2025-06-12 20:10:48,370 <function CleanData.get_answ at 0x7a31f993c900> finished.
+2025-06-12 20:10:48,371 <function IDProcessing.get at 0x7a3238630e00> finished.
+2025-06-12 20:11:20,689 get started.
+2025-06-12 20:11:20,689 run started.
+2025-06-12 20:11:20,689 <function CleanData.run at 0x7a32386311c0> finished.
+2025-06-12 20:11:20,689 get_answ started.
+2025-06-12 20:11:20,689 <function CleanData.get_answ at 0x7a31f993c900> finished.
+2025-06-12 20:11:20,689 <function IDProcessing.get at 0x7a3238630e00> finished.
+2025-06-12 20:11:48,850 get started.
+2025-06-12 20:11:48,851 run started.
+2025-06-12 20:11:48,851 <function CleanData.run at 0x713ab63291c0> finished.
+2025-06-12 20:11:48,851 get_answ started.
+2025-06-12 20:11:48,851 <function CleanData.get_answ at 0x713a7753c900> finished.
+2025-06-12 20:11:48,851 <function IDProcessing.get at 0x713ab6328e00> finished.
+2025-06-12 20:13:46,505 get started.
+2025-06-12 20:13:46,505 run started.
+2025-06-12 20:13:46,520 <function CleanData.run at 0x713ab63291c0> finished.
+2025-06-12 20:13:46,520 get_answ started.
+2025-06-12 20:13:46,520 <function CleanData.get_answ at 0x713a7753c900> finished.
+2025-06-12 20:13:46,660 <function IDProcessing.get at 0x713ab6328e00> finished.
+2025-06-12 20:14:11,169 get started.
+2025-06-12 20:14:11,170 run started.
+2025-06-12 20:14:11,183 <function CleanData.run at 0x713ab63291c0> finished.
+2025-06-12 20:14:11,183 get_answ started.
+2025-06-12 20:14:11,183 <function CleanData.get_answ at 0x713a7753c900> finished.
+2025-06-12 20:14:11,313 <function IDProcessing.get at 0x713ab6328e00> finished.
+2025-06-12 20:14:32,994 get started.
+2025-06-12 20:14:32,995 run started.
+2025-06-12 20:14:33,011 <function CleanData.run at 0x77ac8dd291c0> finished.
+2025-06-12 20:14:33,011 get_answ started.
+2025-06-12 20:14:33,011 <function CleanData.get_answ at 0x77ac53548900> finished.
+2025-06-12 20:14:33,147 <function IDProcessing.get at 0x77ac8dd28e00> finished.
+2025-06-12 20:15:39,483 get started.
+2025-06-12 20:15:39,484 run started.
+2025-06-12 20:15:39,499 <function CleanData.run at 0x7609178311c0> finished.
+2025-06-12 20:15:39,499 get_answ started.
+2025-06-12 20:15:39,499 <function CleanData.get_answ at 0x7608d8c44900> finished.
+2025-06-12 20:15:39,632 <function IDProcessing.get at 0x760917830e00> finished.
+2025-06-12 20:16:46,372 get started.
+2025-06-12 20:16:46,373 run started.
+2025-06-12 20:16:46,389 <function CleanData.run at 0x7a30a54411c0> finished.
+2025-06-12 20:16:46,389 get_answ started.
+2025-06-12 20:16:46,389 <function CleanData.get_answ at 0x7a3066b64900> finished.
+2025-06-12 20:16:46,523 <function IDProcessing.get at 0x7a30a5440e00> finished.
+2025-06-12 20:19:11,933 get started.
+2025-06-12 20:19:11,934 run started.
+2025-06-12 20:19:11,950 <function CleanData.run at 0x77a23d72d1c0> finished.
+2025-06-12 20:19:11,950 get_answ started.
+2025-06-12 20:19:11,950 <function CleanData.get_answ at 0x77a1fea40900> finished.
+2025-06-12 20:19:11,950 <function IDProcessing.get at 0x77a23d72ce00> finished.
+2025-06-12 20:21:20,241 stared
