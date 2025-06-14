@@ -1,38 +1,40 @@
 import pandas as pd
-import numpy as np
 from abc import ABC, abstractmethod
+from typing import Union, Optional
+from .io.loader import DataLoader
 
 class DataProcessing(ABC):
-    def __init__(self, data: pd.DataFrame):
-        """
-        Инициализация с копией переданного DataFrame
-        """
-        self.data = data.copy()
+    def __init__(self, data: Union[pd.DataFrame, str], file_type: Optional[str] = None):
+        if isinstance(data, pd.DataFrame):
+            self.data = data.copy()
+        elif isinstance(data, str):
+            self.data = DataLoader.load_data(data, file_type)
+        else:
+            raise ValueError("Data must be either a DataFrame or a file path")
+            
         self.result = None
 
     @abstractmethod
     def run(self) -> pd.DataFrame:
-        """
-        Выполнение обработки данных
-        """
+        """Execute data processing"""
         pass
 
     @abstractmethod
     def info(self) -> str:
-        """
-        Описание выполняемой обработки
-        """
+        """Description of the processing"""
         pass
 
     @abstractmethod
     def get_answ(self) -> pd.DataFrame:
-        """
-        Возвращает результат обработки
-        """
+        """Get processing result"""
         pass
 
     def _select_numeric_columns(self) -> list:
-        """
-        Вспомогательный метод для выбора числовых столбцов
-        """
-        return self.data.select_dtypes(include=np.number).columns.tolist()
+        """Helper method to select numeric columns"""
+        return self.data.select_dtypes(include='number').columns.tolist()
+
+    def save_result(self, file_path: str, file_type: Optional[str] = None, **kwargs) -> None:
+        """Save processing result to file"""
+        if self.result is None:
+            self.run()
+        DataLoader.save_data(self.result, file_path, file_type, **kwargs)
