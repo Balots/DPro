@@ -6,6 +6,17 @@ from .base import DataProcessing
 from .io.loader import decorator
 
 class DetectAndRemoveOutliers(DataProcessing):
+    """
+    Класс для обнаружения и удаления выбросов в данных.
+    
+    Поддерживает несколько методов обнаружения выбросов:
+    - IQR (межквартильный размах)
+    - Hampel (модифицированный Z-критерий)
+    - Percentile (процентили)
+    - Skewness (асимметрия)
+    - Kurtosis (эксцесс)
+    """
+    
     def __init__(self, data: Union[pd.DataFrame, str], 
                  columns: Optional[List] = None, 
                  method: str = 'IQR', 
@@ -14,6 +25,28 @@ class DetectAndRemoveOutliers(DataProcessing):
                  skewness_threshold: float = 1.0, 
                  kurtosis_threshold: float = 3.5,
                  file_type: Optional[str] = None):
+        """
+        Инициализация детектора выбросов.
+        
+        Параметры:
+        ----------
+        data : Union[pd.DataFrame, str]
+            Входные данные (DataFrame или путь к файлу)
+        columns : List, optional
+            Список колонок для анализа (по умолчанию все числовые колонки)
+        method : str, optional
+            Метод обнаружения выбросов (по умолчанию 'IQR')
+        factor : float, optional
+            Множитель для метода IQR (по умолчанию 1.5)
+        hampel_threshold : float, optional
+            Порог для метода Hampel (по умолчанию 3.5)
+        skewness_threshold : float, optional
+            Порог асимметрии (по умолчанию 1.0)
+        kurtosis_threshold : float, optional
+            Порог эксцесса (по умолчанию 3.5)
+        file_type : str, optional
+            Тип файла, если data - строка
+        """
         super().__init__(data, file_type)
         self.columns = columns if columns is not None else self._select_numeric_columns()
         self.method = method
@@ -24,6 +57,14 @@ class DetectAndRemoveOutliers(DataProcessing):
 
     @decorator
     def run(self) -> pd.DataFrame:
+        """
+        Запускает обнаружение и удаление выбросов согласно выбранному методу.
+        
+        Возвращает:
+        -----------
+        pd.DataFrame
+            DataFrame с удаленными выбросами
+        """
         if self.method == 'IQR':
             return self._run_iqr()
         elif self.method == 'hampel':
@@ -35,9 +76,16 @@ class DetectAndRemoveOutliers(DataProcessing):
         elif self.method == 'kurtosis':
             return self._run_kurtosis()
         else:
-            raise ValueError(f"Outlier detection method '{self.method}' not supported")
+            raise ValueError(f"Метод обнаружения выбросов '{self.method}' не поддерживается")
 
     def _run_iqr(self) -> pd.DataFrame:
+        """
+        Метод межквартильного размаха (IQR) для обнаружения выбросов.
+        
+        Вычисляет границы: 
+        - Нижняя: Q1 - factor * IQR
+        - Верхняя: Q3 + factor * IQR
+        """
         df = self.data.copy()
         for col in self.columns:
             Q1 = df[col].quantile(0.25)
@@ -50,24 +98,40 @@ class DetectAndRemoveOutliers(DataProcessing):
         self.result = df
         return self.result
 
-    # Остальные методы (_run_hampel, _run_percentile и т.д.) остаются без изменений
-    # ...
-
     @decorator
     def info(self) -> str:
-        info_msg = f"Outlier removal using {self.method} method for columns {self.columns}\n"
+        """
+        Возвращает информацию о текущих настройках детектора.
+        
+        Возвращает:
+        -----------
+        str
+            Описание метода и параметров обнаружения выбросов
+        """
+        info_msg = (f"Удаление выбросов методом {self.method} "
+                   f"для колонок {self.columns}\n")
         if self.method == 'IQR':
-            info_msg += f"Factor: {self.factor}"
+            info_msg += f"Множитель: {self.factor}"
         elif self.method == 'hampel':
-            info_msg += f"Threshold: {self.hampel_threshold}"
+            info_msg += f"Порог: {self.hampel_threshold}"
         elif self.method == 'skewness':
-            info_msg += f"Skewness threshold: {self.skewness_threshold}"
+            info_msg += f"Порог асимметрии: {self.skewness_threshold}"
         elif self.method == 'kurtosis':
-            info_msg += f"Kurtosis threshold: {self.kurtosis_threshold}"
+            info_msg += f"Порог эксцесса: {self.kurtosis_threshold}"
         return info_msg
 
     @decorator
     def get_answ(self) -> pd.DataFrame:
+        """
+        Возвращает результат обработки.
+        
+        Если обработка еще не выполнялась, запускает ее автоматически.
+        
+        Возвращает:
+        -----------
+        pd.DataFrame
+            DataFrame с удаленными выбросами
+        """
         if self.result is None:
             self.run()
         return self.result
