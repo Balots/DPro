@@ -16,12 +16,12 @@ class Detector:
         self.kurtosis_threshold = kurtosis_threshold
 
 
-    def check_dataframe(self, filename):
+    def check_dataframe(self, filename, is_df=False):
 
         '''Проверка на наличие пропущенные значений, дубликатов, выбросов и рекомендации по нормализации/
         стандартизации данных в столбцах'''
 
-        df = pd.read_csv(filename)
+        df = filename if is_df else pd.read_csv(filename)
         profile = ProfileReport(df, title="to check")
 
         outcome = {'Overall alerts/Общие проблемы': json.loads(profile.to_json())['alerts'],

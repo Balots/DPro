@@ -17,7 +17,6 @@ class IDProcessing:
     def get(self):
         process = self.__METHODS__[self.method_id](*self.params)
         process.run()
-        result = process.get_answ().to_dict()
-        return json.dumps(result)
+        return process.get_answ()
 
 
