@@ -7,7 +7,6 @@ if __name__ == '__main__':
     
     # Настройка стиля (как в MainWindow.py)
     app.setStyle('Fusion')
-    
     window = DataProcessingApp()
     window.show()
     

@@ -1,7 +1,7 @@
 import pandas as pd
 from abc import ABC, abstractmethod
 from typing import Union
-from Logger import *
+#from Logger import *
     
 class TextProcessing(ABC):
     def __init__(self, text: Union[str, pd.Series]):

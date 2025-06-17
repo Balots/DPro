@@ -2,7 +2,7 @@ from .base import TextProcessing
 import pandas as pd
 from nltk.tokenize import word_tokenize, sent_tokenize
 from typing import List, Union
-from Logger import *
+#from Logger import *
 
 class TokenizeText(TextProcessing):
     def __init__(self, text: Union[str, pd.Series], token_type: str = 'word', lang: str = 'english'):
@@ -15,7 +15,6 @@ class TokenizeText(TextProcessing):
         self.token_type = token_type
         self.lang = lang
     
-    @decorator
     def run(self) -> Union[List[str], pd.Series]:
         if self.token_type == 'word':
             if isinstance(self.original_text, str):
@@ -31,11 +30,10 @@ class TokenizeText(TextProcessing):
             raise ValueError(f"Неизвестный тип токенизации: {self.token_type}")
         return self.processed_text
     
-    @decorator
+
     def info(self) -> str:
         return f"Токенизация текста по {self.token_type} (язык: {self.lang})"
-    
-    @decorator
+
     def get_answ(self) -> Union[List[str], pd.Series]:
         if self.processed_text is None:
             self.run()

@@ -1,5 +1,6 @@
 import pandas as pd
 import re
+from langdetect import detect, DetectorFactory
 import json
 import sys
 from collections import Counter
@@ -18,7 +19,7 @@ class TextDetector:
                  check_tokenize: bool = True,
                  check_stopwords: bool = True,
                  check_stem_lemm: bool = True,
-                 lang: str = 'english'): 
+                 lang: str = None): 
         """
         Параметры:
         - lang: язык текста ('english', 'russian' и т.д.)
@@ -106,7 +107,7 @@ class TextDetector:
         metrics = {
             'length': len(text),
             'detected_lang': self._detect_language(text),
-            'stopword_ratio': self._stopword_ratio(words) if self.check_stopwords else None,
+            'stopword_ratio': self._stopword_ratio(words, self._detect_language(text)) if self.check_stopwords else None,
             'stem_vs_lemma': self._compare_stem_lemm(words) if self.check_stem_lemm else None,
             'words': words,
             'sentences': sentences
@@ -144,15 +145,29 @@ class TextDetector:
         }
 
     def _detect_language(self, text: str) -> str:
-        """Упрощенное определение языка (можно заменить на более сложный метод)"""
-        # В реальной реализации можно использовать langdetect или fasttext
-        return self.lang
+        """Определение языка с использованием langdetect"""
+        if self.lang:  # Если язык задан явно
+            return self.lang
+            
+        try:
+            # Берем только первые 500 символов для ускорения (langdetect может ошибаться на коротких текстах)
+            lang = detect(text[:500])
+            return 'russian' if lang == 'ru' else 'english'  # Поддерживаем пока 2 языка
+        except:
+            return 'english'  # По умолчанию
 
-    def _stopword_ratio(self, words: List[str]) -> float:
-        """Оптимизированный расчет доли стоп-слов"""
+    def _stopword_ratio(self, words: List[str], lang: str) -> float:
+        """Точный расчет доли стоп-слов с учетом языка"""
         if not words:
             return 0.0
-        stopword_count = sum(1 for word in words if word.lower() in self.stop_words)
+            
+        # Обновляем стоп-слова для текущего языка
+        try:
+            self._stop_words = set(stopwords.words(lang))
+        except:
+            self._stop_words = set()
+            
+        stopword_count = sum(1 for word in words if word.lower() in self._stop_words)
         return stopword_count / len(words)
 
     def _compare_stem_lemm(self, words: List[str]) -> Dict:
@@ -166,7 +181,7 @@ class TextDetector:
         }
 
     def _generate_recommendations(self, text: str, metrics: Dict) -> List[Dict]:
-        """Оптимизированная генерация рекомендаций"""
+        """Генерация рекомендаций с русскими названиями действий"""
         recommendations = []
         if self.check_clean:
             recommendations.extend(self._get_cleaning_rec(text))
@@ -176,6 +191,25 @@ class TextDetector:
             recommendations.extend(self._get_stopwords_rec(metrics['stopword_ratio']))
         if self.check_stem_lemm and metrics['stem_vs_lemma'] is not None:
             recommendations.extend(self._get_stemm_lemm_rec(metrics['stem_vs_lemma']))
+        
+        # Маппинг английских действий на русские
+        action_translation = {
+            'remove_html': 'Удалить HTML-теги',
+            'remove_special_chars': 'Удалить спецсимволы',
+            'handle_numbers': 'Обработать числа',
+            'word_tokenize': 'Токенизировать по словам',
+            'sentence_tokenize': 'Токенизировать по предложениям',
+            'remove_stopwords': 'Удалить стоп-слова',
+            'consider_remove_stopwords': 'Рассмотреть удаление стоп-слов',
+            'lemmatize': 'Применить лемматизацию',
+            'lemmatize_or_stem': 'Применить лемматизацию или стемминг',
+            'stem': 'Применить стемминг'
+        }
+        
+        # Переводим действия на русский
+        for rec in recommendations:
+            rec['action_ru'] = action_translation.get(rec['action'], rec['action'])
+        
         return recommendations
 
     def _get_cleaning_rec(self, text: str) -> List[Dict]:
@@ -186,11 +220,11 @@ class TextDetector:
         has_numbers = bool(re.search(r'\d', text))
         
         if has_html:
-            recommendations.append({'action': 'remove_html', 'description': 'Текст содержит HTML-теги'})
+            recommendations.append({'action': 'remove_html', 'description': 'Текст содержит HTML-теги. Рекомендуется удаление'})
         if has_special_chars:
-            recommendations.append({'action': 'remove_special_chars', 'description': 'Текст содержит спецсимволы'})
+            recommendations.append({'action': 'remove_special_chars', 'description': 'Текст содержит спецсимволы. Рекомендуется удаление'})
         if has_numbers:
-            recommendations.append({'action': 'handle_numbers', 'description': 'Текст содержит цифры'})
+            recommendations.append({'action': 'handle_numbers', 'description': 'Текст содержит цифры. Рекомендуется выбрать стратегию обработки'})
         
         return recommendations
 
@@ -245,9 +279,3 @@ class TextDetector:
         elif diff_ratio > 0.1:
             return [{'action': 'lemmatize_or_stem', 'description': 'Лемматизация предпочтительна'}]
         return [{'action': 'stem', 'description': 'Стемминг достаточен'}]
-
-analyzer = TextDetector(lang='russian', task_type='summarization')
-text = 'test.txt'
-res = analyzer.load_text_from_file('Detector/test.txt')
-result = analyzer.analyze_text(res)
-print(result)

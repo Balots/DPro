@@ -1,71 +1,92 @@
 from .base import TextProcessing
-import pandas as pd
 from nltk.tokenize import word_tokenize
-from nltk.stem import PorterStemmer, WordNetLemmatizer
-from typing import List, Union
-from Logger import *
+from nltk.stem import SnowballStemmer, WordNetLemmatizer
+from nltk import download
+from typing import Union
+import pandas as pd
+import logging
+from natasha import MorphVocab, Segmenter, NewsEmbedding, NewsMorphTagger
+
 
 class NormalizeText(TextProcessing):
-    def __init__(self, text: Union[str, List[str], pd.Series], method: str = 'lemmatize', lang: str = 'english'):
-        """
-        Параметры:
-        - method: 'stem' (стемминг), 'lemmatize' (лемматизация)
-        - lang: язык текста
-        """
+    def __init__(self, text: Union[str, pd.Series], method: str = 'stem', lang: str = 'russian'):
         super().__init__(text)
         self.method = method
         self.lang = lang
-        self._stemmer = None
-        self._lemmatizer = None
-    
-    @property
-    def stemmer(self):
-        if self._stemmer is None:
-            self._stemmer = PorterStemmer()
-        return self._stemmer
-    
-    @property
-    def lemmatizer(self):
-        if self._lemmatizer is None:
-            self._lemmatizer = WordNetLemmatizer()
-        return self._lemmatizer
-    
-    @decorator
-    def run(self) -> Union[List[str], pd.Series]:
-        if self.method == 'stem':
+        
+        # Инициализация процессоров
+        if lang == 'russian':
+            if method == 'lemmatize':
+                self.segmenter = Segmenter()
+                self.emb = NewsEmbedding()
+                self.morph_tagger = NewsMorphTagger(self.emb)
+                self.morph_vocab = MorphVocab()
+            else:  # stem
+                self.stemmer = SnowballStemmer('russian')
+        else:  # english
+            if method == 'lemmatize':
+                self.lemmatizer = WordNetLemmatizer()
+            else:  # stem
+                self.stemmer = SnowballStemmer('english')
+
+    def _process_russian(self, text: str) -> str:
+        """Обработка русского текста"""
+        try:
+            if self.method == 'stem':
+                tokens = word_tokenize(text.lower(), language='russian')
+                return ' '.join(self.stemmer.stem(word) for word in tokens)
+            else:  # lemmatize
+                from natasha import Doc
+                doc = Doc(text)
+                doc.segment(self.segmenter)
+                doc.tag_morph(self.morph_tagger)
+                
+                for token in doc.tokens:
+                    token.lemmatize(self.morph_vocab)
+                
+                tokens = [token.lemma for token in doc.tokens if token.lemma is not None]
+                return ' '.join(tokens)
+        except Exception as e:
+            logging.error(f"Russian processing error: {str(e)}", exc_info=True)
+            return text
+
+    def _process_english(self, text: str) -> str:
+        """Обработка английского текста"""
+        try:
+            tokens = word_tokenize(text.lower(), language='english')
+            if self.method == 'stem':
+                return ' '.join(self.stemmer.stem(word) for word in tokens)
+            else:  # lemmatize
+                return ' '.join(self.lemmatizer.lemmatize(word) for word in tokens)
+        except Exception as e:
+            logging.error(f"English processing error: {str(e)}")
+            return text
+
+    def run(self) -> Union[str, pd.Series]:
+        try:
             if isinstance(self.original_text, str):
-                tokens = word_tokenize(self.original_text.lower())
-                self.processed_text = [self.stemmer.stem(word) for word in tokens]
-            elif isinstance(self.original_text, list):
-                self.processed_text = [self.stemmer.stem(word) for word in self.original_text]
-            else:  # pd.Series
-                self.processed_text = self.original_text.apply(
-                    lambda x: [self.stemmer.stem(word) for word in (x if isinstance(x, list) else word_tokenize(x.lower()))]
-                )
-        elif self.method == 'lemmatize':
-            if isinstance(self.original_text, str):
-                tokens = word_tokenize(self.original_text.lower())
-                self.processed_text = [self.lemmatizer.lemmatize(word) for word in tokens]
-            elif isinstance(self.original_text, list):
-                self.processed_text = [self.lemmatizer.lemmatize(word) for word in self.original_text]
-            else:  # pd.Series
-                self.processed_text = self.original_text.apply(
-                    lambda x: [self.lemmatizer.lemmatize(word) for word in (x if isinstance(x, list) else word_tokenize(x.lower()))]
-                )
-        else:
-            raise ValueError(f"Неизвестный метод нормализации: {self.method}")
-        return self.processed_text
-    
-    @decorator
+                if self.lang == 'russian':
+                    self.processed_text = self._process_russian(self.original_text)
+                else:
+                    self.processed_text = self._process_english(self.original_text)
+            elif isinstance(self.original_text, pd.Series):
+                if self.lang == 'russian':
+                    self.processed_text = self.original_text.apply(self._process_russian)
+                else:
+                    self.processed_text = self.original_text.apply(self._process_english)
+            else:
+                raise ValueError("Unsupported input type")
+            return self.processed_text
+        except Exception as e:
+            logging.error(f"Normalization error: {str(e)}")
+            return self.original_text
+
     def info(self) -> str:
         methods = {
-            'stem': "Стемминг текста",
-            'lemmatize': "Лемматизация текста"
+            'stem': 'стемминг',
+            'lemmatize': 'лемматизация'
         }
-        return f"{methods.get(self.method, 'Нормализация текста')} (язык: {self.lang})"
-    
-    @decorator
-    def get_answ(self) -> Union[List[str], pd.Series]:
-        if self.processed_text is None:
-            self.run()
-        return self.processed_text
+        return f"Нормализация ({methods[self.method]}, {self.lang})"
+
+    def get_answ(self) -> Union[str, pd.Series]:
+        return self.processed_text if self.processed_text is not None else self.original_text
