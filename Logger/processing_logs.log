@@ -12,6 +12,7 @@
 2025-06-07 23:41:16,447 get_answ started.
 2025-06-07 23:41:16,447 <function DetectAndRemoveOutliers.get_answ at 0x71e3bfebefc0> finished.
 2025-06-07 23:41:16,448 <function IDProcessing.get at 0x71e43ff80cc0> finished.
+<<<<<<< HEAD
 2025-06-10 00:29:29,498 run started.
 2025-06-10 00:29:29,536 <function CleanData.run at 0x00000152B3880220> finished.
 2025-06-10 00:29:35,354 info started.
@@ -20,6 +21,70 @@
 2025-06-10 00:30:26,595 <function HandleMissingValues.run at 0x00000152B38DE3E0> finished.
 2025-06-10 00:30:33,008 info started.
 2025-06-10 00:30:33,008 <function HandleMissingValues.info at 0x00000152B38DE520> finished.
+=======
+<<<<<<< HEAD
+2025-06-09 15:19:18,582 run started.
+2025-06-09 15:19:18,618 <function CleanData.run at 0x000002200188C160> finished.
+2025-06-09 15:19:18,769 info started.
+2025-06-09 15:19:18,771 <function CleanData.info at 0x000002200188C310> finished.
+2025-06-10 14:38:08,481 run started.
+2025-06-10 14:38:13,560 run started.
+2025-06-10 14:38:13,562 run_hampel started.
+2025-06-10 14:38:13,580 <function DetectAndRemoveOutliers.run_hampel at 0x000001AE07EC0220> finished.
+2025-06-10 14:38:13,590 <function DetectAndRemoveOutliers.run at 0x000001AE07E9BEC0> finished.
+2025-06-10 14:38:13,881 info started.
+2025-06-10 14:38:13,881 <function DetectAndRemoveOutliers.info at 0x000001AE07EC0720> finished.
+2025-06-10 14:45:40,021 run started.
+2025-06-10 14:45:40,030 <function CleanData.run at 0x000002C33A85C9A0> finished.
+2025-06-10 14:45:40,221 info started.
+2025-06-10 14:45:40,221 <function CleanData.info at 0x000002C33A85CAE0> finished.
+2025-06-10 14:45:58,676 run started.
+2025-06-10 14:46:01,469 run started.
+2025-06-10 14:46:01,469 run_hampel started.
+2025-06-10 14:46:01,588 <function DetectAndRemoveOutliers.run_hampel at 0x000002C33AD70220> finished.
+2025-06-10 14:46:01,593 <function DetectAndRemoveOutliers.run at 0x000002C33AD4BEC0> finished.
+2025-06-10 14:46:01,774 info started.
+2025-06-10 14:46:01,774 <function DetectAndRemoveOutliers.info at 0x000002C33AD70720> finished.
+2025-06-10 14:46:05,310 run started.
+2025-06-10 14:46:08,816 run started.
+2025-06-10 14:49:17,252 run started.
+2025-06-10 21:12:58,844 run started.
+2025-06-10 21:13:04,583 run started.
+2025-06-10 21:13:04,583 run_hampel started.
+2025-06-10 21:13:04,600 <function DetectAndRemoveOutliers.run_hampel at 0x0000026C3B830220> finished.
+2025-06-10 21:13:04,608 <function DetectAndRemoveOutliers.run at 0x0000026C3B80BEC0> finished.
+2025-06-10 21:13:04,815 info started.
+2025-06-10 21:13:04,816 <function DetectAndRemoveOutliers.info at 0x0000026C3B830720> finished.
+2025-06-11 11:56:58,058 run started.
+2025-06-11 11:56:58,071 <function HandleMissingValues.run at 0x000001E32DEAD1C0> finished.
+2025-06-11 11:56:58,316 info started.
+2025-06-11 11:56:58,316 <function HandleMissingValues.info at 0x000001E32DEAD300> finished.
+2025-06-11 11:57:23,468 run started.
+2025-06-11 11:57:28,248 run started.
+2025-06-11 11:57:36,130 run started.
+2025-06-11 11:57:40,242 run started.
+2025-06-11 11:57:43,816 run started.
+2025-06-11 11:57:43,816 run_hampel started.
+2025-06-11 11:57:43,830 <function DetectAndRemoveOutliers.run_hampel at 0x000001E32E3D0220> finished.
+2025-06-11 11:57:43,837 <function DetectAndRemoveOutliers.run at 0x000001E32E3ABEC0> finished.
+2025-06-11 11:57:43,924 info started.
+2025-06-11 11:57:43,924 <function DetectAndRemoveOutliers.info at 0x000001E32E3D0720> finished.
+2025-06-11 11:57:56,746 run started.
+2025-06-11 11:58:02,041 run started.
+2025-06-11 11:58:05,495 run started.
+2025-06-11 11:58:21,290 run started.
+2025-06-15 12:36:46,353 run started.
+2025-06-15 12:36:46,369 run_skewness started.
+2025-06-15 12:36:46,369 <function DetectAndRemoveOutliers.run_skewness at 0x00000217BBD90680> finished.
+2025-06-15 12:36:46,385 <function DetectAndRemoveOutliers.run at 0x00000217BBD900E0> finished.
+2025-06-15 12:36:46,385 info started.
+2025-06-15 12:36:46,385 <function DetectAndRemoveOutliers.info at 0x00000217BBD90900> finished.
+2025-06-15 13:04:28,983 run started.
+2025-06-15 13:04:28,999 <function NormalizeData.run at 0x000001AE8EC7A020> finished.
+2025-06-15 13:04:28,999 info started.
+2025-06-15 13:04:28,999 <function NormalizeData.info at 0x000001AE8ECDECA0> finished.
+=======
+>>>>>>> upstream/main
 2025-06-12 16:56:57,701 get started.
 2025-06-12 16:56:57,702 run started.
 2025-06-12 16:56:57,702 run_iqr started.
@@ -160,6 +225,7 @@
 2025-06-12 20:19:11,950 <function CleanData.get_answ at 0x77a1fea40900> finished.
 2025-06-12 20:19:11,950 <function IDProcessing.get at 0x77a23d72ce00> finished.
 2025-06-12 20:21:20,241 stared
+<<<<<<< HEAD
 
 2025-06-14 13:26:55,945 run started.
 2025-06-14 13:26:55,962 <function CleanData.run at 0x0000017DFF9B6480> finished.
@@ -1007,3 +1073,6 @@
 2025-06-18 00:53:30,152 run finished successfully
 2025-06-18 01:01:24,949 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
 2025-06-18 01:01:25,001 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+=======
+>>>>>>> 3bae070376f79a271dae61ec530f49f6b0f00e1e
+>>>>>>> upstream/main

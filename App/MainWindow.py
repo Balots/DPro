@@ -7,16 +7,17 @@ from PyQt5.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout, QH
                              QPushButton, QLabel, QFileDialog, QTabWidget, QTextEdit, 
                              QComboBox, QLineEdit, QSplitter, QTableWidget, QTableWidgetItem, 
                              QStatusBar, QProgressBar, QAction, QToolBar, QGroupBox,
-                             QCheckBox, QSpinBox, QDoubleSpinBox)
+                             QCheckBox, QButtonGroup, QSpinBox, QDoubleSpinBox, QRadioButton)
+from PyQt5.QtGui import QPalette, QColor, QTextDocument, QDoubleValidator
 from PyQt5.QtCore import Qt, QTimer
 from PyQt5.QtPrintSupport import QPrinter
-from PyQt5.QtGui import QPalette, QColor, QTextDocument
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg
 from matplotlib.figure import Figure
 from Detector.Detector import Detector
 from DataProcessing import CleanData, HandleMissingValues, DetectAndRemoveOutliers, NormalizeData, StandardizeData
 from TextProcessing import RemoveHTMLTags, RemoveSpecialChars, HandleNumbers, TokenizeText, RemoveStopwords, NormalizeText
 import matplotlib.pyplot as plt
+
 
 class TextProcessor:
     def __init__(self):
@@ -74,19 +75,16 @@ class DataProcessingApp(QMainWindow):
         # Главный виджет и layout
         main_widget = QWidget()
         main_layout = QVBoxLayout()
-        
         # Панель управления с иконками
         control_panel = QHBoxLayout()
         self.btn_load = QPushButton("📊 Загрузить данные")
         self.btn_load_text = QPushButton("📝 Загрузить текст")
         self.btn_save = QPushButton("💾 Сохранить результат")
         self.btn_save.setEnabled(False)
-        
         # Добавляем подсказки
         self.btn_load.setToolTip("Загрузить табличные данные (CSV, Excel, JSON)")
         self.btn_load_text.setToolTip("Загрузить текстовый файл (TXT, CSV, JSON)")
         self.btn_save.setToolTip("Сохранить текущие данные или текст")
-        
         control_panel.addWidget(self.btn_load)
         control_panel.addWidget(self.btn_load_text)
         control_panel.addWidget(self.btn_save)
@@ -97,7 +95,8 @@ class DataProcessingApp(QMainWindow):
         # Вкладка данных
         self.init_data_tab()
         
-        # Вкладка анализа (оставляем для табличных данных)
+        # Вкладка анализа (для табличных данных)
+
         self.init_analysis_tab()
         
         # Вкладка очистки
@@ -108,10 +107,13 @@ class DataProcessingApp(QMainWindow):
         
         # Вкладка выбросов
         self.init_outliers_tab()
-        
-        # Вкладка обработки текста (с анализом)
+
         self.init_text_processing_tab()
+
         
+        # Вкладка масштабирования
+        self.init_scaling_tab()
+
         # Лог операций
         self.log = QTextEdit()
         self.log.setReadOnly(True)
@@ -261,6 +263,7 @@ class DataProcessingApp(QMainWindow):
         self.tab_data = QWidget()
         self.data_table = QTableWidget()
         self.data_table.setEditTriggers(QTableWidget.NoEditTriggers)
+
         
         # Улучшаем таблицу
         self.data_table.setAlternatingRowColors(True)
@@ -278,30 +281,33 @@ class DataProcessingApp(QMainWindow):
         
         data_layout = QVBoxLayout(self.tab_data)
         data_layout.addWidget(self.data_table)
+        self.tab_data.setLayout(data_layout)
         self.tabs.addTab(self.tab_data, "📊 Данные")
 
     def init_analysis_tab(self):
         self.tab_analyze = QWidget()
         layout = QVBoxLayout(self.tab_analyze)
-        
         # Кнопки анализа
         btn_panel = QHBoxLayout()
         self.btn_analyze = QPushButton("🔍 Автоанализ")
         self.btn_plot_dist = QPushButton("📊 Распределение")
+
         self.btn_analyze.setToolTip("Выполнить комплексный анализ данных")
         self.btn_plot_dist.setToolTip("Построить распределение для числовых столбцов")
-        
+
         btn_panel.addWidget(self.btn_analyze)
         btn_panel.addWidget(self.btn_plot_dist)
         
         # Графическая область
         self.figure = Figure()
         self.canvas = FigureCanvasQTAgg(self.figure)
+
         self.canvas.setMinimumHeight(300)
         
         # Отчёт
         self.analysis_report = QTextEdit()
         self.analysis_report.setReadOnly(True)
+
         self.analysis_report.setStyleSheet("""
             QTextEdit {
                 background-color: #f5f5f5;
@@ -315,7 +321,13 @@ class DataProcessingApp(QMainWindow):
         layout.addWidget(self.canvas)
         layout.addWidget(QLabel("Отчёт анализа:"))
         layout.addWidget(self.analysis_report)
+        self.tab_analyze.setLayout(layout)
         self.tabs.addTab(self.tab_analyze, "📈 Анализ")
+        layout.addLayout(btn_panel)
+        layout.addWidget(self.canvas)
+        layout.addWidget(self.analysis_report)
+        
+        self.tabs.addTab(self.tab_analyze, "Анализ")
 
     def init_clean_tab(self):
         self.tab_clean = QWidget()
@@ -324,7 +336,9 @@ class DataProcessingApp(QMainWindow):
         clean_layout.addWidget(self.btn_clean)
         clean_layout.addStretch()
         self.tab_clean.setLayout(clean_layout)
+
         self.tabs.addTab(self.tab_clean, "🧹Очистка")
+
 
     def init_missing_tab(self):
         self.tab_missing = QWidget()
@@ -351,7 +365,9 @@ class DataProcessingApp(QMainWindow):
         missing_layout.addStretch()
         
         self.tab_missing.setLayout(missing_layout)
+
         self.tabs.addTab(self.tab_missing, "❓Пропуски")
+
 
     def init_outliers_tab(self):
         self.tab_outliers = QWidget()
@@ -373,6 +389,7 @@ class DataProcessingApp(QMainWindow):
         outliers_layout.addStretch()
         
         self.tab_outliers.setLayout(outliers_layout)
+
         self.tabs.addTab(self.tab_outliers, "📈Выбросы")
 
     def init_status_bar(self):
@@ -400,12 +417,15 @@ class DataProcessingApp(QMainWindow):
     def setup_connections(self):
         self.btn_load.clicked.connect(self.load_data)
         self.btn_save.clicked.connect(self.save_data)
+
         self.btn_load_text.clicked.connect(self.load_text_file)
+
         self.btn_clean.clicked.connect(self.clean_data)
         self.btn_process_missing.clicked.connect(self.process_missing)
         self.btn_remove_outliers.clicked.connect(self.remove_outliers)
         self.btn_analyze.clicked.connect(self.run_analysis)
         self.btn_plot_dist.clicked.connect(self.plot_distribution)
+
         self.btn_process_text.clicked.connect(self.process_text)
         self.btn_analyze_text.clicked.connect(self.analyze_text_data)
 
@@ -436,9 +456,9 @@ class DataProcessingApp(QMainWindow):
                     self.cb_language.setCurrentIndex(index)
                     self.log_message(f"Автоматически определен язык: {detected_lang}")
             else:
-                self.log_message(f"Определен язык: {detected_lang}, но он не поддерживается", warning=True)
+                self.log_message(f"Определен язык: {detected_lang}, но он не поддерживается")
         except Exception as e:
-            self.log_message(f"Ошибка определения языка: {str(e)}", warning=True)
+            self.log_message(f"Ошибка определения языка: {str(e)}")
 
     def load_data(self):
         """Сохранение данных в различных форматах"""
@@ -793,6 +813,7 @@ class DataProcessingApp(QMainWindow):
             except Exception as e:
                 self.log_message(f"Ошибка сохранения: {str(e)}", error=True)
 
+
     def display_data(self):
         if self.current_data is not None:
             self.data_table.setRowCount(self.current_data.shape[0])
@@ -861,6 +882,96 @@ class DataProcessingApp(QMainWindow):
             finally:
                 self.show_progress(False)
 
+    def init_scaling_tab(self):
+        """Вкладка для масштабирования данных"""
+        self.tab_scaling = QWidget()
+        layout = QVBoxLayout()
+        
+        # Выбор столбцов
+        self.scaling_columns = QLineEdit()
+        self.scaling_columns.setPlaceholderText("Укажите столбцы через запятую (оставьте пустым для всех числовых)")
+        
+        # Группа методов
+        self.scaling_method = QButtonGroup()
+        self.rb_normalize = QRadioButton("Нормализация (MinMax)")
+        self.rb_standardize = QRadioButton("Стандартизация (Z-score)")
+        self.rb_normalize.setChecked(True)
+        self.scaling_method.addButton(self.rb_normalize)
+        self.scaling_method.addButton(self.rb_standardize)
+        
+        # Параметры нормализации
+        self.norm_range_layout = QHBoxLayout()
+        self.norm_range_layout.addWidget(QLabel("Диапазон:"))
+        self.norm_min = QLineEdit("0")
+        self.norm_max = QLineEdit("1")
+        self.norm_min.setValidator(QDoubleValidator())
+        self.norm_max.setValidator(QDoubleValidator())
+        self.norm_range_layout.addWidget(self.norm_min)
+        self.norm_range_layout.addWidget(QLabel("до"))
+        self.norm_range_layout.addWidget(self.norm_max)
+        
+        # Контейнер для параметров нормализации
+        self.norm_params_container = QWidget()
+        self.norm_params_container.setLayout(self.norm_range_layout)
+        
+        # Кнопка выполнения
+        self.btn_apply_scaling = QPushButton("Применить масштабирование")
+        
+        # Сборка layout
+        layout.addWidget(QLabel("Столбцы для обработки:"))
+        layout.addWidget(self.scaling_columns)
+        layout.addWidget(QLabel("Метод:"))
+        layout.addWidget(self.rb_normalize)
+        layout.addWidget(self.rb_standardize)
+        layout.addWidget(self.norm_params_container)
+        layout.addWidget(self.btn_apply_scaling)
+        layout.addStretch()
+        
+        # Подключение сигналов
+        self.rb_normalize.toggled.connect(self.norm_params_container.setVisible)
+        self.norm_params_container.setVisible(self.rb_normalize.isChecked())
+        
+        self.tab_scaling.setLayout(layout)
+        self.tabs.addTab(self.tab_scaling, "Масштабирование")
+
+    def apply_scaling(self):
+        """Применяет выбранный метод масштабирования"""
+        if self.current_data is None:
+            self.log_message("Нет данных для обработки", error=True)
+            return
+            
+        try:
+            self.show_progress(True)
+            columns = [c.strip() for c in self.scaling_columns.text().split(",")] if self.scaling_columns.text() else None
+            
+            if self.rb_normalize.isChecked():
+                processor = NormalizeData(
+                    self.current_data,
+                    columns=columns,
+                    feature_range=(
+                        float(self.norm_min.text()),
+                        float(self.norm_max.text())
+                    ))
+            else:
+                processor = StandardizeData(
+                    self.current_data,
+                    columns=columns
+                )
+                
+            self.current_data = processor.run()
+            self.display_data()
+            self.save_state()
+            self.log_message(processor.info())
+            
+        except ValueError as e:
+            self.log_message(f"Ошибка ввода параметров: {str(e)}", error=True)
+        except Exception as e:
+            self.log_message(f"Ошибка масштабирования: {str(e)}", error=True)
+        finally:
+            self.show_progress(False)
+
+    # Новые методы анализа
+
     def run_analysis(self):
         if self.current_data is not None:
             try:
@@ -903,6 +1014,8 @@ class DataProcessingApp(QMainWindow):
                 self.current_data[col].plot(kind='hist', ax=ax)
                 ax.set_title(f"Распределение {col}")
                 self.canvas.draw()
+
+    # Система истории и другие утилиты
 
     def save_state(self):
         if self.current_data is not None:
@@ -970,3 +1083,4 @@ if __name__ == "__main__":
     window = DataProcessingApp()
     window.show()
     sys.exit(app.exec_())
+

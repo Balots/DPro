@@ -2,6 +2,10 @@ import sys
 from PyQt5.QtWidgets import QApplication
 from App.MainWindow import DataProcessingApp  # Импортируем из правильного модуля
 
+import sys
+from PyQt5.QtWidgets import QApplication
+from App.MainWindow import DataProcessingApp
+
 if __name__ == '__main__':
     app = QApplication(sys.argv)  # Создаем QApplication
     
