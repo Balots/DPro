@@ -10,7 +10,8 @@ from PyQt5.QtWidgets import (
 from PyQt5.QtGui import QPalette, QColor, QTextDocument, QDoubleValidator
 from PyQt5.QtCore import Qt, QTimer
 from PyQt5.QtPrintSupport import QPrinter
-from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg
+from PyQt5.QtGui import QIcon
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg, NavigationToolbar2QT as NavigationToolbar
 from matplotlib.figure import Figure
 from Detector.Detector import Detector
 from DataProcessing import CleanData, HandleMissingValues, DetectAndRemoveOutliers, NormalizeData, StandardizeData
@@ -22,6 +23,7 @@ class DataProcessingApp(QMainWindow):
         super().__init__()
         self.setWindowTitle("Data Processing Tool")
         self.setGeometry(100, 100, 1200, 800)
+        self.setWindowIcon(QIcon('app_icon.png'))
         self.current_data = None
         self.history = []
         self.init_ui()
@@ -93,24 +95,50 @@ class DataProcessingApp(QMainWindow):
         self.tab_analyze = QWidget()
         layout = QVBoxLayout()
         
+        # Панель управления графиками
+        control_panel = QHBoxLayout()
+        
         # Кнопки анализа
-        btn_panel = QHBoxLayout()
         self.btn_analyze = QPushButton("🔍 Автоанализ")
-        self.btn_plot_dist = QPushButton("📊 Распределение")
-        btn_panel.addWidget(self.btn_analyze)
-        btn_panel.addWidget(self.btn_plot_dist)
+        self.btn_plot = QPushButton("📊 Построить график")
+        
+        # Выбор столбцов и типа графика
+        self.cb_x_axis = QComboBox()
+        self.cb_y_axis = QComboBox()
+        self.cb_plot_type = QComboBox()
+        self.cb_plot_type.addItems([
+            "Гистограмма", 
+            "Boxplot", 
+            "Scatter", 
+            "Линейный график",
+            "Круговая диаграмма"
+        ])
+        
+        # Добавляем элементы на панель
+        control_panel.addWidget(self.btn_analyze)
+        control_panel.addWidget(self.btn_plot)
+        control_panel.addWidget(QLabel("Тип:"))
+        control_panel.addWidget(self.cb_plot_type)
+        control_panel.addWidget(QLabel("X:"))
+        control_panel.addWidget(self.cb_x_axis)
+        control_panel.addWidget(QLabel("Y:"))
+        control_panel.addWidget(self.cb_y_axis)
         
         # Графическая область
-        self.figure = Figure()
+        self.figure = Figure(figsize=(8, 4), dpi=100)
         self.canvas = FigureCanvasQTAgg(self.figure)
+        self.toolbar = NavigationToolbar(self.canvas, self)
         
-        # Отчёт
+        # Отчёт анализа
         self.analysis_report = QTextEdit()
         self.analysis_report.setReadOnly(True)
         
-        layout.addLayout(btn_panel)
+        # Сборка layout
+        layout.addLayout(control_panel)
+        layout.addWidget(self.toolbar)
         layout.addWidget(self.canvas)
         layout.addWidget(self.analysis_report)
+        
         self.tab_analyze.setLayout(layout)
         self.tabs.addTab(self.tab_analyze, "Анализ")
 
@@ -172,6 +200,50 @@ class DataProcessingApp(QMainWindow):
         self.tab_outliers.setLayout(outliers_layout)
         self.tabs.addTab(self.tab_outliers, "Выбросы")
 
+    def init_scaling_tab(self):
+        self.tab_scaling = QWidget()
+        layout = QVBoxLayout()
+        
+        self.scaling_columns = QLineEdit()
+        self.scaling_columns.setPlaceholderText("Укажите столбцы через запятую")
+        
+        self.scaling_method = QButtonGroup()
+        self.rb_normalize = QRadioButton("Нормализация (MinMax)")
+        self.rb_standardize = QRadioButton("Стандартизация (Z-score)")
+        self.rb_normalize.setChecked(True)
+        self.scaling_method.addButton(self.rb_normalize)
+        self.scaling_method.addButton(self.rb_standardize)
+        
+        self.norm_range_layout = QHBoxLayout()
+        self.norm_range_layout.addWidget(QLabel("Диапазон:"))
+        self.norm_min = QLineEdit("0")
+        self.norm_max = QLineEdit("1")
+        self.norm_min.setValidator(QDoubleValidator())
+        self.norm_max.setValidator(QDoubleValidator())
+        self.norm_range_layout.addWidget(self.norm_min)
+        self.norm_range_layout.addWidget(QLabel("до"))
+        self.norm_range_layout.addWidget(self.norm_max)
+        
+        self.norm_params_container = QWidget()
+        self.norm_params_container.setLayout(self.norm_range_layout)
+        
+        self.btn_apply_scaling = QPushButton("Применить масштабирование")
+        
+        layout.addWidget(QLabel("Столбцы для обработки:"))
+        layout.addWidget(self.scaling_columns)
+        layout.addWidget(QLabel("Метод:"))
+        layout.addWidget(self.rb_normalize)
+        layout.addWidget(self.rb_standardize)
+        layout.addWidget(self.norm_params_container)
+        layout.addWidget(self.btn_apply_scaling)
+        layout.addStretch()
+        
+        self.rb_normalize.toggled.connect(self.norm_params_container.setVisible)
+        self.norm_params_container.setVisible(self.rb_normalize.isChecked())
+        
+        self.tab_scaling.setLayout(layout)
+        self.tabs.addTab(self.tab_scaling, "Масштабирование")
+
     def init_status_bar(self):
         self.status_bar = QStatusBar()
         self.progress_bar = QProgressBar()
@@ -183,7 +255,6 @@ class DataProcessingApp(QMainWindow):
     def init_toolbar(self):
         toolbar = self.addToolBar("Инструменты")
         
-        # Действия
         export_action = QAction("Экспорт PDF", self)
         export_action.triggered.connect(self.export_report)
         
@@ -201,12 +272,25 @@ class DataProcessingApp(QMainWindow):
         self.btn_process_missing.clicked.connect(self.process_missing)
         self.btn_remove_outliers.clicked.connect(self.remove_outliers)
         self.btn_analyze.clicked.connect(self.run_analysis)
-        self.btn_plot_dist.clicked.connect(self.plot_distribution)
+        self.btn_plot.clicked.connect(self.plot_data)
         self.btn_apply_scaling.clicked.connect(self.apply_scaling)
+        self.cb_plot_type.currentTextChanged.connect(self.update_axis_visibility)
 
-    # Основные методы обработки данных
+    def update_plot_columns(self):
+        """Обновляет список доступных столбцов для графиков"""
+        if self.current_data is not None:
+            self.cb_x_axis.clear()
+            self.cb_y_axis.clear()
+            self.cb_x_axis.addItems(self.current_data.columns)
+            self.cb_y_axis.addItems(self.current_data.columns)
+            self.cb_y_axis.setCurrentIndex(1 if len(self.current_data.columns) > 1 else 0)
+
+    def update_axis_visibility(self):
+        """Скрывает/показывает выбор оси Y в зависимости от типа графика"""
+        plot_type = self.cb_plot_type.currentText()
+        self.cb_y_axis.setVisible(plot_type in ["Scatter", "Линейный график"])
+
     def load_data(self):
-        """Загрузка данных с поддержкой CSV, Excel, JSON и Parquet"""
         file_path, _ = QFileDialog.getOpenFileName(
             self,
             "Выберите файл данных",
@@ -221,7 +305,6 @@ class DataProcessingApp(QMainWindow):
         try:
             self.show_progress(True)
             
-            # Определяем формат по расширению файла
             if file_path.endswith('.csv'):
                 self.current_data = pd.read_csv(file_path)
             elif file_path.endswith('.xlsx'):
@@ -234,6 +317,7 @@ class DataProcessingApp(QMainWindow):
                 raise ValueError("Неподдерживаемый формат файла")
 
             self.display_data()
+            self.update_plot_columns()
             self.btn_save.setEnabled(True)
             self.save_state()
             self.log_message(f"Данные загружены из {file_path}")
@@ -244,7 +328,6 @@ class DataProcessingApp(QMainWindow):
             self.show_progress(False)
 
     def save_data(self):
-        """Сохранение данных в различных форматах"""
         if self.current_data is None:
             return
 
@@ -261,7 +344,6 @@ class DataProcessingApp(QMainWindow):
         try:
             self.show_progress(True)
             
-            # Добавляем правильное расширение, если его нет
             if selected_filter == "CSV (*.csv)" and not file_path.endswith('.csv'):
                 file_path += '.csv'
             elif selected_filter == "Excel (*.xlsx)" and not file_path.endswith('.xlsx'):
@@ -271,7 +353,6 @@ class DataProcessingApp(QMainWindow):
             elif selected_filter == "Parquet (*.parquet)" and not file_path.endswith('.parquet'):
                 file_path += '.parquet'
 
-            # Сохранение в соответствующем формате
             if file_path.endswith('.csv'):
                 self.current_data.to_csv(file_path, index=False)
             elif file_path.endswith('.xlsx'):
@@ -358,60 +439,7 @@ class DataProcessingApp(QMainWindow):
             finally:
                 self.show_progress(False)
 
-    def init_scaling_tab(self):
-        """Вкладка для масштабирования данных"""
-        self.tab_scaling = QWidget()
-        layout = QVBoxLayout()
-        
-        # Выбор столбцов
-        self.scaling_columns = QLineEdit()
-        self.scaling_columns.setPlaceholderText("Укажите столбцы через запятую (оставьте пустым для всех числовых)")
-        
-        # Группа методов
-        self.scaling_method = QButtonGroup()
-        self.rb_normalize = QRadioButton("Нормализация (MinMax)")
-        self.rb_standardize = QRadioButton("Стандартизация (Z-score)")
-        self.rb_normalize.setChecked(True)
-        self.scaling_method.addButton(self.rb_normalize)
-        self.scaling_method.addButton(self.rb_standardize)
-        
-        # Параметры нормализации
-        self.norm_range_layout = QHBoxLayout()
-        self.norm_range_layout.addWidget(QLabel("Диапазон:"))
-        self.norm_min = QLineEdit("0")
-        self.norm_max = QLineEdit("1")
-        self.norm_min.setValidator(QDoubleValidator())
-        self.norm_max.setValidator(QDoubleValidator())
-        self.norm_range_layout.addWidget(self.norm_min)
-        self.norm_range_layout.addWidget(QLabel("до"))
-        self.norm_range_layout.addWidget(self.norm_max)
-        
-        # Контейнер для параметров нормализации
-        self.norm_params_container = QWidget()
-        self.norm_params_container.setLayout(self.norm_range_layout)
-        
-        # Кнопка выполнения
-        self.btn_apply_scaling = QPushButton("Применить масштабирование")
-        
-        # Сборка layout
-        layout.addWidget(QLabel("Столбцы для обработки:"))
-        layout.addWidget(self.scaling_columns)
-        layout.addWidget(QLabel("Метод:"))
-        layout.addWidget(self.rb_normalize)
-        layout.addWidget(self.rb_standardize)
-        layout.addWidget(self.norm_params_container)
-        layout.addWidget(self.btn_apply_scaling)
-        layout.addStretch()
-        
-        # Подключение сигналов
-        self.rb_normalize.toggled.connect(self.norm_params_container.setVisible)
-        self.norm_params_container.setVisible(self.rb_normalize.isChecked())
-        
-        self.tab_scaling.setLayout(layout)
-        self.tabs.addTab(self.tab_scaling, "Масштабирование")
-
     def apply_scaling(self):
-        """Применяет выбранный метод масштабирования"""
         if self.current_data is None:
             self.log_message("Нет данных для обработки", error=True)
             return
@@ -446,7 +474,6 @@ class DataProcessingApp(QMainWindow):
         finally:
             self.show_progress(False)
 
-    # Новые методы анализа
     def run_analysis(self):
         if self.current_data is not None:
             try:
@@ -470,7 +497,7 @@ class DataProcessingApp(QMainWindow):
                     report += f"- {col}: {rec['Рекомендация']} ({', '.join(rec['причина'])})\n"
                 
                 self.analysis_report.setPlainText(report)
-                self.plot_distribution()
+                self.plot_data()
                 self.log_message("Автоанализ завершен")
                 
             except Exception as e:
@@ -478,19 +505,76 @@ class DataProcessingApp(QMainWindow):
             finally:
                 self.show_progress(False)
 
-    def plot_distribution(self):
-        if self.current_data is not None:
-            self.figure.clear()
-            ax = self.figure.add_subplot(111)
-            
-            numeric_cols = self.current_data.select_dtypes(include=['number']).columns
-            if len(numeric_cols) > 0:
-                col = numeric_cols[0]
-                self.current_data[col].plot(kind='hist', ax=ax)
-                ax.set_title(f"Распределение {col}")
-                self.canvas.draw()
+    def plot_data(self):
+        if self.current_data is None or not self.cb_x_axis.currentText():
+            return
 
-    # Система истории и другие утилиты
+        x_col = self.cb_x_axis.currentText()
+        plot_type = self.cb_plot_type.currentText()
+        
+        self.figure.clear()
+        ax = self.figure.add_subplot(111)
+
+        try:
+            if plot_type == "Гистограмма":
+                self.current_data[x_col].plot(
+                    kind='hist',
+                    ax=ax,
+                    bins=20,
+                    edgecolor='black',
+                    color='skyblue'
+                )
+                ax.set_ylabel("Частота")
+                
+            elif plot_type == "Boxplot":
+                self.current_data[[x_col]].boxplot(
+                    ax=ax,
+                    patch_artist=True,
+                    boxprops=dict(facecolor='lightblue')
+                )
+                ax.set_ylabel("Значения")
+                
+            elif plot_type in ["Scatter", "Линейный график"]:
+                if not self.cb_y_axis.currentText():
+                    raise ValueError("Не выбрана ось Y")
+                
+                y_col = self.cb_y_axis.currentText()
+                if plot_type == "Scatter":
+                    self.current_data.plot.scatter(
+                        x=x_col,
+                        y=y_col,
+                        ax=ax,
+                        color='green',
+                        alpha=0.6
+                    )
+                else:
+                    self.current_data.plot.line(
+                        x=x_col,
+                        y=y_col,
+                        ax=ax,
+                        color='blue',
+                        marker='o'
+                    )
+                ax.set_ylabel(y_col)
+                
+            elif plot_type == "Круговая диаграмма":
+                if self.current_data[x_col].nunique() > 10:
+                    raise ValueError("Слишком много уникальных значений для круговой диаграммы")
+                self.current_data[x_col].value_counts().plot.pie(
+                    ax=ax,
+                    autopct='%1.1f%%',
+                    startangle=90,
+                    colors=plt.cm.Pastel1.colors
+                )
+                ax.set_ylabel("")
+            
+            ax.set_title(f"{plot_type}: {x_col}")
+            ax.grid(True, linestyle='--', alpha=0.6)
+            self.canvas.draw()
+            
+        except Exception as e:
+            self.log_message(f"Ошибка построения графика: {str(e)}", error=True)
+
     def save_state(self):
         if self.current_data is not None:
             self.history.append(self.current_data.copy())
@@ -518,7 +602,7 @@ class DataProcessingApp(QMainWindow):
 
     def show_progress(self, visible):
         self.progress_bar.setVisible(visible)
-        self.progress_bar.setRange(0, 0 if visible else 1)  # Неопределённый прогресс
+        self.progress_bar.setRange(0, 0 if visible else 1)
         QApplication.processEvents()
 
     def log_message(self, message, error=False):
