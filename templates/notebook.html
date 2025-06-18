@@ -130,7 +130,8 @@
     <div id="header">
         <div id="notebook-name">{{ notebook_name }}</div>
         <div id="header-buttons">
-            <button class="toolbar-button"><i class="fas fa-save"></i> Save</button>
+            <button class="toolbar-button" onclick ="document.getElementById('save-btn').click()">
+                <i class="fas fa-save"></i> Save</button>
         </div>
     </div>
 
@@ -218,7 +219,46 @@
                 alert(`Ошибка при загрузке файла: ${error}`);
             }
         });
+        // Обработчик кнопки сохранения файла
+        document.getElementById('save-btn').addEventListener('click', function() {
+            if (!currentData) {
+                alert('Нет данных для сохранения');
+                return;
+            }
 
+            try {
+                // Преобразуем данные в CSV формат (пример для массива объектов)
+                let csvContent = '';
+
+                // Заголовки столбцов
+                const headers = Object.keys(currentData[0]);
+                csvContent += headers.join(',') + '\n';
+
+                // Данные
+                currentData.forEach(row => {
+                    const values = headers.map(header => row[header]);
+                    csvContent += values.join(',') + '\n';
+                });
+
+                // Создаем Blob с CSV данными
+                const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+
+                // Создаем ссылку для скачивания
+                const link = document.createElement('a');
+                const url = URL.createObjectURL(blob);
+
+                link.setAttribute('href', url);
+                link.setAttribute('download', 'data.csv');
+                link.style.visibility = 'hidden';
+
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+            } catch (error) {
+                alert(`Ошибка при сохранении файла: ${error}`);
+            }
+        });
         // Отправка данных на сервер
         async function sendDataFrame() {
             if (!currentData) {

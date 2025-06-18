@@ -1531,3 +1531,115 @@
 2025-06-18 22:55:07,443 get finished successfully
 2025-06-18 22:57:27,444 get started
 2025-06-18 22:57:27,468 get finished successfully
+2025-06-18 23:12:34,600 Pandas backend loaded 2.2.3
+2025-06-18 23:12:34,602 Numpy backend loaded 2.1.3
+2025-06-18 23:12:34,603 Pyspark backend NOT loaded
+2025-06-18 23:12:34,603 Python backend loaded
+2025-06-18 23:13:21,219 Pandas backend loaded 2.2.3
+2025-06-18 23:13:21,221 Numpy backend loaded 2.1.3
+2025-06-18 23:13:21,221 Pyspark backend NOT loaded
+2025-06-18 23:13:21,221 Python backend loaded
+2025-06-18 23:14:05,777 get started
+2025-06-18 23:14:05,801 get finished successfully
+2025-06-18 23:16:08,649 Pandas backend loaded 2.2.3
+2025-06-18 23:16:08,651 Numpy backend loaded 2.1.3
+2025-06-18 23:16:08,651 Pyspark backend NOT loaded
+2025-06-18 23:16:08,651 Python backend loaded
+2025-06-18 23:16:34,616 Pandas backend loaded 2.2.3
+2025-06-18 23:16:34,618 Numpy backend loaded 2.1.3
+2025-06-18 23:16:34,618 Pyspark backend NOT loaded
+2025-06-18 23:16:34,618 Python backend loaded
+2025-06-18 23:16:45,499 get started
+2025-06-18 23:16:45,499 run started
+2025-06-18 23:16:45,523 run finished successfully
+2025-06-18 23:16:45,523 get finished successfully
+2025-06-18 23:21:23,419 Pandas backend loaded 2.2.3
+2025-06-18 23:21:23,420 Numpy backend loaded 2.1.3
+2025-06-18 23:21:23,421 Pyspark backend NOT loaded
+2025-06-18 23:21:23,421 Python backend loaded
+2025-06-18 23:22:24,531 Pandas backend loaded 2.2.3
+2025-06-18 23:22:24,533 Numpy backend loaded 2.1.3
+2025-06-18 23:22:24,533 Pyspark backend NOT loaded
+2025-06-18 23:22:24,533 Python backend loaded
+2025-06-18 23:22:37,770 Pandas backend loaded 2.2.3
+2025-06-18 23:22:37,772 Numpy backend loaded 2.1.3
+2025-06-18 23:22:37,772 Pyspark backend NOT loaded
+2025-06-18 23:22:37,772 Python backend loaded
+2025-06-18 23:23:07,188 Pandas backend loaded 2.2.3
+2025-06-18 23:23:07,189 Numpy backend loaded 2.1.3
+2025-06-18 23:23:07,190 Pyspark backend NOT loaded
+2025-06-18 23:23:07,190 Python backend loaded
+2025-06-18 23:23:30,784 get started
+2025-06-18 23:23:30,784 Error in get: Can't instantiate abstract class DetectAndRemoveOutliers without an implementation for abstract methods 'get_answ', 'info'
+2025-06-18 23:23:50,802 Pandas backend loaded 2.2.3
+2025-06-18 23:23:50,804 Numpy backend loaded 2.1.3
+2025-06-18 23:23:50,804 Pyspark backend NOT loaded
+2025-06-18 23:23:50,804 Python backend loaded
+2025-06-18 23:24:00,832 get started
+2025-06-18 23:24:00,841 get finished successfully
+2025-06-18 23:26:43,922 get started
+2025-06-18 23:26:43,933 get finished successfully
+2025-06-18 23:27:56,251 get started
+2025-06-18 23:27:56,263 get finished successfully
+2025-06-18 23:29:14,344 Pandas backend loaded 2.2.3
+2025-06-18 23:29:14,346 Numpy backend loaded 2.1.3
+2025-06-18 23:29:14,346 Pyspark backend NOT loaded
+2025-06-18 23:29:14,346 Python backend loaded
+2025-06-18 23:29:45,450 Pandas backend loaded 2.2.3
+2025-06-18 23:29:45,452 Numpy backend loaded 2.1.3
+2025-06-18 23:29:45,452 Pyspark backend NOT loaded
+2025-06-18 23:29:45,452 Python backend loaded
+2025-06-18 23:29:52,773 get started
+2025-06-18 23:29:52,775 get finished successfully
+2025-06-18 23:30:14,589 get started
+2025-06-18 23:30:14,590 get finished successfully
+2025-06-18 23:30:45,890 Pandas backend loaded 2.2.3
+2025-06-18 23:30:45,892 Numpy backend loaded 2.1.3
+2025-06-18 23:30:45,892 Pyspark backend NOT loaded
+2025-06-18 23:30:45,892 Python backend loaded
+2025-06-18 23:30:53,126 Pandas backend loaded 2.2.3
+2025-06-18 23:30:53,127 Numpy backend loaded 2.1.3
+2025-06-18 23:30:53,128 Pyspark backend NOT loaded
+2025-06-18 23:30:53,128 Python backend loaded
+2025-06-18 23:30:59,933 get started
+2025-06-18 23:31:00,001 get finished successfully
+2025-06-18 23:39:07,098 get started
+2025-06-18 23:39:07,101 get finished successfully
+2025-06-18 23:40:04,227 get started
+2025-06-18 23:40:04,229 get finished successfully
+2025-06-18 23:44:25,654 get started
+2025-06-18 23:44:25,656 get finished successfully
+2025-06-18 23:47:05,121 Pandas backend loaded 2.2.3
+2025-06-18 23:47:05,123 Numpy backend loaded 2.1.3
+2025-06-18 23:47:05,123 Pyspark backend NOT loaded
+2025-06-18 23:47:05,123 Python backend loaded
+2025-06-18 23:47:32,893 Pandas backend loaded 2.2.3
+2025-06-18 23:47:32,895 Numpy backend loaded 2.1.3
+2025-06-18 23:47:32,895 Pyspark backend NOT loaded
+2025-06-18 23:47:32,895 Python backend loaded
+2025-06-18 23:48:01,106 Pandas backend loaded 2.2.3
+2025-06-18 23:48:01,108 Numpy backend loaded 2.1.3
+2025-06-18 23:48:01,108 Pyspark backend NOT loaded
+2025-06-18 23:48:01,108 Python backend loaded
+2025-06-18 23:48:11,736 get started
+2025-06-18 23:48:11,832 Error in get: Input X contains NaN.
+LocalOutlierFactor does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values
+2025-06-18 23:49:35,289 stared
+2025-06-18 23:51:30,055 Pandas backend loaded 2.2.3
+2025-06-18 23:51:30,057 Numpy backend loaded 2.1.3
+2025-06-18 23:51:30,057 Pyspark backend NOT loaded
+2025-06-18 23:51:30,057 Python backend loaded
+2025-06-18 23:51:31,262 Pandas backend loaded 2.2.3
+2025-06-18 23:51:31,264 Numpy backend loaded 2.1.3
+2025-06-18 23:51:31,264 Pyspark backend NOT loaded
+2025-06-18 23:51:31,264 Python backend loaded
+2025-06-18 23:51:39,698 get started
+2025-06-18 23:51:39,699 Error in get: DataFrame constructor not properly called!
+2025-06-18 23:52:22,703 Pandas backend loaded 2.2.3
+2025-06-18 23:52:22,705 Numpy backend loaded 2.1.3
+2025-06-18 23:52:22,705 Pyspark backend NOT loaded
+2025-06-18 23:52:22,705 Python backend loaded
+2025-06-18 23:52:33,275 get started
+2025-06-18 23:52:33,344 get finished successfully
+2025-06-18 23:57:03,021 get started
+2025-06-18 23:57:03,024 get finished successfully
