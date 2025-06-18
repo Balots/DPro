@@ -1,0 +1,1086 @@
+2025-06-07 23:37:25,998 get started.
+2025-06-07 23:37:25,998 run started.
+2025-06-07 23:37:26,000 <function StandardizeData.run at 0x769c5eafe2a0> finished.
+2025-06-07 23:37:26,000 get_answ started.
+2025-06-07 23:37:26,002 <function StandardizeData.get_answ at 0x769c5eafe660> finished.
+2025-06-07 23:37:26,002 <function IDProcessing.get at 0x769cdebd8cc0> finished.
+2025-06-07 23:41:16,444 get started.
+2025-06-07 23:41:16,444 run started.
+2025-06-07 23:41:16,444 run_iqr started.
+2025-06-07 23:41:16,446 <function DetectAndRemoveOutliers.run_iqr at 0x71e3bfebe840> finished.
+2025-06-07 23:41:16,447 <function DetectAndRemoveOutliers.run at 0x71e4011f5260> finished.
+2025-06-07 23:41:16,447 get_answ started.
+2025-06-07 23:41:16,447 <function DetectAndRemoveOutliers.get_answ at 0x71e3bfebefc0> finished.
+2025-06-07 23:41:16,448 <function IDProcessing.get at 0x71e43ff80cc0> finished.
+<<<<<<< HEAD
+2025-06-10 00:29:29,498 run started.
+2025-06-10 00:29:29,536 <function CleanData.run at 0x00000152B3880220> finished.
+2025-06-10 00:29:35,354 info started.
+2025-06-10 00:29:35,354 <function CleanData.info at 0x00000152B3880860> finished.
+2025-06-10 00:30:26,582 run started.
+2025-06-10 00:30:26,595 <function HandleMissingValues.run at 0x00000152B38DE3E0> finished.
+2025-06-10 00:30:33,008 info started.
+2025-06-10 00:30:33,008 <function HandleMissingValues.info at 0x00000152B38DE520> finished.
+=======
+<<<<<<< HEAD
+2025-06-09 15:19:18,582 run started.
+2025-06-09 15:19:18,618 <function CleanData.run at 0x000002200188C160> finished.
+2025-06-09 15:19:18,769 info started.
+2025-06-09 15:19:18,771 <function CleanData.info at 0x000002200188C310> finished.
+2025-06-10 14:38:08,481 run started.
+2025-06-10 14:38:13,560 run started.
+2025-06-10 14:38:13,562 run_hampel started.
+2025-06-10 14:38:13,580 <function DetectAndRemoveOutliers.run_hampel at 0x000001AE07EC0220> finished.
+2025-06-10 14:38:13,590 <function DetectAndRemoveOutliers.run at 0x000001AE07E9BEC0> finished.
+2025-06-10 14:38:13,881 info started.
+2025-06-10 14:38:13,881 <function DetectAndRemoveOutliers.info at 0x000001AE07EC0720> finished.
+2025-06-10 14:45:40,021 run started.
+2025-06-10 14:45:40,030 <function CleanData.run at 0x000002C33A85C9A0> finished.
+2025-06-10 14:45:40,221 info started.
+2025-06-10 14:45:40,221 <function CleanData.info at 0x000002C33A85CAE0> finished.
+2025-06-10 14:45:58,676 run started.
+2025-06-10 14:46:01,469 run started.
+2025-06-10 14:46:01,469 run_hampel started.
+2025-06-10 14:46:01,588 <function DetectAndRemoveOutliers.run_hampel at 0x000002C33AD70220> finished.
+2025-06-10 14:46:01,593 <function DetectAndRemoveOutliers.run at 0x000002C33AD4BEC0> finished.
+2025-06-10 14:46:01,774 info started.
+2025-06-10 14:46:01,774 <function DetectAndRemoveOutliers.info at 0x000002C33AD70720> finished.
+2025-06-10 14:46:05,310 run started.
+2025-06-10 14:46:08,816 run started.
+2025-06-10 14:49:17,252 run started.
+2025-06-10 21:12:58,844 run started.
+2025-06-10 21:13:04,583 run started.
+2025-06-10 21:13:04,583 run_hampel started.
+2025-06-10 21:13:04,600 <function DetectAndRemoveOutliers.run_hampel at 0x0000026C3B830220> finished.
+2025-06-10 21:13:04,608 <function DetectAndRemoveOutliers.run at 0x0000026C3B80BEC0> finished.
+2025-06-10 21:13:04,815 info started.
+2025-06-10 21:13:04,816 <function DetectAndRemoveOutliers.info at 0x0000026C3B830720> finished.
+2025-06-11 11:56:58,058 run started.
+2025-06-11 11:56:58,071 <function HandleMissingValues.run at 0x000001E32DEAD1C0> finished.
+2025-06-11 11:56:58,316 info started.
+2025-06-11 11:56:58,316 <function HandleMissingValues.info at 0x000001E32DEAD300> finished.
+2025-06-11 11:57:23,468 run started.
+2025-06-11 11:57:28,248 run started.
+2025-06-11 11:57:36,130 run started.
+2025-06-11 11:57:40,242 run started.
+2025-06-11 11:57:43,816 run started.
+2025-06-11 11:57:43,816 run_hampel started.
+2025-06-11 11:57:43,830 <function DetectAndRemoveOutliers.run_hampel at 0x000001E32E3D0220> finished.
+2025-06-11 11:57:43,837 <function DetectAndRemoveOutliers.run at 0x000001E32E3ABEC0> finished.
+2025-06-11 11:57:43,924 info started.
+2025-06-11 11:57:43,924 <function DetectAndRemoveOutliers.info at 0x000001E32E3D0720> finished.
+2025-06-11 11:57:56,746 run started.
+2025-06-11 11:58:02,041 run started.
+2025-06-11 11:58:05,495 run started.
+2025-06-11 11:58:21,290 run started.
+2025-06-15 12:36:46,353 run started.
+2025-06-15 12:36:46,369 run_skewness started.
+2025-06-15 12:36:46,369 <function DetectAndRemoveOutliers.run_skewness at 0x00000217BBD90680> finished.
+2025-06-15 12:36:46,385 <function DetectAndRemoveOutliers.run at 0x00000217BBD900E0> finished.
+2025-06-15 12:36:46,385 info started.
+2025-06-15 12:36:46,385 <function DetectAndRemoveOutliers.info at 0x00000217BBD90900> finished.
+2025-06-15 13:04:28,983 run started.
+2025-06-15 13:04:28,999 <function NormalizeData.run at 0x000001AE8EC7A020> finished.
+2025-06-15 13:04:28,999 info started.
+2025-06-15 13:04:28,999 <function NormalizeData.info at 0x000001AE8ECDECA0> finished.
+=======
+>>>>>>> upstream/main
+2025-06-12 16:56:57,701 get started.
+2025-06-12 16:56:57,702 run started.
+2025-06-12 16:56:57,702 run_iqr started.
+2025-06-12 16:56:57,705 <function DetectAndRemoveOutliers.run_iqr at 0x7729ba56e840> finished.
+2025-06-12 16:56:57,706 <function DetectAndRemoveOutliers.run at 0x772a02505260> finished.
+2025-06-12 16:56:57,706 get_answ started.
+2025-06-12 16:56:57,707 <function DetectAndRemoveOutliers.get_answ at 0x7729ba56efc0> finished.
+2025-06-12 16:56:57,708 <function IDProcessing.get at 0x772a3a684cc0> finished.
+2025-06-12 16:57:29,177 get started.
+2025-06-12 17:00:00,399 get started.
+2025-06-12 17:02:24,627 get started.
+2025-06-12 17:07:00,604 get started.
+2025-06-12 17:07:11,566 get started.
+2025-06-12 17:07:11,566 run started.
+2025-06-12 17:07:11,566 run_iqr started.
+2025-06-12 17:07:11,567 <function DetectAndRemoveOutliers.run_iqr at 0x73ab226de840> finished.
+2025-06-12 17:07:11,568 <function DetectAndRemoveOutliers.run at 0x73ab67d01260> finished.
+2025-06-12 17:07:11,568 get_answ started.
+2025-06-12 17:07:11,569 <function DetectAndRemoveOutliers.get_answ at 0x73ab226defc0> finished.
+2025-06-12 17:07:11,569 <function IDProcessing.get at 0x73aba27d8cc0> finished.
+2025-06-12 17:07:18,323 get started.
+2025-06-12 17:08:09,647 get started.
+2025-06-12 17:08:09,647 run started.
+2025-06-12 17:08:09,650 <function NormalizeData.run at 0x7c5ba3105440> finished.
+2025-06-12 17:08:09,650 get_answ started.
+2025-06-12 17:08:09,650 <function NormalizeData.get_answ at 0x7c5b5875a0c0> finished.
+2025-06-12 17:08:09,651 <function IDProcessing.get at 0x7c5bd8ae0cc0> finished.
+2025-06-12 17:08:16,509 get started.
+2025-06-12 17:08:16,509 run started.
+2025-06-12 17:08:16,509 <function HandleMissingValues.run at 0x7c5ba3104e00> finished.
+2025-06-12 17:08:16,509 get_answ started.
+2025-06-12 17:08:16,509 <function HandleMissingValues.get_answ at 0x7c5ba3105080> finished.
+2025-06-12 17:08:16,509 <function IDProcessing.get at 0x7c5bd8ae0cc0> finished.
+2025-06-12 17:08:22,299 get started.
+2025-06-12 17:08:22,299 run started.
+2025-06-12 17:08:22,299 run_iqr started.
+2025-06-12 17:08:22,300 <function DetectAndRemoveOutliers.run_iqr at 0x7c5b5875a700> finished.
+2025-06-12 17:08:22,300 <function DetectAndRemoveOutliers.run at 0x7c5ba3105260> finished.
+2025-06-12 17:08:22,300 get_answ started.
+2025-06-12 17:08:22,300 <function DetectAndRemoveOutliers.get_answ at 0x7c5b5875ae80> finished.
+2025-06-12 17:08:22,300 <function IDProcessing.get at 0x7c5bd8ae0cc0> finished.
+2025-06-12 18:46:55,945 stared
+2025-06-12 19:19:31,070 stared
+2025-06-12 19:59:34,211 get started.
+2025-06-12 19:59:34,211 run started.
+2025-06-12 19:59:34,255 <function CleanData.run at 0x7905070391c0> finished.
+2025-06-12 19:59:34,255 get_answ started.
+2025-06-12 19:59:34,255 <function CleanData.get_answ at 0x7904c875c900> finished.
+2025-06-12 19:59:34,255 <function IDProcessing.get at 0x790507038e00> finished.
+2025-06-12 19:59:45,291 get started.
+2025-06-12 19:59:45,291 run started.
+2025-06-12 19:59:45,291 <function HandleMissingValues.run at 0x7904c875cc20> finished.
+2025-06-12 19:59:45,291 get_answ started.
+2025-06-12 19:59:45,291 <function HandleMissingValues.get_answ at 0x7904c875cea0> finished.
+2025-06-12 19:59:45,291 <function IDProcessing.get at 0x790507038e00> finished.
+2025-06-12 20:02:04,052 get started.
+2025-06-12 20:02:04,052 run started.
+2025-06-12 20:02:04,052 <function CleanData.run at 0x750010cd11c0> finished.
+2025-06-12 20:02:04,052 get_answ started.
+2025-06-12 20:02:04,052 <function CleanData.get_answ at 0x74ffd8d4c900> finished.
+2025-06-12 20:02:04,053 <function IDProcessing.get at 0x750010cd0e00> finished.
+2025-06-12 20:03:46,964 get started.
+2025-06-12 20:03:46,964 run started.
+2025-06-12 20:03:46,964 <function CleanData.run at 0x750010cd11c0> finished.
+2025-06-12 20:03:46,964 get_answ started.
+2025-06-12 20:03:46,964 <function CleanData.get_answ at 0x74ffd8d4c900> finished.
+2025-06-12 20:03:46,964 <function IDProcessing.get at 0x750010cd0e00> finished.
+2025-06-12 20:03:55,909 get started.
+2025-06-12 20:03:55,909 run started.
+2025-06-12 20:03:55,909 <function CleanData.run at 0x750010cd11c0> finished.
+2025-06-12 20:03:55,909 get_answ started.
+2025-06-12 20:03:55,909 <function CleanData.get_answ at 0x74ffd8d4c900> finished.
+2025-06-12 20:03:55,909 <function IDProcessing.get at 0x750010cd0e00> finished.
+2025-06-12 20:08:59,127 get started.
+2025-06-12 20:08:59,127 run started.
+2025-06-12 20:08:59,127 <function CleanData.run at 0x750010cd11c0> finished.
+2025-06-12 20:08:59,128 get_answ started.
+2025-06-12 20:08:59,128 <function CleanData.get_answ at 0x74ffd8d4c900> finished.
+2025-06-12 20:08:59,128 <function IDProcessing.get at 0x750010cd0e00> finished.
+2025-06-12 20:09:55,464 get started.
+2025-06-12 20:09:55,465 run started.
+2025-06-12 20:09:55,465 <function CleanData.run at 0x750010cd11c0> finished.
+2025-06-12 20:09:55,465 get_answ started.
+2025-06-12 20:09:55,465 <function CleanData.get_answ at 0x74ffd8d4c900> finished.
+2025-06-12 20:09:55,465 <function IDProcessing.get at 0x750010cd0e00> finished.
+2025-06-12 20:10:48,370 get started.
+2025-06-12 20:10:48,370 run started.
+2025-06-12 20:10:48,370 <function CleanData.run at 0x7a32386311c0> finished.
+2025-06-12 20:10:48,370 get_answ started.
+2025-06-12 20:10:48,370 <function CleanData.get_answ at 0x7a31f993c900> finished.
+2025-06-12 20:10:48,371 <function IDProcessing.get at 0x7a3238630e00> finished.
+2025-06-12 20:11:20,689 get started.
+2025-06-12 20:11:20,689 run started.
+2025-06-12 20:11:20,689 <function CleanData.run at 0x7a32386311c0> finished.
+2025-06-12 20:11:20,689 get_answ started.
+2025-06-12 20:11:20,689 <function CleanData.get_answ at 0x7a31f993c900> finished.
+2025-06-12 20:11:20,689 <function IDProcessing.get at 0x7a3238630e00> finished.
+2025-06-12 20:11:48,850 get started.
+2025-06-12 20:11:48,851 run started.
+2025-06-12 20:11:48,851 <function CleanData.run at 0x713ab63291c0> finished.
+2025-06-12 20:11:48,851 get_answ started.
+2025-06-12 20:11:48,851 <function CleanData.get_answ at 0x713a7753c900> finished.
+2025-06-12 20:11:48,851 <function IDProcessing.get at 0x713ab6328e00> finished.
+2025-06-12 20:13:46,505 get started.
+2025-06-12 20:13:46,505 run started.
+2025-06-12 20:13:46,520 <function CleanData.run at 0x713ab63291c0> finished.
+2025-06-12 20:13:46,520 get_answ started.
+2025-06-12 20:13:46,520 <function CleanData.get_answ at 0x713a7753c900> finished.
+2025-06-12 20:13:46,660 <function IDProcessing.get at 0x713ab6328e00> finished.
+2025-06-12 20:14:11,169 get started.
+2025-06-12 20:14:11,170 run started.
+2025-06-12 20:14:11,183 <function CleanData.run at 0x713ab63291c0> finished.
+2025-06-12 20:14:11,183 get_answ started.
+2025-06-12 20:14:11,183 <function CleanData.get_answ at 0x713a7753c900> finished.
+2025-06-12 20:14:11,313 <function IDProcessing.get at 0x713ab6328e00> finished.
+2025-06-12 20:14:32,994 get started.
+2025-06-12 20:14:32,995 run started.
+2025-06-12 20:14:33,011 <function CleanData.run at 0x77ac8dd291c0> finished.
+2025-06-12 20:14:33,011 get_answ started.
+2025-06-12 20:14:33,011 <function CleanData.get_answ at 0x77ac53548900> finished.
+2025-06-12 20:14:33,147 <function IDProcessing.get at 0x77ac8dd28e00> finished.
+2025-06-12 20:15:39,483 get started.
+2025-06-12 20:15:39,484 run started.
+2025-06-12 20:15:39,499 <function CleanData.run at 0x7609178311c0> finished.
+2025-06-12 20:15:39,499 get_answ started.
+2025-06-12 20:15:39,499 <function CleanData.get_answ at 0x7608d8c44900> finished.
+2025-06-12 20:15:39,632 <function IDProcessing.get at 0x760917830e00> finished.
+2025-06-12 20:16:46,372 get started.
+2025-06-12 20:16:46,373 run started.
+2025-06-12 20:16:46,389 <function CleanData.run at 0x7a30a54411c0> finished.
+2025-06-12 20:16:46,389 get_answ started.
+2025-06-12 20:16:46,389 <function CleanData.get_answ at 0x7a3066b64900> finished.
+2025-06-12 20:16:46,523 <function IDProcessing.get at 0x7a30a5440e00> finished.
+2025-06-12 20:19:11,933 get started.
+2025-06-12 20:19:11,934 run started.
+2025-06-12 20:19:11,950 <function CleanData.run at 0x77a23d72d1c0> finished.
+2025-06-12 20:19:11,950 get_answ started.
+2025-06-12 20:19:11,950 <function CleanData.get_answ at 0x77a1fea40900> finished.
+2025-06-12 20:19:11,950 <function IDProcessing.get at 0x77a23d72ce00> finished.
+2025-06-12 20:21:20,241 stared
+<<<<<<< HEAD
+
+2025-06-14 13:26:55,945 run started.
+2025-06-14 13:26:55,962 <function CleanData.run at 0x0000017DFF9B6480> finished.
+2025-06-14 13:27:02,077 info started.
+2025-06-14 13:27:02,077 <function CleanData.info at 0x0000017DA707C680> finished.
+2025-06-14 13:27:11,472 run started.
+2025-06-14 13:27:11,476 <function HandleMissingValues.run at 0x0000017DA707CCC0> finished.
+2025-06-14 13:27:17,339 info started.
+2025-06-14 13:27:17,339 <function HandleMissingValues.info at 0x0000017DA707CE00> finished.
+2025-06-14 13:27:51,132 run started.
+2025-06-14 13:27:51,132 run_skewness started.
+2025-06-14 13:27:51,140 <function DetectAndRemoveOutliers.run_skewness at 0x0000017DA707E160> finished.
+2025-06-14 13:27:51,140 <function DetectAndRemoveOutliers.run at 0x0000017DA707DC60> finished.
+2025-06-14 13:27:56,839 info started.
+2025-06-14 13:27:56,842 <function DetectAndRemoveOutliers.info at 0x0000017DA707E3E0> finished.
+2025-06-14 13:29:07,123 run started.
+2025-06-14 13:29:07,123 run_skewness started.
+2025-06-14 13:29:07,123 <function DetectAndRemoveOutliers.run_skewness at 0x0000017DA707E160> finished.
+2025-06-14 13:29:07,123 <function DetectAndRemoveOutliers.run at 0x0000017DA707DC60> finished.
+2025-06-14 13:29:12,652 info started.
+2025-06-14 13:29:12,662 <function DetectAndRemoveOutliers.info at 0x0000017DA707E3E0> finished.
+2025-06-14 13:29:19,252 run started.
+2025-06-14 14:18:11,642 run started.
+2025-06-14 14:18:11,642 <function RemoveHTMLTags.run at 0x00000206572FE8E0> finished.
+2025-06-14 14:18:11,642 info started.
+2025-06-14 14:18:11,642 <function RemoveHTMLTags.info at 0x00000206572FECA0> finished.
+2025-06-14 14:18:11,643 run started.
+2025-06-14 14:18:11,643 <function RemoveSpecialChars.run at 0x00000206572FF060> finished.
+2025-06-14 14:18:11,643 info started.
+2025-06-14 14:18:11,643 <function RemoveSpecialChars.info at 0x00000206572FF1A0> finished.
+2025-06-14 14:21:42,519 run started.
+2025-06-14 14:21:42,519 <function RemoveHTMLTags.run at 0x00000206572FE8E0> finished.
+2025-06-14 14:21:42,519 info started.
+2025-06-14 14:21:42,519 <function RemoveHTMLTags.info at 0x00000206572FECA0> finished.
+2025-06-14 14:21:42,519 run started.
+2025-06-14 14:21:42,519 <function RemoveSpecialChars.run at 0x00000206572FF060> finished.
+2025-06-14 14:21:42,519 info started.
+2025-06-14 14:21:42,519 <function RemoveSpecialChars.info at 0x00000206572FF1A0> finished.
+2025-06-14 14:21:42,519 run started.
+2025-06-14 14:21:42,519 <function HandleNumbers.run at 0x00000206572FF4C0> finished.
+2025-06-14 14:21:42,521 info started.
+2025-06-14 14:21:42,521 <function HandleNumbers.info at 0x00000206572FF600> finished.
+2025-06-14 14:21:42,521 run started.
+2025-06-14 14:21:42,548 <function TokenizeText.run at 0x00000206572FF920> finished.
+2025-06-14 14:21:42,548 info started.
+2025-06-14 14:21:42,548 <function TokenizeText.info at 0x00000206572FFA60> finished.
+2025-06-14 14:21:42,549 run started.
+2025-06-14 14:21:42,551 <function RemoveStopwords.run at 0x0000020657310040> finished.
+2025-06-14 14:21:42,551 info started.
+2025-06-14 14:21:42,551 <function RemoveStopwords.info at 0x0000020657310180> finished.
+2025-06-14 14:23:28,975 run started.
+2025-06-14 15:28:14,924 run started.
+2025-06-14 15:28:14,924 <function RemoveHTMLTags.run at 0x0000028D6B3FE840> finished.
+2025-06-14 15:28:14,924 info started.
+2025-06-14 15:28:14,924 <function RemoveHTMLTags.info at 0x0000028D6B3FEC00> finished.
+2025-06-14 15:28:14,924 run started.
+2025-06-14 15:28:14,925 <function RemoveSpecialChars.run at 0x0000028D6B3FEFC0> finished.
+2025-06-14 15:28:14,925 info started.
+2025-06-14 15:28:14,925 <function RemoveSpecialChars.info at 0x0000028D6B3FF100> finished.
+2025-06-14 15:28:14,925 run started.
+2025-06-14 15:28:14,925 <function NormalizeText.run at 0x0000028D6B410680> finished.
+2025-06-14 15:28:14,925 info started.
+2025-06-14 15:28:14,925 <function NormalizeText.info at 0x0000028D6B4107C0> finished.
+2025-06-14 15:28:48,564 run started.
+2025-06-14 15:29:32,524 run started.
+2025-06-14 15:29:32,524 <function RemoveSpecialChars.run at 0x0000012CF2CAF060> finished.
+2025-06-14 15:29:32,525 info started.
+2025-06-14 15:29:32,525 <function RemoveSpecialChars.info at 0x0000012CF2CAF1A0> finished.
+2025-06-14 15:29:32,525 run started.
+2025-06-14 15:29:32,526 <function RemoveStopwords.run at 0x0000012CF2CC0040> finished.
+2025-06-14 15:29:32,526 info started.
+2025-06-14 15:29:32,526 <function RemoveStopwords.info at 0x0000012CF2CC0180> finished.
+2025-06-14 15:29:32,527 run started.
+2025-06-14 15:29:32,527 <function NormalizeText.run at 0x0000012CF2CC0720> finished.
+2025-06-14 15:29:32,527 info started.
+2025-06-14 15:29:32,527 <function NormalizeText.info at 0x0000012CF2CC0860> finished.
+2025-06-14 15:29:49,122 run started.
+2025-06-14 15:30:08,630 run started.
+2025-06-14 15:30:08,630 <function RemoveHTMLTags.run at 0x000001DCECEFE840> finished.
+2025-06-14 15:30:08,631 info started.
+2025-06-14 15:30:08,631 <function RemoveHTMLTags.info at 0x000001DCECEFEC00> finished.
+2025-06-14 15:30:08,631 run started.
+2025-06-14 15:30:08,631 <function RemoveSpecialChars.run at 0x000001DCECEFEFC0> finished.
+2025-06-14 15:30:08,631 info started.
+2025-06-14 15:30:08,631 <function RemoveSpecialChars.info at 0x000001DCECEFF100> finished.
+2025-06-14 15:30:08,631 run started.
+2025-06-14 15:30:08,644 <function RemoveStopwords.run at 0x000001DCECEFFF60> finished.
+2025-06-14 15:30:08,644 info started.
+2025-06-14 15:30:08,644 <function RemoveStopwords.info at 0x000001DCECF100E0> finished.
+2025-06-14 15:30:08,644 run started.
+2025-06-14 15:30:10,278 <function NormalizeText.run at 0x000001DCECF10680> finished.
+2025-06-14 15:30:10,278 info started.
+2025-06-14 15:30:10,278 <function NormalizeText.info at 0x000001DCECF107C0> finished.
+2025-06-14 15:30:15,962 run started.
+2025-06-14 15:30:39,701 run started.
+2025-06-14 15:30:39,701 <function RemoveHTMLTags.run at 0x000001EAB2ED2840> finished.
+2025-06-14 15:30:39,701 info started.
+2025-06-14 15:30:39,701 <function RemoveHTMLTags.info at 0x000001EAB2ED2C00> finished.
+2025-06-14 15:30:39,701 run started.
+2025-06-14 15:30:39,702 <function RemoveSpecialChars.run at 0x000001EAB2ED2FC0> finished.
+2025-06-14 15:30:39,702 info started.
+2025-06-14 15:30:39,702 <function RemoveSpecialChars.info at 0x000001EAB2ED3100> finished.
+2025-06-14 15:30:39,702 run started.
+2025-06-14 15:30:41,376 <function NormalizeText.run at 0x000001EAB2EE0680> finished.
+2025-06-14 15:30:41,376 info started.
+2025-06-14 15:30:41,376 <function NormalizeText.info at 0x000001EAB2EE07C0> finished.
+2025-06-14 15:34:54,251 run started.
+2025-06-14 15:34:54,260 <function TokenizeText.run at 0x0000018F0205FA60> finished.
+2025-06-14 15:35:16,766 run started.
+2025-06-14 15:35:16,771 <function TokenizeText.run at 0x0000018F0205FA60> finished.
+2025-06-14 15:35:26,780 run started.
+2025-06-14 15:35:26,785 <function TokenizeText.run at 0x0000018F0205FA60> finished.
+2025-06-14 16:18:43,183 run started.
+2025-06-14 16:18:43,184 <function HandleNumbers.run at 0x000002DCB168F4C0> finished.
+2025-06-14 16:18:56,166 run started.
+2025-06-14 16:18:56,168 <function HandleNumbers.run at 0x000002DCB168F4C0> finished.
+2025-06-14 16:18:56,168 run started.
+2025-06-14 16:18:56,168 <function RemoveSpecialChars.run at 0x000002DCB168F060> finished.
+2025-06-14 16:18:56,168 run started.
+2025-06-14 16:18:56,193 <function RemoveStopwords.run at 0x000002DCB16A0040> finished.
+2025-06-14 16:19:41,457 run started.
+2025-06-14 16:19:41,467 <function TokenizeText.run at 0x000001F6CE14FA60> finished.
+2025-06-14 16:26:18,873 run started.
+2025-06-14 16:26:18,898 <function TokenizeText.run at 0x000001F6CE14FA60> finished.
+2025-06-14 16:26:32,302 run started.
+2025-06-14 16:26:32,302 <function TokenizeText.run at 0x000001F6CE14FA60> finished.
+2025-06-14 16:46:52,527 run started.
+2025-06-14 16:46:52,547 <function TokenizeText.run at 0x00000165EE5D1C60> finished.
+2025-06-14 16:47:37,613 run started.
+2025-06-14 16:47:37,615 <function TokenizeText.run at 0x00000165EE5D1C60> finished.
+2025-06-14 16:48:06,142 run started.
+2025-06-14 16:48:06,161 <function TokenizeText.run at 0x000001AFE1B17E20> finished.
+2025-06-14 16:52:36,877 run started.
+2025-06-14 16:52:36,882 <function TokenizeText.run at 0x000001AFE1B17E20> finished.
+2025-06-14 16:56:04,029 run started.
+2025-06-14 16:56:04,037 <function TokenizeText.run at 0x000001AFE1B17E20> finished.
+2025-06-14 16:56:04,061 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-14 16:56:04,256 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-14 16:57:56,278 run started.
+2025-06-14 16:57:56,289 <function TokenizeText.run at 0x000002179F877E20> finished.
+2025-06-14 16:57:56,313 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-14 16:57:56,337 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-14 17:00:07,420 run started.
+2025-06-14 17:00:07,427 <function TokenizeText.run at 0x000002179F877E20> finished.
+2025-06-14 17:00:07,447 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-14 17:00:07,470 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-14 17:02:01,555 run started.
+2025-06-14 17:02:01,562 <function TokenizeText.run at 0x000002179F877E20> finished.
+2025-06-14 17:02:06,588 run started.
+2025-06-14 17:02:06,596 <function TokenizeText.run at 0x000002179F877E20> finished.
+2025-06-14 17:02:17,371 run started.
+2025-06-14 17:02:17,378 <function TokenizeText.run at 0x000002179F877E20> finished.
+2025-06-14 17:06:00,869 run started.
+2025-06-14 17:06:00,869 <function RemoveHTMLTags.run at 0x00000255AFE7EAC0> finished.
+2025-06-14 17:06:06,460 run started.
+2025-06-14 17:06:06,460 <function RemoveSpecialChars.run at 0x00000255AFE7F240> finished.
+2025-06-14 17:06:11,460 run started.
+2025-06-14 17:06:11,460 <function HandleNumbers.run at 0x00000255AFE7F6A0> finished.
+2025-06-14 17:06:23,268 run started.
+2025-06-14 17:06:23,288 <function RemoveStopwords.run at 0x00000255B0EB8FE0> finished.
+2025-06-14 17:08:35,493 run started.
+2025-06-14 17:08:35,493 <function RemoveHTMLTags.run at 0x000001BCF73BAA20> finished.
+2025-06-14 17:08:35,493 run started.
+2025-06-14 17:08:35,493 <function RemoveSpecialChars.run at 0x000001BCF73BB1A0> finished.
+2025-06-14 17:08:41,411 run started.
+2025-06-14 17:08:41,412 <function HandleNumbers.run at 0x000001BCF73BB600> finished.
+2025-06-14 17:08:46,156 run started.
+2025-06-14 17:08:46,156 <function HandleNumbers.run at 0x000001BCF73BB600> finished.
+2025-06-14 17:08:46,156 run started.
+2025-06-14 17:08:46,178 <function RemoveStopwords.run at 0x000001BCF83F8F40> finished.
+2025-06-14 17:10:52,165 run started.
+2025-06-14 17:10:52,165 <function RemoveHTMLTags.run at 0x0000022081E8AAC0> finished.
+2025-06-14 17:10:52,165 run started.
+2025-06-14 17:10:52,165 <function RemoveSpecialChars.run at 0x0000022081E8B240> finished.
+2025-06-14 17:11:00,155 run started.
+2025-06-14 17:11:00,156 <function HandleNumbers.run at 0x0000022081E8B6A0> finished.
+2025-06-14 17:11:15,755 run started.
+2025-06-14 17:11:15,758 <function RemoveStopwords.run at 0x0000022082EC8FE0> finished.
+2025-06-14 17:11:29,075 run started.
+2025-06-14 17:11:29,076 <function RemoveStopwords.run at 0x0000022082EC8FE0> finished.
+2025-06-14 17:11:29,103 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-14 17:11:29,127 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-14 17:16:02,380 run started.
+2025-06-14 17:16:02,380 <function RemoveHTMLTags.run at 0x000001A7379DAA20> finished.
+2025-06-14 17:16:02,380 run started.
+2025-06-14 17:16:02,380 <function RemoveSpecialChars.run at 0x000001A7379DB1A0> finished.
+2025-06-14 17:16:07,948 run started.
+2025-06-14 17:16:07,948 <function HandleNumbers.run at 0x000001A7379DB600> finished.
+2025-06-14 17:17:51,533 run started.
+2025-06-14 17:17:51,534 <function RemoveHTMLTags.run at 0x0000024A8D7DBA60> finished.
+2025-06-14 17:17:51,534 run started.
+2025-06-14 17:17:51,534 <function RemoveSpecialChars.run at 0x0000024A8D82C220> finished.
+2025-06-14 17:17:55,028 run started.
+2025-06-14 17:17:55,028 <function RemoveHTMLTags.run at 0x0000024A8D7DBA60> finished.
+2025-06-14 17:17:55,028 run started.
+2025-06-14 17:17:55,028 <function RemoveSpecialChars.run at 0x0000024A8D82C220> finished.
+2025-06-14 17:17:55,028 run started.
+2025-06-14 17:17:55,029 <function HandleNumbers.run at 0x0000024A8D82C680> finished.
+2025-06-14 17:18:14,914 run started.
+2025-06-14 17:18:14,914 <function RemoveHTMLTags.run at 0x0000024A8D7DBA60> finished.
+2025-06-14 17:18:14,914 run started.
+2025-06-14 17:18:14,915 <function RemoveSpecialChars.run at 0x0000024A8D82C220> finished.
+2025-06-14 17:18:14,915 run started.
+2025-06-14 17:18:14,915 <function HandleNumbers.run at 0x0000024A8D82C680> finished.
+2025-06-14 17:20:20,540 run started.
+2025-06-14 17:20:20,541 <function RemoveHTMLTags.run at 0x000001D65153B9C0> finished.
+2025-06-14 17:20:20,541 run started.
+2025-06-14 17:20:20,541 <function RemoveSpecialChars.run at 0x000001D651570180> finished.
+2025-06-14 17:20:20,559 Ќе удалось загрузить стоп-слова дл€ €зыка russian: name 'nltk' is not defined
+2025-06-14 17:20:32,835 run started.
+2025-06-14 17:20:32,835 <function RemoveHTMLTags.run at 0x000001D65153B9C0> finished.
+2025-06-14 17:20:32,835 run started.
+2025-06-14 17:20:32,835 <function RemoveSpecialChars.run at 0x000001D651570180> finished.
+2025-06-14 17:20:32,835 run started.
+2025-06-14 17:20:32,836 <function HandleNumbers.run at 0x000001D6515705E0> finished.
+2025-06-14 17:20:32,838 Ќе удалось загрузить стоп-слова дл€ €зыка russian: name 'nltk' is not defined
+2025-06-14 17:20:35,963 run started.
+2025-06-14 17:20:35,964 <function HandleNumbers.run at 0x000001D6515705E0> finished.
+2025-06-14 17:20:35,966 Ќе удалось загрузить стоп-слова дл€ €зыка russian: name 'nltk' is not defined
+2025-06-14 17:20:47,667 run started.
+2025-06-14 17:20:47,667 <function HandleNumbers.run at 0x000001D6515705E0> finished.
+2025-06-14 17:20:47,669 Ќе удалось загрузить стоп-слова дл€ €зыка russian: name 'nltk' is not defined
+2025-06-14 17:20:51,498 run started.
+2025-06-14 17:20:51,499 <function HandleNumbers.run at 0x000001D6515705E0> finished.
+2025-06-14 17:20:51,501 Ќе удалось загрузить стоп-слова дл€ €зыка russian: name 'nltk' is not defined
+2025-06-14 17:20:51,531 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-14 17:20:51,554 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-14 17:23:36,507 run started.
+2025-06-14 17:23:36,508 <function RemoveHTMLTags.run at 0x000002297544AAC0> finished.
+2025-06-14 17:23:36,508 info started.
+2025-06-14 17:23:36,508 <function RemoveHTMLTags.info at 0x000002297544AE80> finished.
+2025-06-14 17:23:36,508 run started.
+2025-06-14 17:23:36,510 <function RemoveSpecialChars.run at 0x000002297544B240> finished.
+2025-06-14 17:23:36,510 info started.
+2025-06-14 17:23:36,510 <function RemoveSpecialChars.info at 0x000002297544B380> finished.
+2025-06-14 17:23:36,510 run started.
+2025-06-14 17:23:36,511 <function RemoveStopwords.run at 0x0000022976484FE0> finished.
+2025-06-14 17:23:36,511 info started.
+2025-06-14 17:23:36,512 <function RemoveStopwords.info at 0x0000022976485120> finished.
+2025-06-14 17:23:52,018 run started.
+2025-06-14 17:23:58,891 run started.
+2025-06-14 17:24:10,386 run started.
+2025-06-14 17:24:10,386 <function RemoveHTMLTags.run at 0x000002297544AAC0> finished.
+2025-06-14 17:24:10,386 info started.
+2025-06-14 17:24:10,386 <function RemoveHTMLTags.info at 0x000002297544AE80> finished.
+2025-06-14 17:24:10,386 run started.
+2025-06-14 17:24:10,388 <function RemoveSpecialChars.run at 0x000002297544B240> finished.
+2025-06-14 17:24:10,388 info started.
+2025-06-14 17:24:10,388 <function RemoveSpecialChars.info at 0x000002297544B380> finished.
+2025-06-14 17:24:10,388 run started.
+2025-06-14 17:24:10,388 <function HandleNumbers.run at 0x000002297544B6A0> finished.
+2025-06-14 17:24:10,388 info started.
+2025-06-14 17:24:10,388 <function HandleNumbers.info at 0x000002297544B7E0> finished.
+2025-06-14 17:24:10,388 run started.
+2025-06-14 17:24:10,389 <function RemoveStopwords.run at 0x0000022976484FE0> finished.
+2025-06-14 17:24:10,389 info started.
+2025-06-14 17:24:10,389 <function RemoveStopwords.info at 0x0000022976485120> finished.
+2025-06-14 17:24:10,414 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-14 17:24:10,438 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-14 17:26:21,916 run started.
+2025-06-14 17:26:21,916 <function RemoveHTMLTags.run at 0x0000027DD841AAC0> finished.
+2025-06-14 17:26:21,916 info started.
+2025-06-14 17:26:21,916 <function RemoveHTMLTags.info at 0x0000027DD841AE80> finished.
+2025-06-14 17:26:21,916 run started.
+2025-06-14 17:26:21,917 <function RemoveSpecialChars.run at 0x0000027DD841B240> finished.
+2025-06-14 17:26:21,917 info started.
+2025-06-14 17:26:21,917 <function RemoveSpecialChars.info at 0x0000027DD841B380> finished.
+2025-06-14 17:26:21,917 run started.
+2025-06-14 17:26:21,917 <function HandleNumbers.run at 0x0000027DD841B6A0> finished.
+2025-06-14 17:26:21,917 info started.
+2025-06-14 17:26:21,917 <function HandleNumbers.info at 0x0000027DD841B7E0> finished.
+2025-06-14 17:26:37,658 run started.
+2025-06-14 17:26:37,658 <function RemoveHTMLTags.run at 0x0000027DD841AAC0> finished.
+2025-06-14 17:26:37,658 info started.
+2025-06-14 17:26:37,658 <function RemoveHTMLTags.info at 0x0000027DD841AE80> finished.
+2025-06-14 17:26:37,658 run started.
+2025-06-14 17:26:37,658 <function RemoveSpecialChars.run at 0x0000027DD841B240> finished.
+2025-06-14 17:26:37,658 info started.
+2025-06-14 17:26:37,659 <function RemoveSpecialChars.info at 0x0000027DD841B380> finished.
+2025-06-14 17:26:37,659 run started.
+2025-06-14 17:26:37,659 <function HandleNumbers.run at 0x0000027DD841B6A0> finished.
+2025-06-14 17:26:37,659 info started.
+2025-06-14 17:26:37,659 <function HandleNumbers.info at 0x0000027DD841B7E0> finished.
+2025-06-14 17:26:43,745 run started.
+2025-06-14 17:26:43,747 <function RemoveHTMLTags.run at 0x0000027DD841AAC0> finished.
+2025-06-14 17:26:43,747 info started.
+2025-06-14 17:26:43,747 <function RemoveHTMLTags.info at 0x0000027DD841AE80> finished.
+2025-06-14 17:26:43,747 run started.
+2025-06-14 17:26:43,747 <function RemoveSpecialChars.run at 0x0000027DD841B240> finished.
+2025-06-14 17:26:43,747 info started.
+2025-06-14 17:26:43,747 <function RemoveSpecialChars.info at 0x0000027DD841B380> finished.
+2025-06-14 17:26:43,748 run started.
+2025-06-14 17:26:43,748 <function HandleNumbers.run at 0x0000027DD841B6A0> finished.
+2025-06-14 17:26:43,748 info started.
+2025-06-14 17:26:43,748 <function HandleNumbers.info at 0x0000027DD841B7E0> finished.
+2025-06-14 17:31:18,162 run started.
+2025-06-14 17:31:18,164 <function RemoveHTMLTags.run at 0x000002542105AA20> finished.
+2025-06-14 17:31:18,164 info started.
+2025-06-14 17:31:18,164 <function RemoveHTMLTags.info at 0x000002542105ADE0> finished.
+2025-06-14 17:31:18,164 run started.
+2025-06-14 17:31:18,164 <function RemoveSpecialChars.run at 0x000002542105B1A0> finished.
+2025-06-14 17:31:18,164 info started.
+2025-06-14 17:31:18,165 <function RemoveSpecialChars.info at 0x000002542105B2E0> finished.
+2025-06-14 17:31:36,849 run started.
+2025-06-14 17:31:36,849 <function RemoveHTMLTags.run at 0x000002542105AA20> finished.
+2025-06-14 17:31:36,849 info started.
+2025-06-14 17:31:36,849 <function RemoveHTMLTags.info at 0x000002542105ADE0> finished.
+2025-06-14 17:31:36,850 run started.
+2025-06-14 17:31:36,850 <function RemoveSpecialChars.run at 0x000002542105B1A0> finished.
+2025-06-14 17:31:36,850 info started.
+2025-06-14 17:31:36,850 <function RemoveSpecialChars.info at 0x000002542105B2E0> finished.
+2025-06-14 17:31:36,850 run started.
+2025-06-14 17:31:36,850 <function HandleNumbers.run at 0x000002542105B600> finished.
+2025-06-14 17:31:36,850 info started.
+2025-06-14 17:31:36,851 <function HandleNumbers.info at 0x000002542105B740> finished.
+2025-06-14 17:31:41,258 run started.
+2025-06-14 17:31:41,258 <function RemoveHTMLTags.run at 0x000002542105AA20> finished.
+2025-06-14 17:31:41,258 info started.
+2025-06-14 17:31:41,258 <function RemoveHTMLTags.info at 0x000002542105ADE0> finished.
+2025-06-14 17:31:41,259 run started.
+2025-06-14 17:31:41,259 <function RemoveSpecialChars.run at 0x000002542105B1A0> finished.
+2025-06-14 17:31:41,259 info started.
+2025-06-14 17:31:41,259 <function RemoveSpecialChars.info at 0x000002542105B2E0> finished.
+2025-06-14 17:31:41,259 run started.
+2025-06-14 17:31:41,259 <function HandleNumbers.run at 0x000002542105B600> finished.
+2025-06-14 17:31:41,259 info started.
+2025-06-14 17:31:41,259 <function HandleNumbers.info at 0x000002542105B740> finished.
+2025-06-14 17:31:45,730 run started.
+2025-06-14 17:31:45,730 <function RemoveHTMLTags.run at 0x000002542105AA20> finished.
+2025-06-14 17:31:45,730 info started.
+2025-06-14 17:31:45,730 <function RemoveHTMLTags.info at 0x000002542105ADE0> finished.
+2025-06-14 17:31:45,730 run started.
+2025-06-14 17:31:45,731 <function RemoveSpecialChars.run at 0x000002542105B1A0> finished.
+2025-06-14 17:31:45,731 info started.
+2025-06-14 17:31:45,731 <function RemoveSpecialChars.info at 0x000002542105B2E0> finished.
+2025-06-14 17:31:45,731 run started.
+2025-06-14 17:31:45,731 <function HandleNumbers.run at 0x000002542105B600> finished.
+2025-06-14 17:31:45,731 info started.
+2025-06-14 17:31:45,731 <function HandleNumbers.info at 0x000002542105B740> finished.
+2025-06-14 17:31:46,395 run started.
+2025-06-14 17:31:46,395 <function RemoveHTMLTags.run at 0x000002542105AA20> finished.
+2025-06-14 17:31:46,395 info started.
+2025-06-14 17:31:46,396 <function RemoveHTMLTags.info at 0x000002542105ADE0> finished.
+2025-06-14 17:31:46,396 run started.
+2025-06-14 17:31:46,396 <function RemoveSpecialChars.run at 0x000002542105B1A0> finished.
+2025-06-14 17:31:46,396 info started.
+2025-06-14 17:31:46,396 <function RemoveSpecialChars.info at 0x000002542105B2E0> finished.
+2025-06-14 17:31:46,396 run started.
+2025-06-14 17:31:46,396 <function HandleNumbers.run at 0x000002542105B600> finished.
+2025-06-14 17:31:46,396 info started.
+2025-06-14 17:31:46,396 <function HandleNumbers.info at 0x000002542105B740> finished.
+2025-06-14 17:31:46,553 run started.
+2025-06-14 17:31:46,554 <function RemoveHTMLTags.run at 0x000002542105AA20> finished.
+2025-06-14 17:31:46,554 info started.
+2025-06-14 17:31:46,554 <function RemoveHTMLTags.info at 0x000002542105ADE0> finished.
+2025-06-14 17:31:46,554 run started.
+2025-06-14 17:31:46,554 <function RemoveSpecialChars.run at 0x000002542105B1A0> finished.
+2025-06-14 17:31:46,554 info started.
+2025-06-14 17:31:46,554 <function RemoveSpecialChars.info at 0x000002542105B2E0> finished.
+2025-06-14 17:31:46,554 run started.
+2025-06-14 17:31:46,554 <function HandleNumbers.run at 0x000002542105B600> finished.
+2025-06-14 17:31:46,555 info started.
+2025-06-14 17:31:46,555 <function HandleNumbers.info at 0x000002542105B740> finished.
+2025-06-14 17:31:46,714 run started.
+2025-06-14 17:31:46,714 <function RemoveHTMLTags.run at 0x000002542105AA20> finished.
+2025-06-14 17:31:46,714 info started.
+2025-06-14 17:31:46,714 <function RemoveHTMLTags.info at 0x000002542105ADE0> finished.
+2025-06-14 17:31:46,714 run started.
+2025-06-14 17:31:46,715 <function RemoveSpecialChars.run at 0x000002542105B1A0> finished.
+2025-06-14 17:31:46,715 info started.
+2025-06-14 17:31:46,715 <function RemoveSpecialChars.info at 0x000002542105B2E0> finished.
+2025-06-14 17:31:46,715 run started.
+2025-06-14 17:31:46,715 <function HandleNumbers.run at 0x000002542105B600> finished.
+2025-06-14 17:31:46,715 info started.
+2025-06-14 17:31:46,715 <function HandleNumbers.info at 0x000002542105B740> finished.
+2025-06-14 17:34:55,257 run started.
+2025-06-14 17:34:55,259 <function RemoveHTMLTags.run at 0x0000026A9585AA20> finished.
+2025-06-14 17:34:55,259 info started.
+2025-06-14 17:34:55,259 <function RemoveHTMLTags.info at 0x0000026A9585ADE0> finished.
+2025-06-14 17:34:55,259 run started.
+2025-06-14 17:34:55,259 <function RemoveSpecialChars.run at 0x0000026A9585B1A0> finished.
+2025-06-14 17:34:55,259 info started.
+2025-06-14 17:34:55,259 <function RemoveSpecialChars.info at 0x0000026A9585B2E0> finished.
+2025-06-14 17:43:41,107 run started.
+2025-06-14 17:43:41,107 <function RemoveHTMLTags.run at 0x0000019D1705EAC0> finished.
+2025-06-14 17:43:41,107 run started.
+2025-06-14 17:43:41,108 <function RemoveSpecialChars.run at 0x0000019D1705F240> finished.
+2025-06-14 17:43:41,108 run started.
+2025-06-14 17:43:41,130 <function RemoveStopwords.run at 0x0000019D18098FE0> finished.
+2025-06-14 17:43:57,529 run started.
+2025-06-14 17:43:57,529 <function RemoveHTMLTags.run at 0x0000019D1705EAC0> finished.
+2025-06-14 17:43:57,530 run started.
+2025-06-14 17:43:57,530 <function RemoveSpecialChars.run at 0x0000019D1705F240> finished.
+2025-06-14 17:45:59,321 run started.
+2025-06-14 17:45:59,329 <function RemoveStopwords.run at 0x0000019D18098FE0> finished.
+2025-06-14 17:46:44,122 run started.
+2025-06-14 17:46:44,141 <function RemoveStopwords.run at 0x0000021EE7458FE0> finished.
+2025-06-14 17:46:50,896 run started.
+2025-06-14 17:46:50,896 <function RemoveHTMLTags.run at 0x0000021EE641EAC0> finished.
+2025-06-14 17:46:50,896 run started.
+2025-06-14 17:46:50,897 <function RemoveSpecialChars.run at 0x0000021EE641F240> finished.
+2025-06-14 17:46:50,897 run started.
+2025-06-14 17:46:50,900 <function RemoveStopwords.run at 0x0000021EE7458FE0> finished.
+2025-06-14 17:46:56,544 run started.
+2025-06-14 17:46:56,544 <function RemoveHTMLTags.run at 0x0000021EE641EAC0> finished.
+2025-06-14 17:46:56,544 run started.
+2025-06-14 17:46:56,544 <function HandleNumbers.run at 0x0000021EE641F6A0> finished.
+2025-06-14 17:46:56,544 run started.
+2025-06-14 17:46:56,545 <function RemoveSpecialChars.run at 0x0000021EE641F240> finished.
+2025-06-14 17:46:56,545 run started.
+2025-06-14 17:46:56,547 <function RemoveStopwords.run at 0x0000021EE7458FE0> finished.
+2025-06-14 17:47:05,073 run started.
+2025-06-14 17:47:05,073 <function RemoveHTMLTags.run at 0x0000021EE641EAC0> finished.
+2025-06-14 17:47:05,073 run started.
+2025-06-14 17:47:05,073 <function HandleNumbers.run at 0x0000021EE641F6A0> finished.
+2025-06-14 17:47:05,073 run started.
+2025-06-14 17:47:05,073 <function RemoveSpecialChars.run at 0x0000021EE641F240> finished.
+2025-06-14 17:47:05,073 run started.
+2025-06-14 17:47:05,076 <function RemoveStopwords.run at 0x0000021EE7458FE0> finished.
+2025-06-14 17:47:05,076 run started.
+2025-06-14 17:47:05,081 <function NormalizeText.run at 0x0000021EE74596C0> finished.
+2025-06-14 17:47:08,753 run started.
+2025-06-14 17:47:08,753 <function RemoveHTMLTags.run at 0x0000021EE641EAC0> finished.
+2025-06-14 17:47:08,753 run started.
+2025-06-14 17:47:08,753 <function HandleNumbers.run at 0x0000021EE641F6A0> finished.
+2025-06-14 17:47:08,753 run started.
+2025-06-14 17:47:08,753 <function RemoveSpecialChars.run at 0x0000021EE641F240> finished.
+2025-06-14 17:47:08,753 run started.
+2025-06-14 17:47:08,756 <function RemoveStopwords.run at 0x0000021EE7458FE0> finished.
+2025-06-14 17:47:08,756 run started.
+2025-06-14 17:47:10,613 <function NormalizeText.run at 0x0000021EE74596C0> finished.
+2025-06-14 17:48:53,962 run started.
+2025-06-14 17:48:53,962 <function RemoveHTMLTags.run at 0x00000196AB17AA20> finished.
+2025-06-14 17:48:53,962 run started.
+2025-06-14 17:48:53,963 <function RemoveSpecialChars.run at 0x00000196AB17B1A0> finished.
+2025-06-14 17:48:53,963 run started.
+2025-06-14 17:48:53,983 <function RemoveStopwords.run at 0x00000196AC1B8F40> finished.
+2025-06-14 17:49:00,800 run started.
+2025-06-14 17:49:00,800 <function RemoveHTMLTags.run at 0x00000196AB17AA20> finished.
+2025-06-14 17:49:00,800 run started.
+2025-06-14 17:49:00,801 <function HandleNumbers.run at 0x00000196AB17B600> finished.
+2025-06-14 17:49:00,801 run started.
+2025-06-14 17:49:00,801 <function RemoveSpecialChars.run at 0x00000196AB17B1A0> finished.
+2025-06-14 17:49:00,801 run started.
+2025-06-14 17:49:00,803 <function RemoveStopwords.run at 0x00000196AC1B8F40> finished.
+2025-06-14 17:49:05,456 run started.
+2025-06-14 17:49:05,457 <function RemoveHTMLTags.run at 0x00000196AB17AA20> finished.
+2025-06-14 17:49:05,457 run started.
+2025-06-14 17:49:05,457 <function HandleNumbers.run at 0x00000196AB17B600> finished.
+2025-06-14 17:49:05,457 run started.
+2025-06-14 17:49:05,457 <function RemoveSpecialChars.run at 0x00000196AB17B1A0> finished.
+2025-06-14 17:49:05,457 run started.
+2025-06-14 17:49:05,459 <function RemoveStopwords.run at 0x00000196AC1B8F40> finished.
+2025-06-14 17:49:05,459 run started.
+2025-06-14 17:49:05,467 <function NormalizeText.run at 0x00000196AC1B9620> finished.
+2025-06-14 17:49:10,697 run started.
+2025-06-14 17:49:10,698 <function RemoveHTMLTags.run at 0x00000196AB17AA20> finished.
+2025-06-14 17:49:10,698 run started.
+2025-06-14 17:49:10,698 <function HandleNumbers.run at 0x00000196AB17B600> finished.
+2025-06-14 17:49:10,698 run started.
+2025-06-14 17:49:10,698 <function RemoveSpecialChars.run at 0x00000196AB17B1A0> finished.
+2025-06-14 17:49:10,698 run started.
+2025-06-14 17:49:10,700 <function RemoveStopwords.run at 0x00000196AC1B8F40> finished.
+2025-06-14 17:49:10,700 run started.
+2025-06-14 17:49:12,536 <function NormalizeText.run at 0x00000196AC1B9620> finished.
+2025-06-14 18:06:09,389 run started.
+2025-06-14 18:06:09,410 <function RemoveStopwords.run at 0x000002196D968F40> finished.
+2025-06-14 18:06:17,475 run started.
+2025-06-14 18:06:17,479 <function RemoveStopwords.run at 0x000002196D968F40> finished.
+2025-06-14 18:06:17,480 run started.
+2025-06-14 18:06:17,486 <function NormalizeText.run at 0x000002196D969620> finished.
+2025-06-14 18:08:00,576 run started.
+2025-06-14 18:08:00,576 <function RemoveHTMLTags.run at 0x000002196C92EA20> finished.
+2025-06-14 18:08:00,576 run started.
+2025-06-14 18:08:00,576 <function RemoveSpecialChars.run at 0x000002196C92F1A0> finished.
+2025-06-14 18:09:35,101 run started.
+2025-06-14 18:09:35,101 <function RemoveHTMLTags.run at 0x000001DB7961AA20> finished.
+2025-06-14 18:09:35,101 run started.
+2025-06-14 18:09:35,101 <function RemoveSpecialChars.run at 0x000001DB7961B1A0> finished.
+2025-06-14 18:09:39,306 run started.
+2025-06-14 18:09:39,306 <function HandleNumbers.run at 0x000001DB7961B600> finished.
+2025-06-14 18:10:32,545 run started.
+2025-06-14 18:10:32,545 <function RemoveHTMLTags.run at 0x000001DB7961AA20> finished.
+2025-06-14 18:10:32,545 run started.
+2025-06-14 18:10:32,547 <function RemoveSpecialChars.run at 0x000001DB7961B1A0> finished.
+2025-06-14 18:10:37,242 run started.
+2025-06-14 18:10:37,242 <function RemoveHTMLTags.run at 0x000001DB7961AA20> finished.
+2025-06-14 18:10:37,242 run started.
+2025-06-14 18:10:37,242 <function HandleNumbers.run at 0x000001DB7961B600> finished.
+2025-06-14 18:10:37,242 run started.
+2025-06-14 18:10:37,242 <function RemoveSpecialChars.run at 0x000001DB7961B1A0> finished.
+2025-06-14 18:10:47,449 run started.
+2025-06-14 18:10:47,449 <function RemoveHTMLTags.run at 0x000001DB7961AA20> finished.
+2025-06-14 18:10:47,449 run started.
+2025-06-14 18:10:47,450 <function HandleNumbers.run at 0x000001DB7961B600> finished.
+2025-06-14 18:10:47,450 run started.
+2025-06-14 18:10:47,450 <function RemoveSpecialChars.run at 0x000001DB7961B1A0> finished.
+2025-06-14 18:11:08,082 run started.
+2025-06-14 18:11:08,082 <function RemoveHTMLTags.run at 0x000001DB7961AA20> finished.
+2025-06-14 18:11:08,082 run started.
+2025-06-14 18:11:08,082 <function HandleNumbers.run at 0x000001DB7961B600> finished.
+2025-06-14 18:11:08,082 run started.
+2025-06-14 18:11:08,082 <function RemoveSpecialChars.run at 0x000001DB7961B1A0> finished.
+2025-06-14 18:11:13,121 run started.
+2025-06-14 18:11:13,122 <function RemoveHTMLTags.run at 0x000001DB7961AA20> finished.
+2025-06-14 18:11:13,122 run started.
+2025-06-14 18:11:13,122 <function HandleNumbers.run at 0x000001DB7961B600> finished.
+2025-06-14 18:11:13,122 run started.
+2025-06-14 18:11:13,122 <function RemoveSpecialChars.run at 0x000001DB7961B1A0> finished.
+2025-06-14 18:12:49,988 run started.
+2025-06-14 18:12:49,988 <function RemoveHTMLTags.run at 0x000002177656AA20> finished.
+2025-06-14 18:12:49,988 run started.
+2025-06-14 18:12:49,988 <function RemoveSpecialChars.run at 0x000002177656B1A0> finished.
+2025-06-14 18:12:49,988 run started.
+2025-06-14 18:12:50,008 <function RemoveStopwords.run at 0x00000217776302C0> finished.
+2025-06-14 18:12:58,810 run started.
+2025-06-14 18:12:58,810 <function RemoveHTMLTags.run at 0x000002177656AA20> finished.
+2025-06-14 18:12:58,810 run started.
+2025-06-14 18:12:58,811 <function HandleNumbers.run at 0x000002177656B600> finished.
+2025-06-14 18:12:58,811 run started.
+2025-06-14 18:12:58,811 <function RemoveSpecialChars.run at 0x000002177656B1A0> finished.
+2025-06-14 18:12:58,811 run started.
+2025-06-14 18:12:58,813 <function RemoveStopwords.run at 0x00000217776302C0> finished.
+2025-06-14 18:13:12,394 run started.
+2025-06-14 18:13:12,403 <function NormalizeText.run at 0x0000021777631800> finished.
+2025-06-14 18:13:42,416 run started.
+2025-06-14 18:13:44,277 <function NormalizeText.run at 0x0000021777631800> finished.
+2025-06-14 18:16:13,857 run started.
+2025-06-14 18:16:13,857 <function RemoveHTMLTags.run at 0x000002177656AA20> finished.
+2025-06-14 18:16:13,858 run started.
+2025-06-14 18:16:13,858 <function RemoveSpecialChars.run at 0x000002177656B1A0> finished.
+2025-06-14 18:16:13,883 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-14 18:16:13,906 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-14 18:16:46,061 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-14 18:16:46,083 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-14 18:16:50,744 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-14 18:16:50,767 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-14 18:17:00,246 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-14 18:17:00,268 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-14 18:27:12,338 run started.
+2025-06-14 18:27:12,338 <function RemoveHTMLTags.run at 0x000002206065AA20> finished.
+2025-06-14 18:27:12,338 run started.
+2025-06-14 18:27:12,339 <function RemoveSpecialChars.run at 0x000002206065B1A0> finished.
+2025-06-14 18:27:21,280 run started.
+2025-06-14 18:27:21,280 <function RemoveHTMLTags.run at 0x000002206065AA20> finished.
+2025-06-14 18:27:21,280 run started.
+2025-06-14 18:27:21,281 <function HandleNumbers.run at 0x000002206065B600> finished.
+2025-06-14 18:27:21,281 run started.
+2025-06-14 18:27:21,281 <function RemoveSpecialChars.run at 0x000002206065B1A0> finished.
+2025-06-14 18:27:27,920 run started.
+2025-06-14 18:27:27,920 <function RemoveHTMLTags.run at 0x000002206065AA20> finished.
+2025-06-14 18:27:27,920 run started.
+2025-06-14 18:27:27,920 <function HandleNumbers.run at 0x000002206065B600> finished.
+2025-06-14 18:27:27,920 run started.
+2025-06-14 18:27:27,920 <function RemoveSpecialChars.run at 0x000002206065B1A0> finished.
+2025-06-14 18:27:49,112 run started.
+2025-06-14 18:27:49,112 <function RemoveHTMLTags.run at 0x000002206065AA20> finished.
+2025-06-14 18:27:49,113 run started.
+2025-06-14 18:27:49,113 <function HandleNumbers.run at 0x000002206065B600> finished.
+2025-06-14 18:27:49,113 run started.
+2025-06-14 18:27:49,113 <function RemoveSpecialChars.run at 0x000002206065B1A0> finished.
+2025-06-14 18:27:49,134 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-14 18:27:49,154 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-14 18:27:58,546 run started.
+2025-06-14 18:27:58,546 <function RemoveHTMLTags.run at 0x000002206065AA20> finished.
+2025-06-14 18:27:58,546 run started.
+2025-06-14 18:27:58,546 <function HandleNumbers.run at 0x000002206065B600> finished.
+2025-06-14 18:27:58,546 run started.
+2025-06-14 18:27:58,546 <function RemoveSpecialChars.run at 0x000002206065B1A0> finished.
+2025-06-14 18:27:58,564 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-14 18:27:58,645 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-14 18:27:58,665 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-14 18:27:58,686 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-14 18:28:04,592 run started.
+2025-06-14 18:28:04,592 <function RemoveHTMLTags.run at 0x000002206065AA20> finished.
+2025-06-14 18:28:04,592 run started.
+2025-06-14 18:28:04,592 <function HandleNumbers.run at 0x000002206065B600> finished.
+2025-06-14 18:28:04,592 run started.
+2025-06-14 18:28:04,593 <function RemoveSpecialChars.run at 0x000002206065B1A0> finished.
+2025-06-14 18:28:04,611 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-14 18:28:04,630 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-14 18:44:30,130 run started
+2025-06-14 18:44:30,131 run finished successfully
+2025-06-14 18:44:30,131 run started
+2025-06-14 18:44:30,131 run finished successfully
+2025-06-14 18:44:30,151 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-14 18:44:30,171 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-14 18:44:39,935 run started
+2025-06-14 18:44:39,935 run finished successfully
+2025-06-14 18:44:39,935 run started
+2025-06-14 18:44:39,935 run finished successfully
+2025-06-14 18:44:39,935 run started
+2025-06-14 18:44:39,935 run finished successfully
+2025-06-14 18:44:39,954 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-14 18:44:40,035 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-14 18:44:46,824 run started
+2025-06-14 18:44:46,824 run finished successfully
+2025-06-14 18:44:46,844 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-14 18:44:46,864 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-14 18:44:46,881 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-14 18:44:46,901 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-14 18:53:38,534 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-14 18:53:38,554 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-14 18:56:27,536 run started
+2025-06-14 18:56:27,537 run finished successfully
+2025-06-14 18:56:27,537 run started
+2025-06-14 18:56:27,537 run finished successfully
+2025-06-14 18:56:27,537 Error loading stopwords: cannot access local variable 'stopwords' where it is not associated with a value
+2025-06-14 18:56:34,886 run started
+2025-06-14 18:56:34,886 run finished successfully
+2025-06-14 18:56:34,886 run started
+2025-06-14 18:56:34,886 run finished successfully
+2025-06-14 18:56:34,886 Error loading stopwords: cannot access local variable 'stopwords' where it is not associated with a value
+2025-06-14 18:56:38,774 run started
+2025-06-14 18:56:38,774 run finished successfully
+2025-06-14 18:56:38,774 run started
+2025-06-14 18:56:38,774 run finished successfully
+2025-06-14 18:56:38,774 Error loading stopwords: cannot access local variable 'stopwords' where it is not associated with a value
+2025-06-14 18:57:08,247 run started
+2025-06-14 18:57:08,248 run finished successfully
+2025-06-14 18:57:08,248 run started
+2025-06-14 18:57:08,248 run finished successfully
+2025-06-14 18:57:08,267 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-14 18:57:08,288 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-14 18:57:17,793 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-14 18:57:17,811 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-14 18:57:17,829 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-14 18:57:17,851 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-14 18:59:06,656 run started
+2025-06-14 18:59:06,656 run finished successfully
+2025-06-14 18:59:06,656 run started
+2025-06-14 18:59:06,656 run finished successfully
+2025-06-14 19:00:30,391 run started
+2025-06-14 19:00:30,391 run finished successfully
+2025-06-14 19:00:30,391 run started
+2025-06-14 19:00:30,391 run finished successfully
+2025-06-14 19:06:18,520 run started
+2025-06-14 19:06:18,520 run finished successfully
+2025-06-14 19:06:18,520 run started
+2025-06-14 19:06:18,520 run finished successfully
+2025-06-14 19:06:42,933 run started
+2025-06-14 19:06:42,934 run finished successfully
+2025-06-14 19:06:42,955 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-14 19:06:42,975 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-14 19:06:48,533 run started
+2025-06-14 19:06:48,534 run finished successfully
+2025-06-14 19:06:48,552 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-14 19:06:48,633 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-14 19:11:15,855 run started
+2025-06-14 19:11:15,855 run finished successfully
+2025-06-14 19:11:15,855 run started
+2025-06-14 19:11:15,856 run finished successfully
+2025-06-14 19:11:28,217 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-14 19:11:28,237 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-14 19:11:32,229 run started
+2025-06-14 19:11:32,229 run finished successfully
+2025-06-14 19:11:32,249 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-14 19:11:32,329 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-14 19:15:14,462 run started
+2025-06-14 19:15:14,462 run finished successfully
+2025-06-14 19:15:14,462 run started
+2025-06-14 19:15:14,462 run finished successfully
+2025-06-14 19:15:18,164 run started
+2025-06-14 19:15:18,165 run finished successfully
+2025-06-14 19:15:18,165 run started
+2025-06-14 19:15:18,165 run finished successfully
+2025-06-14 19:17:11,788 run started
+2025-06-14 19:17:11,789 run finished successfully
+2025-06-14 19:17:16,117 run started
+2025-06-14 19:17:16,117 run finished successfully
+2025-06-14 19:17:16,117 run started
+2025-06-14 19:17:16,117 run finished successfully
+2025-06-14 19:17:20,701 run started
+2025-06-14 19:17:20,701 run finished successfully
+2025-06-14 19:22:28,366 run started
+2025-06-14 19:22:28,366 run finished successfully
+2025-06-14 19:22:31,956 run started
+2025-06-14 19:22:31,956 run finished successfully
+2025-06-14 19:22:39,394 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-14 19:22:39,415 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-14 19:22:39,420 Normalization error: 'MorphVocab' object has no attribute 'tokenize'
+2025-06-14 19:22:59,817 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-14 19:22:59,899 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-14 19:22:59,901 Normalization error: 'MorphVocab' object has no attribute 'tokenize'
+2025-06-14 19:25:05,134 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-14 19:25:05,155 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-14 19:25:05,158 Normalization error: 'MorphVocab' object has no attribute 'tokenize'
+2025-06-14 19:57:40,354 run started
+2025-06-14 19:57:40,354 run finished successfully
+2025-06-14 19:57:40,354 run started
+2025-06-14 19:57:40,354 run finished successfully
+2025-06-14 19:57:50,762 run started
+2025-06-14 19:57:50,762 run finished successfully
+2025-06-14 19:57:54,449 run started
+2025-06-14 19:57:54,450 run finished successfully
+2025-06-14 19:58:34,859 run started
+2025-06-14 19:58:34,860 run finished successfully
+2025-06-14 19:58:34,860 run started
+2025-06-14 19:58:34,863 run finished successfully
+2025-06-14 19:58:34,863 Normalization error: Unsupported input type
+2025-06-14 19:59:40,426 run started
+2025-06-14 19:59:40,426 run finished successfully
+2025-06-14 19:59:40,426 run started
+2025-06-14 19:59:40,426 run finished successfully
+2025-06-14 19:59:40,426 run started
+2025-06-14 19:59:40,427 run finished successfully
+2025-06-14 19:59:40,427 run started
+2025-06-14 19:59:40,429 run finished successfully
+2025-06-14 20:00:24,267 run started
+2025-06-14 20:00:24,268 run finished successfully
+2025-06-14 20:06:49,113 run started
+2025-06-14 20:06:49,113 run finished successfully
+2025-06-14 20:06:49,115 run started
+2025-06-14 20:06:49,115 run finished successfully
+2025-06-14 20:06:49,115 run started
+2025-06-14 20:06:49,115 run finished successfully
+2025-06-14 20:07:03,026 run started
+2025-06-14 20:07:03,026 run finished successfully
+2025-06-14 20:07:03,026 run started
+2025-06-14 20:07:03,026 run finished successfully
+2025-06-14 20:07:03,026 run started
+2025-06-14 20:07:03,026 run finished successfully
+2025-06-14 20:08:01,057 run started
+2025-06-14 20:08:01,057 run finished successfully
+2025-06-14 20:08:09,025 run started
+2025-06-14 20:08:09,025 run finished successfully
+2025-06-17 20:13:51,187 run started
+2025-06-17 20:13:51,203 run finished successfully
+2025-06-17 20:16:43,756 run started
+2025-06-17 20:16:43,758 run finished successfully
+2025-06-17 20:17:22,674 run started
+2025-06-17 20:17:22,677 run finished successfully
+2025-06-17 20:50:36,137 run started
+2025-06-17 20:50:36,137 run finished successfully
+2025-06-17 20:53:02,680 run started
+2025-06-17 20:53:02,680 run finished successfully
+2025-06-17 20:53:02,680 run started
+2025-06-17 20:53:02,681 run finished successfully
+2025-06-17 20:53:37,106 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-17 20:53:37,208 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-17 20:53:37,219 Normalization error: 'MorphVocab' object has no attribute 'tokenize'
+2025-06-17 21:07:14,414 run started
+2025-06-17 21:07:14,415 run finished successfully
+2025-06-17 21:07:14,415 run started
+2025-06-17 21:07:14,415 run finished successfully
+2025-06-17 21:23:15,911 run started
+2025-06-17 21:23:15,926 run finished successfully
+2025-06-17 21:23:23,210 info started
+2025-06-17 21:23:23,211 info finished successfully
+2025-06-17 21:29:01,782 run started
+2025-06-17 21:29:01,782 run finished successfully
+2025-06-17 21:29:01,783 run started
+2025-06-17 21:29:01,783 run finished successfully
+2025-06-17 21:29:01,784 run started
+2025-06-17 21:29:01,784 run finished successfully
+2025-06-17 21:32:36,526 Initializing TokenizeText with type: sentence, lang: russian
+2025-06-17 21:32:36,526 Starting tokenization (input type: <class 'str'>)
+2025-06-17 21:32:36,530 Tokenization completed successfully
+2025-06-17 21:43:39,148 run started
+2025-06-17 21:43:39,149 run finished successfully
+2025-06-17 21:43:39,152 Normalization error: Unsupported input type
+2025-06-17 21:44:11,342 run started
+2025-06-17 21:44:11,342 run finished successfully
+2025-06-17 21:44:31,716 run started
+2025-06-17 21:44:31,716 run finished successfully
+2025-06-17 21:44:54,132 run started
+2025-06-17 21:44:54,132 run finished successfully
+2025-06-17 21:45:06,604 run started
+2025-06-17 21:45:06,604 run finished successfully
+2025-06-17 21:45:06,641 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-17 21:45:06,718 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-17 21:45:06,729 Normalization error: 'MorphVocab' object has no attribute 'tokenize'
+2025-06-17 21:51:41,820 run started
+2025-06-17 21:51:41,820 run finished successfully
+2025-06-17 21:51:41,821 run started
+2025-06-17 21:51:41,821 run finished successfully
+2025-06-17 21:51:41,821 run started
+2025-06-17 21:51:41,821 run finished successfully
+2025-06-17 21:51:41,853 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-17 21:51:41,878 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-17 21:51:41,883 Normalization error: 'MorphVocab' object has no attribute 'tokenize'
+2025-06-17 21:51:46,885 run started
+2025-06-17 21:51:46,885 run finished successfully
+2025-06-17 21:51:46,885 run started
+2025-06-17 21:51:46,885 run finished successfully
+2025-06-17 21:51:46,886 run started
+2025-06-17 21:51:46,886 run finished successfully
+2025-06-17 21:55:07,466 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-17 21:55:07,489 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-17 21:55:07,501 Russian processing error: 'MorphVocab' object has no attribute 'map'
+2025-06-17 21:55:23,522 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-17 21:55:23,546 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-17 21:55:23,554 Russian processing error: 'MorphVocab' object has no attribute 'map'
+2025-06-17 22:00:09,290 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-17 22:00:09,325 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-17 22:00:25,436 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-17 22:00:25,461 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-17 22:12:38,367 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-17 22:12:38,414 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-17 22:12:46,345 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-17 22:12:46,382 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-17 22:12:46,385 Normalization error: Unsupported input type
+2025-06-17 22:12:52,474 run started
+2025-06-17 22:12:52,474 run finished successfully
+2025-06-17 22:12:52,474 run started
+2025-06-17 22:12:52,476 run finished successfully
+2025-06-17 22:12:53,012 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-17 22:12:53,055 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-17 22:12:53,058 Normalization error: Unsupported input type
+2025-06-18 00:02:16,179 Normalization error: Unsupported input type
+2025-06-18 00:02:25,345 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-18 00:02:25,503 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+2025-06-18 00:02:25,511 Normalization error: Unsupported input type
+2025-06-18 00:04:00,810 Normalization error: Unsupported input type
+2025-06-18 00:19:44,104 run started
+2025-06-18 00:19:44,104 run finished successfully
+2025-06-18 00:19:44,105 run started
+2025-06-18 00:19:44,105 run finished successfully
+2025-06-18 00:24:44,464 run started
+2025-06-18 00:24:44,464 run finished successfully
+2025-06-18 00:24:44,473 run started
+2025-06-18 00:24:44,586 run finished successfully
+2025-06-18 00:24:44,586 run started
+2025-06-18 00:24:44,712 run finished successfully
+2025-06-18 00:29:35,621 run started
+2025-06-18 00:29:35,621 run finished successfully
+2025-06-18 00:29:35,622 run started
+2025-06-18 00:29:35,622 run finished successfully
+2025-06-18 00:30:13,845 run started
+2025-06-18 00:30:13,846 run finished successfully
+2025-06-18 00:30:13,846 run started
+2025-06-18 00:30:13,846 run finished successfully
+2025-06-18 00:51:02,872 run started
+2025-06-18 00:51:02,872 run finished successfully
+2025-06-18 00:51:02,872 run started
+2025-06-18 00:51:02,872 run finished successfully
+2025-06-18 00:52:03,172 run started
+2025-06-18 00:52:03,172 run finished successfully
+2025-06-18 00:52:03,182 Error processing text: Unsupported input type
+2025-06-18 00:53:30,144 run started
+2025-06-18 00:53:30,144 run finished successfully
+2025-06-18 00:53:30,144 run started
+2025-06-18 00:53:30,144 run finished successfully
+2025-06-18 00:53:30,152 run started
+2025-06-18 00:53:30,152 run finished successfully
+2025-06-18 01:01:24,949 Loading dictionaries from C:\Users\nst\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymorphy2_dicts_ru\data
+2025-06-18 01:01:25,001 format: 2.4, revision: 417127, updated: 2020-10-11T15:05:51.070345
+=======
+>>>>>>> 3bae070376f79a271dae61ec530f49f6b0f00e1e
+>>>>>>> upstream/main
+2025-06-18 11:57:18,356 run started
+2025-06-18 11:57:18,356 run finished successfully
+2025-06-18 11:57:18,356 info started
+2025-06-18 11:57:18,356 info finished successfully
+2025-06-18 12:24:04,466 run started
+2025-06-18 12:24:04,466 run finished successfully
+2025-06-18 12:24:04,466 info started
+2025-06-18 12:24:04,466 info finished successfully
