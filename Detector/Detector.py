@@ -3,6 +3,8 @@ import numpy as np
 from ydata_profiling import ProfileReport
 import json
 
+
+
 class Detector:
     def __init__(self, check_abnormal:bool, check_missing:bool, check_duplicates:bool, check_scaling:bool, hampel_threshold:float = 3.0,
                  iqr_multiplier:float = 1.5, skewness_threshold:float = 2.0, kurtosis_threshold:float = 3.5):
@@ -30,22 +32,22 @@ class Detector:
 
         abnormal = self.find_abnormal(profile, df, self.hampel_threshold, self.iqr_multiplier, self.skewness_threshold, self.kurtosis_threshold)
         scaling = self.recommend_scaling_methods(df, profile)
-#        for col, data in abnormal.items():
-#            print(f'результат для колонки {col}')
+        for col, data in abnormal.items():
+            print(f'результат для колонки {col}')
 
-#            for method in ['IQR', 'Modified_Z_score', 'Skewness_Method', 'Percentile', 'Kurtosis_Method']:
-#                m = data[method]
-#                if m['count'] != 0:
-#                    print(f"\n{method.replace('_', ' ')}:")
-#                    print(f"Метод: {m['method']}")
-#                    if 'threshold' in m:
-#                        print(f" Порог: {m['threshold']}")
-#                    if 'direction' in m:
-#                        print(f" Направление: {m['direction']}")
-#                    print(f" Найдено выбросов: {m['count']} ({m['count'] / len(df) * 100:.1f}%)")
+            for method in ['IQR', 'Modified_Z_score', 'Skewness_Method', 'Percentile', 'Kurtosis_Method']:
+                m = data[method]
+                if m['count'] != 0:
+                    print(f"\n{method.replace('_', ' ')}:")
+                    print(f"Метод: {m['method']}")
+                    if 'threshold' in m:
+                        print(f" Порог: {m['threshold']}")
+                    if 'direction' in m:
+                        print(f" Направление: {m['direction']}")
+                    print(f" Найдено выбросов: {m['count']} ({m['count'] / len(df) * 100:.1f}%)")
 
-#        recommendations = self.recommend_scaling_methods(df, profile)
-#        print(recommendations)
+        #recommendations = self.recommend_scaling_methods(df, profile)
+        #print(recommendations)
         return outcome, abnormal, scaling
 
     def increase_threshold(self, increasing_multiplier:int):
@@ -154,29 +156,24 @@ class Detector:
                 result[column_name] = {
                     'IQR': {
                         'method': f'IQR ({iqr_multiplier}×)',
-                        'outliers': iqr_outliers.to_list(),
                         'count': len(iqr_outliers)
                     },
                     'Modified_Z_score': {
                         'method': 'Hampel (MAD-based)',
                         'threshold': hampel_threshold,
-                        'outliers': hampel_outliers.to_list(),
                         'count': len(hampel_outliers)
                     },
                     'Percentile': {'method': 'percentile', 'bounds': [p5, p95],
-                                   'outliers': percentile_outliers.tolist(),
                                    'count': len(percentile_outliers)},
                     'Skewness_Method': {
                         'method': f'Skewness (>{skewness_threshold})',
                         'threshold': skewness_threshold,
                         'direction': 'right' if skewness > 0 else 'left',
-                        'outliers': skewness_outliers.to_list(),
                         'count': len(skewness_outliers)
                     },
                     'Kurtosis_Method': {
                         'method': f'Kurtosis (>{kurtosis_threshold})',
                         'threshold': kurtosis_threshold,
-                        'outliers': kurtosis_outliers.to_list(),
                         'count': len(kurtosis_outliers)
                     }
                 }
@@ -248,13 +245,9 @@ class Detector:
 
 
 class IDet:
-    def __init__(self, check_abnormal: bool, check_missing: bool, check_duplicates: bool, check_scaling: bool,  *args):
+    def __init__(self, check_abnormal: bool=False, check_missing: bool=False, check_duplicates: bool=False, check_scaling: bool=False,  *args):
         self.standart_settings = args
         self.detector = Detector(check_abnormal, check_missing, check_duplicates, check_scaling, *self.standart_settings)
 
     def logging_results(self, filename):
         return self.detector.check_dataframe(filename)
-
-
-if __name__ == '__main__':
-    print(IDet(True, True, True, True).logging_results('Accidents.csv'))

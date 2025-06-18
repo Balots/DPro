@@ -4,9 +4,9 @@ from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from IDProcessing import DataObject, IDProcessing
-#from Detector import IDet
 import pandas as pd
 from pathlib import Path
+from ydata_profiling import ProfileReport
 
 Path("static").mkdir(exist_ok=True)
 Path("templates").mkdir(exist_ok=True)
@@ -17,6 +17,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
 current_df = {}
+report_html = None
 
 @app.get("/DataFrame/", tags=['Обработка данных'])
 async def processing_data(id: int):
@@ -25,6 +26,7 @@ async def processing_data(id: int):
     if type(current_df) is pd.DataFrame:
         tmp = IDProcessing(data)
         current_df = tmp.get()
+        print(type(current_df))
         return JSONResponse(content={"message": "DataFrame processing successfully", "shape": current_df.shape})
     raise HTTPException
 
@@ -33,7 +35,7 @@ async def processing_data(id: int):
 async def read_root(request: Request):
     return templates.TemplateResponse(
         "notebook.html",
-        {"request": request, "notebook_name": "DPro Data Analysis"}
+        {"request": request, "notebook_name": "DPro Data Analysis", "report_html": report_html}
     )
 
 
@@ -52,13 +54,12 @@ async def create_upload_file(file: UploadFile = File(...)):
     except Exception as e:
         return JSONResponse(content={"error": str(e)}, status_code=500)
 
-'''@app.get("/generate_report/")
+@app.post("/generate_report/")
 async def generate_report():
-    global current_df, current_report_html
+    global current_df, report_html
     try:
-        res = IDet(True, True, True, True).logging_results(current_df)
-        print(res)
+        profile = ProfileReport(current_df, title=f"Your New Magic Data {chr(129392)} \u2728... or not, if you just loaded it {chr(128577)}")
+        report_html = profile.to_html()
+        return HTMLResponse(content=report_html, status_code=200)
     except Exception as e:
-        return JSONResponse(content={"error": str(e)}, status_code=500)'''
-
-
+        return JSONResponse(content={"error": str(e)}, status_code=500)

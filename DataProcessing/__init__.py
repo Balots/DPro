@@ -1,8 +1,8 @@
-from .clean import CleanData
+from .cleaning import CleanData
 from .missing_values import HandleMissingValues
 from .outliers import DetectAndRemoveOutliers
-from .normalize import NormalizeData
-from .standardize import StandardizeData
+from .scaling import NormalizeData
+from .scaling import StandardizeData
 from .io.loader import DataLoader
 
 __all__ = [

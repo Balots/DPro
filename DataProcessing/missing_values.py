@@ -1,57 +1,57 @@
-import pandas as pd
 from .base import DataProcessing
 from Logger import *
 
+import pandas as pd
+from sklearn.impute import KNNImputer
+from sklearn.experimental import enable_iterative_imputer
+from sklearn.impute import IterativeImputer
 
-class HandleMissingValues(DataProcessing):
-    def __init__(self, data: pd.DataFrame, numeric_strategy: str = 'mean',
-                 categorical_strategy: str = 'mode', fill_value: dict = None, columns: list = None):
-        super().__init__(data)
+
+class HandleMissingValues:
+    def __init__(self, data: pd.DataFrame,
+                 numeric_strategy: str = 'knn',
+                 categorical_strategy: str = 'mode',
+                 fill_value: dict = None):
+        self.data = data
         self.numeric_strategy = numeric_strategy
         self.categorical_strategy = categorical_strategy
         self.fill_value = fill_value or {}
-        self.columns = columns or self.data.columns.tolist()
+        self.result = None
 
-    @decorator
     def run(self) -> pd.DataFrame:
         df = self.data.copy()
-        for col in self.columns:
-            if df[col].isnull().sum() > 0:
-                if pd.api.types.is_numeric_dtype(df[col]):
-                    strategy = self.numeric_strategy
-                else:
-                    strategy = self.categorical_strategy
 
-                if strategy in ['mean', 'median'] and not pd.api.types.is_numeric_dtype(df[col]):
-                    logging.warning(f"Стратегия '{strategy}' неприменима к нечисловому столбцу '{col}'")
-                    continue
-
-                if strategy == 'mean':
+        # Обрабатываем числовые колонки
+        numeric_cols = df.select_dtypes(include=['number']).columns
+        for col in numeric_cols:
+            if df[col].isnull().any():
+                if self.numeric_strategy == 'mean':
                     df[col] = df[col].fillna(df[col].mean())
-                elif strategy == 'median':
+                elif self.numeric_strategy == 'median':
                     df[col] = df[col].fillna(df[col].median())
-                elif strategy == 'mode':
-                    mode_val = df[col].mode()
-                    if not mode_val.empty:
-                        df[col] = df[col].fillna(mode_val[0])
-                    else:
-                        logging.warning(f"Невозможно вычислить моду для столбца '{col}'")
-                elif strategy == 'constant':
-                    if col in self.fill_value:
-                        df[col] = df[col].fillna(self.fill_value[col])
-                    else:
-                        raise ValueError(f"Для столбца '{col}' не задано значение для стратегии 'constant'")
+                elif self.numeric_strategy == 'knn':
+                    imputer = KNNImputer(n_neighbors=5)
+                    df[numeric_cols] = imputer.fit_transform(df[numeric_cols])
+                elif self.numeric_strategy == 'iterative':
+                    imputer = IterativeImputer(max_iter=10, random_state=42)
+                    df[numeric_cols] = imputer.fit_transform(df[numeric_cols])
+
+        # Обрабатываем категориальные колонки
+        categorical_cols = df.select_dtypes(exclude=['number']).columns
+        for col in categorical_cols:
+            if df[col].isnull().any():
+                if self.categorical_strategy == 'mode':
+                    df[col] = df[col].fillna(df[col].mode()[0])
+                elif col in self.fill_value:
+                    df[col] = df[col].fillna(self.fill_value[col])
                 else:
-                    raise ValueError(f"Неизвестная стратегия заполнения: {strategy}")
+                    df[col] = df[col].fillna('Unknown')
+
         self.result = df
         return self.result
-
-    @decorator
-    def info(self) -> str:
-        return f"Обработка пропущенных значений: числовые - {self.numeric_strategy}, категориальные - {self.categorical_strategy}"
-
-    @decorator
-    def get_answ(self) -> pd.DataFrame:
+    def get_answ(self):
         if self.result is None:
             self.run()
         return self.result
+
+
