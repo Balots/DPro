@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 Thu Jun 12 17:07:11 2025	run_iqr started.
 Thu Jun 12 17:07:11 2025	<function DetectAndRemoveOutliers.run_iqr at 0x73ab226de840> result:     name  Age
 0  Peter   12
@@ -26,5 +25,3 @@ Thu Jun 12 17:07:11 2025	get started.
 Thu Jun 12 17:07:11 2025	<function IDProcessing.get at 0x73aba27d8cc0> result: {"name": {"0": "Peter", "1": "Ivan"}, "Age": {"0": 12, "1": 13}}
 Thu Jun 12 17:07:11 2025	<function IDProcessing.get at 0x73aba27d8cc0> finished.
 
-
->>>>>>> 3bae070376f79a271dae61ec530f49f6b0f00e1e

@@ -1,0 +1,28 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 YaBrowser/25.4.0.0 Safari/537.36" version="27.1.4">
+  <diagram name="Страница — 1" id="mz8CnMytncerL9NIvjkV">
+    <mxGraphModel dx="1010" dy="461" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="BJyW6Nd1NyUvIKqKs8_R-1" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;i&gt;Class TextDetector&lt;/i&gt;&lt;/font&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="260" y="390" width="290" height="520" as="geometry" />
+        </mxCell>
+        <mxCell id="BJyW6Nd1NyUvIKqKs8_R-2" value="# lang: str&lt;div&gt;check_clean: bool&lt;/div&gt;&lt;div&gt;check_tokenize: bool&lt;/div&gt;&lt;div&gt;check_stopwords: bool&lt;/div&gt;&lt;div&gt;check_stem_lemm: bool&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="BJyW6Nd1NyUvIKqKs8_R-1">
+          <mxGeometry y="26" width="290" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="BJyW6Nd1NyUvIKqKs8_R-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="BJyW6Nd1NyUvIKqKs8_R-1">
+          <mxGeometry y="120" width="290" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="BJyW6Nd1NyUvIKqKs8_R-4" value="+ load_text_from_file(file_path): str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="BJyW6Nd1NyUvIKqKs8_R-1">
+          <mxGeometry y="128" width="290" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="BJyW6Nd1NyUvIKqKs8_R-5" value="+ analyze_text(): dict" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="BJyW6Nd1NyUvIKqKs8_R-1">
+          <mxGeometry y="154" width="290" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="BJyW6Nd1NyUvIKqKs8_R-6" value="+ _analyze_single_text(): dict&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ _analyze_text_series(): dict&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ _detect_language(): str&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ _stopword_ratio(text:str): float&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ _compare_stemm_lemm(text:str): dict&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ _generate_recommendations(analysis: dict)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ _add_cleaning_rec():&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ _add_tokenization_rec()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ _add_stopwords_rec()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ _add_stemm_lemm_rec()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="BJyW6Nd1NyUvIKqKs8_R-1">
+          <mxGeometry y="180" width="290" height="340" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

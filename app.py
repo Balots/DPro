@@ -1,20 +1,17 @@
-import App
-
-
-"""
-If you wished to use App interface to analyse your data instead of Method. Just run file. 
-"""
+import sys
+from PyQt5.QtWidgets import QApplication
+from App.MainWindow import DataProcessingApp  # Импортируем из правильного модуля
 
 import sys
 from PyQt5.QtWidgets import QApplication
 from App.MainWindow import DataProcessingApp
 
 if __name__ == '__main__':
-    app = QApplication(sys.argv)  # Создаем QApplication первым
+    app = QApplication(sys.argv)  # Создаем QApplication
     
-    # Настройка стиля (опционально)
+    # Настройка стиля (как в MainWindow.py)
     app.setStyle('Fusion')
-    
     window = DataProcessingApp()
     window.show()
-    sys.exit(app.exec_())
+    
+    sys.exit(app.exec_())  # Запускаем цикл событий
