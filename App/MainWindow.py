@@ -79,8 +79,8 @@ class DataProcessingApp(QMainWindow):
         
         # Панель управления
         control_panel = QHBoxLayout()
-        self.btn_load = QPushButton("Загрузить данные (*.csv *.xlsx *.json *.parquet)")
-        self.btn_load_text = QPushButton("Загрузить текст")
+        self.btn_load = QPushButton("📊Загрузить табличные данные (*.csv *.xlsx *.json *.parquet)")
+        self.btn_load_text = QPushButton("📄Загрузить текстовые данные (*.txt *.csv *.xlsx *.json)")
         self.btn_save = QPushButton("Сохранить результат")
         self.btn_save.setEnabled(False)
         
