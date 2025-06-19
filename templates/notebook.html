@@ -130,14 +130,15 @@
     <div id="header">
         <div id="notebook-name">{{ notebook_name }}</div>
         <div id="header-buttons">
-            <button class="toolbar-button" onclick ="document.getElementById('save-btn').click()">
-                <i class="fas fa-save"></i> Save</button>
+        <button onclick="saveData()">Save</button>
         </div>
     </div>
 
     <input type="file" id="file-input" accept=".csv,.xlsx">
-    <button class="toolbar-button" onclick="document.getElementById('file-input').click()">
-        <i class="fas fa-file-upload"></i> Загрузить файл
+    <div id="toolbar">  <!-- Добавлен div для группировки кнопок -->
+        <button class="toolbar-button" onclick="document.getElementById('file-input').click()">
+            <i class="fas fa-file-upload"></i> Загрузить файл
+        </button>
         <button class="toolbar-button" onclick="CleanData()">
             <i class="fas fa-broom"></i> Очистить данные
         </button>
@@ -156,6 +157,7 @@
         <button class="toolbar-button" onclick="generateReport()">
             <i class="fas fa-chart-bar"></i> Сгенерировать отчет
         </button>
+    </div>
 
         <div id="notebook-container">
         <div class="cell">
@@ -219,71 +221,20 @@
                 alert(`Ошибка при загрузке файла: ${error}`);
             }
         });
-        // Обработчик кнопки сохранения файла
-        document.getElementById('save-btn').addEventListener('click', function() {
-            if (!currentData) {
-                alert('Нет данных для сохранения');
-                return;
-            }
-
+        async function saveData() {
             try {
-                // Преобразуем данные в CSV формат (пример для массива объектов)
-                let csvContent = '';
+                const response = await fetch('/save_data/');
 
-                // Заголовки столбцов
-                const headers = Object.keys(currentData[0]);
-                csvContent += headers.join(',') + '\n';
-
-                // Данные
-                currentData.forEach(row => {
-                    const values = headers.map(header => row[header]);
-                    csvContent += values.join(',') + '\n';
-                });
-
-                // Создаем Blob с CSV данными
-                const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-
-                // Создаем ссылку для скачивания
-                const link = document.createElement('a');
-                const url = URL.createObjectURL(blob);
-
-                link.setAttribute('href', url);
-                link.setAttribute('download', 'data.csv');
-                link.style.visibility = 'hidden';
-
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-
-            } catch (error) {
-                alert(`Ошибка при сохранении файла: ${error}`);
-            }
-        });
-        // Отправка данных на сервер
-        async function sendDataFrame() {
-            if (!currentData) {
-                alert('Нет данных для отправки');
-                return;
-            }
-
-            try {
-                const response = await fetch('/DataFrame/', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(currentData)
-                });
-
-                const result = await response.json();
-
-                if (response.ok) {
-                    alert(`Данные успешно отправлены. Размер: ${result.shape[0]} строк, ${result.shape[1]} столбцов`);
-                } else {
-                    alert(`Ошибка: ${result.error}`);
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || 'Failed to save data');
                 }
+
+                const data = await response.json();
+                alert(data); // Показываем сообщение об успешном сохранении
+                console.log("File saved successfully:", data);
             } catch (error) {
-                alert(`Ошибка при отправке данных: ${error}`);
+                console.error("Error saving data:", error);
             }
         }
 

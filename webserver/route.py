@@ -63,3 +63,13 @@ async def generate_report():
         return HTMLResponse(content=report_html, status_code=200)
     except Exception as e:
         return JSONResponse(content={"error": str(e)}, status_code=500)
+
+
+@app.get("/save_data/")
+async def save():
+    global current_df
+    try:
+        current_df.to_csv('Processed Data.csv')
+        return JSONResponse(content={"Ваш файл сохранён как Processed Data.csv"}, status_code=200)
+    except Exception as e:
+        return JSONResponse(content={"error": str(e)}, status_code=500)

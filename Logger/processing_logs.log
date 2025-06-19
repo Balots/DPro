@@ -1643,3 +1643,82 @@ LocalOutlierFactor does not accept missing values encoded as NaN natively. For s
 2025-06-18 23:52:33,344 get finished successfully
 2025-06-18 23:57:03,021 get started
 2025-06-18 23:57:03,024 get finished successfully
+2025-06-19 00:01:07,133 stared
+2025-06-19 20:38:52,274 Pandas backend loaded 2.2.3
+2025-06-19 20:38:52,277 Numpy backend loaded 2.1.3
+2025-06-19 20:38:52,277 Pyspark backend NOT loaded
+2025-06-19 20:38:52,277 Python backend loaded
+2025-06-19 20:38:53,587 Pandas backend loaded 2.2.3
+2025-06-19 20:38:53,589 Numpy backend loaded 2.1.3
+2025-06-19 20:38:53,589 Pyspark backend NOT loaded
+2025-06-19 20:38:53,589 Python backend loaded
+2025-06-19 20:48:23,028 get started
+2025-06-19 20:48:23,029 run started
+2025-06-19 20:48:23,032 run finished successfully
+2025-06-19 20:48:23,032 get_answ started
+2025-06-19 20:48:23,032 get_answ finished successfully
+2025-06-19 20:48:23,032 get finished successfully
+2025-06-19 20:48:24,859 get started
+2025-06-19 20:48:24,859 run started
+2025-06-19 20:48:24,861 Error in run: 'HandleMissingValues' object has no attribute 'knn_k'
+2025-06-19 20:48:24,861 Error in get: 'HandleMissingValues' object has no attribute 'knn_k'
+2025-06-19 20:48:37,635 get started
+2025-06-19 20:48:37,635 run started
+2025-06-19 20:48:37,636 run finished successfully
+2025-06-19 20:48:37,636 get_answ started
+2025-06-19 20:48:37,636 get_answ finished successfully
+2025-06-19 20:48:37,636 get finished successfully
+2025-06-19 20:48:39,700 get started
+2025-06-19 20:48:39,704 get finished successfully
+2025-06-19 20:48:42,291 get started
+2025-06-19 20:48:42,293 get finished successfully
+2025-06-19 20:48:44,804 get started
+2025-06-19 20:48:44,874 get finished successfully
+2025-06-19 20:50:46,908 get started
+2025-06-19 20:50:46,910 get finished successfully
+2025-06-19 20:50:48,933 get started
+2025-06-19 20:50:48,933 run started
+2025-06-19 20:50:48,934 Error in run: 'HandleMissingValues' object has no attribute 'knn_k'
+2025-06-19 20:50:48,934 Error in get: 'HandleMissingValues' object has no attribute 'knn_k'
+2025-06-19 20:50:54,540 get started
+2025-06-19 20:50:54,542 get finished successfully
+2025-06-19 20:51:45,638 get started
+2025-06-19 20:51:45,640 get finished successfully
+2025-06-19 20:57:07,325 get started
+2025-06-19 20:57:07,328 get finished successfully
+2025-06-19 20:57:24,150 get started
+2025-06-19 20:57:24,152 get finished successfully
+2025-06-19 21:03:31,310 Pandas backend loaded 2.2.3
+2025-06-19 21:03:31,312 Numpy backend loaded 2.1.3
+2025-06-19 21:03:31,312 Pyspark backend NOT loaded
+2025-06-19 21:03:31,312 Python backend loaded
+2025-06-19 21:04:01,224 Pandas backend loaded 2.2.3
+2025-06-19 21:04:01,226 Numpy backend loaded 2.1.3
+2025-06-19 21:04:01,226 Pyspark backend NOT loaded
+2025-06-19 21:04:01,226 Python backend loaded
+2025-06-19 21:04:31,928 Pandas backend loaded 2.2.3
+2025-06-19 21:04:31,929 Numpy backend loaded 2.1.3
+2025-06-19 21:04:31,930 Pyspark backend NOT loaded
+2025-06-19 21:04:31,930 Python backend loaded
+2025-06-19 21:13:25,070 Pandas backend loaded 2.2.3
+2025-06-19 21:13:25,072 Numpy backend loaded 2.1.3
+2025-06-19 21:13:25,072 Pyspark backend NOT loaded
+2025-06-19 21:13:25,072 Python backend loaded
+2025-06-19 21:20:40,206 get started
+2025-06-19 21:20:40,209 get finished successfully
+2025-06-19 21:23:05,379 Pandas backend loaded 2.2.3
+2025-06-19 21:23:05,380 Numpy backend loaded 2.1.3
+2025-06-19 21:23:05,380 Pyspark backend NOT loaded
+2025-06-19 21:23:05,380 Python backend loaded
+2025-06-19 21:24:20,139 Pandas backend loaded 2.2.3
+2025-06-19 21:24:20,141 Numpy backend loaded 2.1.3
+2025-06-19 21:24:20,141 Pyspark backend NOT loaded
+2025-06-19 21:24:20,141 Python backend loaded
+2025-06-19 21:24:58,769 get started
+2025-06-19 21:24:58,773 get finished successfully
+2025-06-19 21:25:00,410 get started
+2025-06-19 21:25:00,481 get finished successfully
+2025-06-19 21:25:45,858 get started
+2025-06-19 21:25:45,928 get finished successfully
+2025-06-19 21:26:08,130 get started
+2025-06-19 21:26:08,133 get finished successfully
