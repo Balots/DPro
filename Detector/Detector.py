@@ -4,7 +4,6 @@ from ydata_profiling import ProfileReport
 import json
 
 
-
 class Detector:
     def __init__(self, check_abnormal:bool, check_missing:bool, check_duplicates:bool, check_scaling:bool, hampel_threshold:float = 3.0,
                  iqr_multiplier:float = 1.5, skewness_threshold:float = 2.0, kurtosis_threshold:float = 3.5):
