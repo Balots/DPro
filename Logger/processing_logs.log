@@ -1777,3 +1777,48 @@ LocalOutlierFactor does not accept missing values encoded as NaN natively. For s
 2025-06-19 22:09:26,086 run started
 2025-06-19 22:09:26,087 Error in run: 'HandleMissingValues' object has no attribute 'knn_k'
 2025-06-19 22:09:26,186 get finished successfully
+2025-06-19 22:34:58,161 run started
+2025-06-19 22:34:58,162 run finished successfully
+2025-06-19 22:34:58,180 info started
+2025-06-19 22:34:58,180 info finished successfully
+2025-06-19 22:39:49,625 Pandas backend loaded 2.2.3
+2025-06-19 22:39:49,626 Numpy backend loaded 2.1.3
+2025-06-19 22:39:49,626 Pyspark backend NOT loaded
+2025-06-19 22:39:49,626 Python backend loaded
+2025-06-19 22:39:50,898 Pandas backend loaded 2.2.3
+2025-06-19 22:39:50,900 Numpy backend loaded 2.1.3
+2025-06-19 22:39:50,900 Pyspark backend NOT loaded
+2025-06-19 22:39:50,900 Python backend loaded
+2025-06-19 22:41:10,188 stared
+2025-06-19 22:42:43,397 Pandas backend loaded 2.2.3
+2025-06-19 22:42:43,399 Numpy backend loaded 2.1.3
+2025-06-19 22:42:43,399 Pyspark backend NOT loaded
+2025-06-19 22:42:43,399 Python backend loaded
+2025-06-19 22:42:44,673 Pandas backend loaded 2.2.3
+2025-06-19 22:42:44,675 Numpy backend loaded 2.1.3
+2025-06-19 22:42:44,675 Pyspark backend NOT loaded
+2025-06-19 22:42:44,675 Python backend loaded
+2025-06-19 22:44:17,554 get started
+2025-06-19 22:44:18,366 run started
+2025-06-19 22:44:19,491 run finished successfully
+2025-06-19 22:44:34,288 get finished successfully
+2025-06-19 22:46:53,333 get started
+2025-06-19 22:46:53,333 run started
+2025-06-19 22:46:53,334 Error in run: 'HandleMissingValues' object has no attribute 'knn_k'
+2025-06-19 22:46:53,334 Error in get: 'HandleMissingValues' object has no attribute 'knn_k'
+2025-06-19 22:47:10,512 stared
+2025-06-19 22:50:30,838 Pandas backend loaded 2.2.3
+2025-06-19 22:50:30,839 Numpy backend loaded 2.1.3
+2025-06-19 22:50:30,839 Pyspark backend NOT loaded
+2025-06-19 22:50:30,839 Python backend loaded
+2025-06-19 22:50:32,079 Pandas backend loaded 2.2.3
+2025-06-19 22:50:32,080 Numpy backend loaded 2.1.3
+2025-06-19 22:50:32,080 Pyspark backend NOT loaded
+2025-06-19 22:50:32,080 Python backend loaded
+2025-06-19 22:51:17,527 get started
+2025-06-19 22:51:17,527 run started
+2025-06-19 22:51:17,532 run finished successfully
+2025-06-19 22:51:17,532 get finished successfully
+2025-06-19 22:51:51,760 get started
+2025-06-19 22:51:51,901 get finished successfully
+2025-06-19 23:24:06,221 stared

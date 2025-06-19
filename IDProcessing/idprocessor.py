@@ -17,5 +17,3 @@ class IDProcessing:
         process = self.__METHODS__[self.method_id](*self.params)
         process.run()
         return process.get_answ()
-
-

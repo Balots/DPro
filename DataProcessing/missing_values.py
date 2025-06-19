@@ -16,6 +16,7 @@ class HandleMissingValues:
         self.categorical_strategy = categorical_strategy
         self.fill_value = fill_value or {}
         self.result = None
+        self.knn_k = 5
     @decorator
     def run(self) -> pd.DataFrame:
         """

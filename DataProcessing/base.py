@@ -1,8 +1,9 @@
 import pandas as pd
 from abc import ABC, abstractmethod
 from typing import Union, Optional
-# Правильный абсолютный путь от корня проекта
-#from io.loader import DataLoader
+from flaml import AutoML
+from sklearn.model_selection import train_test_split
+from io.loader import DataLoader
 
 class DataProcessing(ABC):
     def __init__(self, data: Union[pd.DataFrame, str], file_type: Optional[str] = None):
@@ -67,3 +68,34 @@ class DataProcessing(ABC):
         if self.result is None:
             self.run()
         DataLoader.save_data(self.result, file_path, file_type, **kwargs)
+
+    def ml_proc(self, target:str):
+        x = self.data.drop(target)
+        y = self.data[target]
+
+        X_train, X_test, y_train, y_test = train_test_split(x, y, random_state=42)
+        X_train, X_test, y_train, y_test = train_test_split(x, y, random_state=42)
+
+        automl = AutoML()
+        automl.fit(X_train=X_train, y_train=y_train, task='classification', time_budget=60)
+        y_pred = automl.predict(X_test)
+
+        best_model = automl.model.estimator
+        if hasattr(best_model, 'feature_importances_'):
+            feature_importances = best_model.feature_importances_
+            print("Важность признаков:", feature_importances)
+            # Связываем с именами признаков
+            features_df = pd.DataFrame({
+                'Feature': X_train.columns,
+                'Importance': feature_importances
+            }).sort_values('Importance', ascending=False)
+            print(features_df)
+        else:
+            print("Модель не поддерживает feature_importances_")
+        features_df = pd.DataFrame({
+            'Feature': X_train.columns,
+            'Importance': feature_importances
+        }).sort_values('Importance', ascending=False)
+        print(features_df)
+        features_df.to_csv('weights.csv')
+        return 0
