@@ -502,13 +502,50 @@ class DataProcessingApp(QMainWindow):
                 self.current_data = pd.read_csv(file_path)
             elif file_path.endswith('.xlsx'):
                 self.current_data = pd.read_excel(file_path)
+            # elif file_path.endswith('.json'):
+            #     # Пробуем разные способы чтения JSON
+            #     with open(file_path, 'r', encoding='utf-8') as f:
+            #         data = json.load(f)
+            #         if isinstance(data, list):
+            #             self.current_data = pd.json_normalize(data)
+            #         elif isinstance(data, dict):
+            #             self.current_data = pd.DataFrame.from_dict(data, orient='columns')
+
             elif file_path.endswith('.json'):
-                self.current_data = pd.read_json(file_path)
+                try:
+                    with open(file_path, 'r', encoding='utf-8') as f:
+                        data = json.load(f)
+                        
+                        # Случай 1: JSON — это список словарей (например, [{...}, {...}])
+                        if isinstance(data, list):
+                            self.current_data = pd.json_normalize(data)
+                        
+                        # Случай 2: JSON — это словарь с одним ключом-списком (как audio_features)
+                        elif isinstance(data, dict):
+                            # Ищем ключ, содержащий список словарей
+                            list_keys = [k for k, v in data.items() if isinstance(v, list) and all(isinstance(i, dict) for i in v)]
+                            
+                            if list_keys:
+                                # Берём первый подходящий ключ (например, 'audio_features')
+                                self.current_data = pd.json_normalize(data[list_keys[0]])
+                            else:
+                                # Если нет списка словарей, пробуем развернуть как есть
+                                self.current_data = pd.json_normalize(data)
+                        
+                        # Обновляем интерфейс
+                        self.display_data()
+                        self.update_plot_columns()
+                        self.btn_save.setEnabled(True)
+                        self.log_message(f"Данные загружены из {file_path}")
+                        
+                except Exception as e:
+                    self.log_message(f"Ошибка загрузки JSON: {str(e)}", error=True)
+
             elif file_path.endswith('.parquet'):
                 self.current_data = pd.read_parquet(file_path)
             else:
                 raise ValueError("Неподдерживаемый формат файла")
-            
+
             self.display_data()
             self.update_plot_columns()
             self.btn_save.setEnabled(True)
