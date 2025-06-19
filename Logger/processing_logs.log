@@ -1084,6 +1084,7 @@
 2025-06-18 12:24:04,466 run finished successfully
 2025-06-18 12:24:04,466 info started
 2025-06-18 12:24:04,466 info finished successfully
+<<<<<<< HEAD
 2025-06-18 17:48:22,573 run started
 2025-06-18 17:48:22,580 Error in run: Метод обнаружения выбросов 'iqr' не поддерживается
 2025-06-18 17:48:26,069 run started
@@ -1114,3 +1115,564 @@
 2025-06-19 16:18:01,475 run finished successfully
 2025-06-19 16:18:01,479 info started
 2025-06-19 16:18:01,479 info finished successfully
+=======
+2025-06-18 19:23:16,947 get started
+2025-06-18 19:23:16,948 run started
+2025-06-18 19:23:16,966 run finished successfully
+2025-06-18 19:23:16,966 get_answ started
+2025-06-18 19:23:16,966 get_answ finished successfully
+2025-06-18 19:23:16,967 get finished successfully
+2025-06-18 19:23:36,096 stared
+2025-06-18 19:28:55,174 Pandas backend loaded 2.2.3
+2025-06-18 19:28:55,175 Numpy backend loaded 2.1.3
+2025-06-18 19:28:55,175 Pyspark backend NOT loaded
+2025-06-18 19:28:55,175 Python backend loaded
+2025-06-18 19:28:56,310 Pandas backend loaded 2.2.3
+2025-06-18 19:28:56,311 Numpy backend loaded 2.1.3
+2025-06-18 19:28:56,311 Pyspark backend NOT loaded
+2025-06-18 19:28:56,311 Python backend loaded
+2025-06-18 19:29:49,192 get started
+2025-06-18 19:29:49,193 run started
+2025-06-18 19:29:49,216 run finished successfully
+2025-06-18 19:29:49,216 get_answ started
+2025-06-18 19:29:49,216 get_answ finished successfully
+2025-06-18 19:29:49,216 get finished successfully
+2025-06-18 19:29:52,200 get started
+2025-06-18 19:29:52,208 get finished successfully
+2025-06-18 19:32:30,286 Pandas backend loaded 2.2.3
+2025-06-18 19:32:30,287 Numpy backend loaded 2.1.3
+2025-06-18 19:32:30,287 Pyspark backend NOT loaded
+2025-06-18 19:32:30,287 Python backend loaded
+2025-06-18 19:33:45,771 Pandas backend loaded 2.2.3
+2025-06-18 19:33:45,773 Numpy backend loaded 2.1.3
+2025-06-18 19:33:45,773 Pyspark backend NOT loaded
+2025-06-18 19:33:45,773 Python backend loaded
+2025-06-18 19:34:28,858 Pandas backend loaded 2.2.3
+2025-06-18 19:34:28,860 Numpy backend loaded 2.1.3
+2025-06-18 19:34:28,860 Pyspark backend NOT loaded
+2025-06-18 19:34:28,860 Python backend loaded
+2025-06-18 19:38:50,441 Pandas backend loaded 2.2.3
+2025-06-18 19:38:50,443 Numpy backend loaded 2.1.3
+2025-06-18 19:38:50,443 Pyspark backend NOT loaded
+2025-06-18 19:38:50,443 Python backend loaded
+2025-06-18 19:57:42,648 Pandas backend loaded 2.2.3
+2025-06-18 19:57:42,650 Numpy backend loaded 2.1.3
+2025-06-18 19:57:42,650 Pyspark backend NOT loaded
+2025-06-18 19:57:42,650 Python backend loaded
+2025-06-18 19:58:39,192 Pandas backend loaded 2.2.3
+2025-06-18 19:58:39,194 Numpy backend loaded 2.1.3
+2025-06-18 19:58:39,194 Pyspark backend NOT loaded
+2025-06-18 19:58:39,194 Python backend loaded
+2025-06-18 20:00:04,499 Pandas backend loaded 2.2.3
+2025-06-18 20:00:04,501 Numpy backend loaded 2.1.3
+2025-06-18 20:00:04,501 Pyspark backend NOT loaded
+2025-06-18 20:00:04,501 Python backend loaded
+2025-06-18 20:06:12,936 Pandas backend loaded 2.2.3
+2025-06-18 20:06:12,938 Numpy backend loaded 2.1.3
+2025-06-18 20:06:12,938 Pyspark backend NOT loaded
+2025-06-18 20:06:12,938 Python backend loaded
+2025-06-18 20:06:48,113 Pandas backend loaded 2.2.3
+2025-06-18 20:06:48,115 Numpy backend loaded 2.1.3
+2025-06-18 20:06:48,115 Pyspark backend NOT loaded
+2025-06-18 20:06:48,115 Python backend loaded
+2025-06-18 20:07:02,462 Pandas backend loaded 2.2.3
+2025-06-18 20:07:02,464 Numpy backend loaded 2.1.3
+2025-06-18 20:07:02,464 Pyspark backend NOT loaded
+2025-06-18 20:07:02,464 Python backend loaded
+2025-06-18 20:07:51,919 stared
+2025-06-18 20:10:08,129 Pandas backend loaded 2.2.3
+2025-06-18 20:10:08,130 Numpy backend loaded 2.1.3
+2025-06-18 20:10:08,130 Pyspark backend NOT loaded
+2025-06-18 20:10:08,130 Python backend loaded
+2025-06-18 20:10:09,291 Pandas backend loaded 2.2.3
+2025-06-18 20:10:09,293 Numpy backend loaded 2.1.3
+2025-06-18 20:10:09,293 Pyspark backend NOT loaded
+2025-06-18 20:10:09,293 Python backend loaded
+2025-06-18 20:11:36,285 Pandas backend loaded 2.2.3
+2025-06-18 20:11:36,287 Numpy backend loaded 2.1.3
+2025-06-18 20:11:36,287 Pyspark backend NOT loaded
+2025-06-18 20:11:36,287 Python backend loaded
+2025-06-18 20:13:23,301 Pandas backend loaded 2.2.3
+2025-06-18 20:13:23,303 Numpy backend loaded 2.1.3
+2025-06-18 20:13:23,303 Pyspark backend NOT loaded
+2025-06-18 20:13:23,303 Python backend loaded
+2025-06-18 20:14:06,512 Pandas backend loaded 2.2.3
+2025-06-18 20:14:06,514 Numpy backend loaded 2.1.3
+2025-06-18 20:14:06,514 Pyspark backend NOT loaded
+2025-06-18 20:14:06,514 Python backend loaded
+2025-06-18 20:14:52,038 Pandas backend loaded 2.2.3
+2025-06-18 20:14:52,040 Numpy backend loaded 2.1.3
+2025-06-18 20:14:52,040 Pyspark backend NOT loaded
+2025-06-18 20:14:52,040 Python backend loaded
+2025-06-18 20:18:17,063 Pandas backend loaded 2.2.3
+2025-06-18 20:18:17,064 Numpy backend loaded 2.1.3
+2025-06-18 20:18:17,064 Pyspark backend NOT loaded
+2025-06-18 20:18:17,064 Python backend loaded
+2025-06-18 20:23:23,537 Pandas backend loaded 2.2.3
+2025-06-18 20:23:23,539 Numpy backend loaded 2.1.3
+2025-06-18 20:23:23,539 Pyspark backend NOT loaded
+2025-06-18 20:23:23,539 Python backend loaded
+2025-06-18 20:23:59,527 Pandas backend loaded 2.2.3
+2025-06-18 20:23:59,529 Numpy backend loaded 2.1.3
+2025-06-18 20:23:59,529 Pyspark backend NOT loaded
+2025-06-18 20:23:59,529 Python backend loaded
+2025-06-18 20:24:11,474 Pandas backend loaded 2.2.3
+2025-06-18 20:24:11,476 Numpy backend loaded 2.1.3
+2025-06-18 20:24:11,476 Pyspark backend NOT loaded
+2025-06-18 20:24:11,476 Python backend loaded
+2025-06-18 20:24:22,509 Pandas backend loaded 2.2.3
+2025-06-18 20:24:22,511 Numpy backend loaded 2.1.3
+2025-06-18 20:24:22,511 Pyspark backend NOT loaded
+2025-06-18 20:24:22,511 Python backend loaded
+2025-06-18 20:24:30,083 Pandas backend loaded 2.2.3
+2025-06-18 20:24:30,085 Numpy backend loaded 2.1.3
+2025-06-18 20:24:30,086 Pyspark backend NOT loaded
+2025-06-18 20:24:30,086 Python backend loaded
+2025-06-18 20:25:26,975 Pandas backend loaded 2.2.3
+2025-06-18 20:25:26,977 Numpy backend loaded 2.1.3
+2025-06-18 20:25:26,977 Pyspark backend NOT loaded
+2025-06-18 20:25:26,977 Python backend loaded
+2025-06-18 20:31:02,089 Pandas backend loaded 2.2.3
+2025-06-18 20:31:02,090 Numpy backend loaded 2.1.3
+2025-06-18 20:31:02,091 Pyspark backend NOT loaded
+2025-06-18 20:31:02,091 Python backend loaded
+2025-06-18 20:31:23,024 Pandas backend loaded 2.2.3
+2025-06-18 20:31:23,026 Numpy backend loaded 2.1.3
+2025-06-18 20:31:23,026 Pyspark backend NOT loaded
+2025-06-18 20:31:23,026 Python backend loaded
+2025-06-18 20:34:03,477 Pandas backend loaded 2.2.3
+2025-06-18 20:34:03,479 Numpy backend loaded 2.1.3
+2025-06-18 20:34:03,479 Pyspark backend NOT loaded
+2025-06-18 20:34:03,479 Python backend loaded
+2025-06-18 20:37:09,413 Pandas backend loaded 2.2.3
+2025-06-18 20:37:09,416 Numpy backend loaded 2.1.3
+2025-06-18 20:37:09,416 Pyspark backend NOT loaded
+2025-06-18 20:37:09,416 Python backend loaded
+2025-06-18 20:37:54,080 Pandas backend loaded 2.2.3
+2025-06-18 20:37:54,082 Numpy backend loaded 2.1.3
+2025-06-18 20:37:54,082 Pyspark backend NOT loaded
+2025-06-18 20:37:54,082 Python backend loaded
+2025-06-18 20:38:17,322 Pandas backend loaded 2.2.3
+2025-06-18 20:38:17,324 Numpy backend loaded 2.1.3
+2025-06-18 20:38:17,324 Pyspark backend NOT loaded
+2025-06-18 20:38:17,324 Python backend loaded
+2025-06-18 20:40:18,451 Pandas backend loaded 2.2.3
+2025-06-18 20:40:18,453 Numpy backend loaded 2.1.3
+2025-06-18 20:40:18,453 Pyspark backend NOT loaded
+2025-06-18 20:40:18,453 Python backend loaded
+2025-06-18 20:43:00,328 get started
+2025-06-18 20:43:00,329 run started
+2025-06-18 20:43:00,344 run finished successfully
+2025-06-18 20:43:00,344 get_answ started
+2025-06-18 20:43:00,344 get_answ finished successfully
+2025-06-18 20:43:00,345 get finished successfully
+2025-06-18 20:44:23,451 stared
+2025-06-18 20:44:26,826 Pandas backend loaded 2.2.3
+2025-06-18 20:44:26,828 Numpy backend loaded 2.1.3
+2025-06-18 20:44:26,828 Pyspark backend NOT loaded
+2025-06-18 20:44:26,828 Python backend loaded
+2025-06-18 20:44:27,982 Pandas backend loaded 2.2.3
+2025-06-18 20:44:27,984 Numpy backend loaded 2.1.3
+2025-06-18 20:44:27,984 Pyspark backend NOT loaded
+2025-06-18 20:44:27,985 Python backend loaded
+2025-06-18 20:44:48,009 get started
+2025-06-18 20:44:48,014 get finished successfully
+2025-06-18 20:46:19,786 get started
+2025-06-18 20:46:19,787 run started
+2025-06-18 20:46:19,801 run finished successfully
+2025-06-18 20:46:19,801 get_answ started
+2025-06-18 20:46:19,801 get_answ finished successfully
+2025-06-18 20:46:19,802 get finished successfully
+2025-06-18 20:47:12,623 Pandas backend loaded 2.2.3
+2025-06-18 20:47:12,625 Numpy backend loaded 2.1.3
+2025-06-18 20:47:12,625 Pyspark backend NOT loaded
+2025-06-18 20:47:12,625 Python backend loaded
+2025-06-18 20:47:23,179 get started
+2025-06-18 20:47:23,181 run started
+2025-06-18 20:47:23,203 run finished successfully
+2025-06-18 20:47:23,203 get_answ started
+2025-06-18 20:47:23,203 get_answ finished successfully
+2025-06-18 20:47:23,203 get finished successfully
+2025-06-18 20:47:25,090 get started
+2025-06-18 20:47:25,098 get finished successfully
+2025-06-18 20:48:29,348 Pandas backend loaded 2.2.3
+2025-06-18 20:48:29,350 Numpy backend loaded 2.1.3
+2025-06-18 20:48:29,350 Pyspark backend NOT loaded
+2025-06-18 20:48:29,350 Python backend loaded
+2025-06-18 20:48:37,282 get started
+2025-06-18 20:48:37,284 run started
+2025-06-18 20:48:37,308 run finished successfully
+2025-06-18 20:48:37,308 get_answ started
+2025-06-18 20:48:37,308 get_answ finished successfully
+2025-06-18 20:48:37,308 get finished successfully
+2025-06-18 20:48:38,898 get started
+2025-06-18 20:48:38,906 get finished successfully
+2025-06-18 20:50:42,738 get started
+2025-06-18 20:50:42,739 run started
+2025-06-18 20:50:42,752 run finished successfully
+2025-06-18 20:50:42,752 get_answ started
+2025-06-18 20:50:42,752 get_answ finished successfully
+2025-06-18 20:50:42,752 get finished successfully
+2025-06-18 20:50:46,562 get started
+2025-06-18 20:50:46,562 run started
+2025-06-18 20:50:46,584 run finished successfully
+2025-06-18 20:50:46,584 get_answ started
+2025-06-18 20:50:46,584 get_answ finished successfully
+2025-06-18 20:50:46,585 get finished successfully
+2025-06-18 20:50:48,986 get started
+2025-06-18 20:50:48,996 get finished successfully
+2025-06-18 20:55:11,334 stared
+2025-06-18 20:55:13,725 Pandas backend loaded 2.2.3
+2025-06-18 20:55:13,726 Numpy backend loaded 2.1.3
+2025-06-18 20:55:13,726 Pyspark backend NOT loaded
+2025-06-18 20:55:13,726 Python backend loaded
+2025-06-18 20:55:14,933 Pandas backend loaded 2.2.3
+2025-06-18 20:55:14,935 Numpy backend loaded 2.1.3
+2025-06-18 20:55:14,936 Pyspark backend NOT loaded
+2025-06-18 20:55:14,936 Python backend loaded
+2025-06-18 20:59:46,419 get started
+2025-06-18 20:59:46,428 get finished successfully
+2025-06-18 21:07:30,176 Pandas backend loaded 2.2.3
+2025-06-18 21:07:30,178 Numpy backend loaded 2.1.3
+2025-06-18 21:07:30,178 Pyspark backend NOT loaded
+2025-06-18 21:07:30,178 Python backend loaded
+2025-06-18 21:07:56,932 Pandas backend loaded 2.2.3
+2025-06-18 21:07:56,934 Numpy backend loaded 2.1.3
+2025-06-18 21:07:56,934 Pyspark backend NOT loaded
+2025-06-18 21:07:56,934 Python backend loaded
+2025-06-18 21:10:02,025 get started
+2025-06-18 21:10:02,033 get finished successfully
+2025-06-18 21:10:04,890 get started
+2025-06-18 21:10:04,891 run started
+2025-06-18 21:10:04,908 run finished successfully
+2025-06-18 21:10:04,908 get_answ started
+2025-06-18 21:10:04,908 get_answ finished successfully
+2025-06-18 21:10:04,908 get finished successfully
+2025-06-18 21:10:08,177 get started
+2025-06-18 21:10:08,181 get finished successfully
+2025-06-18 21:10:10,649 get started
+2025-06-18 21:10:10,653 get finished successfully
+2025-06-18 21:25:06,516 Pandas backend loaded 2.2.3
+2025-06-18 21:25:06,517 Numpy backend loaded 2.1.3
+2025-06-18 21:25:06,517 Pyspark backend NOT loaded
+2025-06-18 21:25:06,517 Python backend loaded
+2025-06-18 21:26:08,921 get started
+2025-06-18 21:26:08,923 run started
+2025-06-18 21:26:08,945 run finished successfully
+2025-06-18 21:26:08,945 get_answ started
+2025-06-18 21:26:08,945 get_answ finished successfully
+2025-06-18 21:26:08,946 get finished successfully
+2025-06-18 21:26:16,754 get started
+2025-06-18 21:26:16,760 get finished successfully
+2025-06-18 21:26:34,042 get started
+2025-06-18 21:26:34,043 run started
+2025-06-18 21:26:34,056 run finished successfully
+2025-06-18 21:26:34,056 get_answ started
+2025-06-18 21:26:34,056 get_answ finished successfully
+2025-06-18 21:26:34,056 get finished successfully
+2025-06-18 21:26:36,713 get started
+2025-06-18 21:26:36,714 run started
+2025-06-18 21:26:36,740 run finished successfully
+2025-06-18 21:26:36,740 get_answ started
+2025-06-18 21:26:36,740 get_answ finished successfully
+2025-06-18 21:26:36,740 get finished successfully
+2025-06-18 21:27:06,569 get started
+2025-06-18 21:27:06,570 run started
+2025-06-18 21:27:06,590 run finished successfully
+2025-06-18 21:27:06,591 get_answ started
+2025-06-18 21:27:06,591 get_answ finished successfully
+2025-06-18 21:27:06,591 get finished successfully
+2025-06-18 21:27:12,290 get started
+2025-06-18 21:27:12,300 get finished successfully
+2025-06-18 21:28:24,602 Pandas backend loaded 2.2.3
+2025-06-18 21:28:24,603 Numpy backend loaded 2.1.3
+2025-06-18 21:28:24,603 Pyspark backend NOT loaded
+2025-06-18 21:28:24,603 Python backend loaded
+2025-06-18 21:28:32,788 Pandas backend loaded 2.2.3
+2025-06-18 21:28:32,790 Numpy backend loaded 2.1.3
+2025-06-18 21:28:32,790 Pyspark backend NOT loaded
+2025-06-18 21:28:32,790 Python backend loaded
+2025-06-18 21:28:40,002 get started
+2025-06-18 21:28:40,003 run started
+2025-06-18 21:28:40,018 run finished successfully
+2025-06-18 21:28:40,018 get_answ started
+2025-06-18 21:28:40,018 get_answ finished successfully
+2025-06-18 21:28:40,019 get finished successfully
+2025-06-18 21:29:52,107 get started
+2025-06-18 21:29:52,116 get finished successfully
+2025-06-18 21:30:55,403 get started
+2025-06-18 21:30:55,406 get finished successfully
+2025-06-18 21:30:57,411 get started
+2025-06-18 21:30:57,412 run started
+2025-06-18 21:30:57,420 run finished successfully
+2025-06-18 21:30:57,421 get_answ started
+2025-06-18 21:30:57,421 get_answ finished successfully
+2025-06-18 21:30:57,421 get finished successfully
+2025-06-18 21:31:00,755 get started
+2025-06-18 21:31:00,760 get finished successfully
+2025-06-18 21:31:04,035 get started
+2025-06-18 21:31:04,036 run started
+2025-06-18 21:31:04,051 run finished successfully
+2025-06-18 21:31:04,051 get_answ started
+2025-06-18 21:31:04,051 get_answ finished successfully
+2025-06-18 21:31:04,052 get finished successfully
+2025-06-18 21:31:53,868 get started
+2025-06-18 21:31:53,869 run started
+2025-06-18 21:31:53,890 run finished successfully
+2025-06-18 21:31:53,890 get_answ started
+2025-06-18 21:31:53,890 get_answ finished successfully
+2025-06-18 21:31:53,890 get finished successfully
+2025-06-18 21:37:58,780 stared
+2025-06-18 21:38:01,042 Pandas backend loaded 2.2.3
+2025-06-18 21:38:01,044 Numpy backend loaded 2.1.3
+2025-06-18 21:38:01,044 Pyspark backend NOT loaded
+2025-06-18 21:38:01,044 Python backend loaded
+2025-06-18 21:38:02,222 Pandas backend loaded 2.2.3
+2025-06-18 21:38:02,223 Numpy backend loaded 2.1.3
+2025-06-18 21:38:02,223 Pyspark backend NOT loaded
+2025-06-18 21:38:02,223 Python backend loaded
+2025-06-18 21:41:20,514 get started
+2025-06-18 21:41:20,518 get finished successfully
+2025-06-18 21:46:47,514 stared
+2025-06-18 21:46:50,914 Pandas backend loaded 2.2.3
+2025-06-18 21:46:50,916 Numpy backend loaded 2.1.3
+2025-06-18 21:46:50,916 Pyspark backend NOT loaded
+2025-06-18 21:46:50,916 Python backend loaded
+2025-06-18 21:46:52,080 Pandas backend loaded 2.2.3
+2025-06-18 21:46:52,082 Numpy backend loaded 2.1.3
+2025-06-18 21:46:52,082 Pyspark backend NOT loaded
+2025-06-18 21:46:52,082 Python backend loaded
+2025-06-18 21:47:24,478 stared
+2025-06-18 21:47:26,485 Pandas backend loaded 2.2.3
+2025-06-18 21:47:26,486 Numpy backend loaded 2.1.3
+2025-06-18 21:47:26,486 Pyspark backend NOT loaded
+2025-06-18 21:47:26,486 Python backend loaded
+2025-06-18 21:47:27,652 Pandas backend loaded 2.2.3
+2025-06-18 21:47:27,654 Numpy backend loaded 2.1.3
+2025-06-18 21:47:27,654 Pyspark backend NOT loaded
+2025-06-18 21:47:27,654 Python backend loaded
+2025-06-18 21:48:27,461 get started
+2025-06-18 21:48:27,470 get finished successfully
+2025-06-18 21:58:39,570 Pandas backend loaded 2.2.3
+2025-06-18 21:58:39,572 Numpy backend loaded 2.1.3
+2025-06-18 21:58:39,572 Pyspark backend NOT loaded
+2025-06-18 21:58:39,572 Python backend loaded
+2025-06-18 21:58:55,422 Pandas backend loaded 2.2.3
+2025-06-18 21:58:55,424 Numpy backend loaded 2.1.3
+2025-06-18 21:58:55,424 Pyspark backend NOT loaded
+2025-06-18 21:58:55,424 Python backend loaded
+2025-06-18 21:59:54,378 Pandas backend loaded 2.2.3
+2025-06-18 21:59:54,380 Numpy backend loaded 2.1.3
+2025-06-18 21:59:54,380 Pyspark backend NOT loaded
+2025-06-18 21:59:54,380 Python backend loaded
+2025-06-18 22:00:00,209 Pandas backend loaded 2.2.3
+2025-06-18 22:00:00,211 Numpy backend loaded 2.1.3
+2025-06-18 22:00:00,211 Pyspark backend NOT loaded
+2025-06-18 22:00:00,211 Python backend loaded
+2025-06-18 22:01:09,039 Pandas backend loaded 2.2.3
+2025-06-18 22:01:09,040 Numpy backend loaded 2.1.3
+2025-06-18 22:01:09,040 Pyspark backend NOT loaded
+2025-06-18 22:01:09,040 Python backend loaded
+2025-06-18 22:02:19,370 Pandas backend loaded 2.2.3
+2025-06-18 22:02:19,372 Numpy backend loaded 2.1.3
+2025-06-18 22:02:19,372 Pyspark backend NOT loaded
+2025-06-18 22:02:19,372 Python backend loaded
+2025-06-18 22:02:41,000 Pandas backend loaded 2.2.3
+2025-06-18 22:02:41,001 Numpy backend loaded 2.1.3
+2025-06-18 22:02:41,002 Pyspark backend NOT loaded
+2025-06-18 22:02:41,002 Python backend loaded
+2025-06-18 22:02:59,784 Pandas backend loaded 2.2.3
+2025-06-18 22:02:59,786 Numpy backend loaded 2.1.3
+2025-06-18 22:02:59,786 Pyspark backend NOT loaded
+2025-06-18 22:02:59,786 Python backend loaded
+2025-06-18 22:04:09,474 Pandas backend loaded 2.2.3
+2025-06-18 22:04:09,476 Numpy backend loaded 2.1.3
+2025-06-18 22:04:09,476 Pyspark backend NOT loaded
+2025-06-18 22:04:09,476 Python backend loaded
+2025-06-18 22:07:14,355 Pandas backend loaded 2.2.3
+2025-06-18 22:07:14,357 Numpy backend loaded 2.1.3
+2025-06-18 22:07:14,357 Pyspark backend NOT loaded
+2025-06-18 22:07:14,357 Python backend loaded
+2025-06-18 22:07:58,649 Pandas backend loaded 2.2.3
+2025-06-18 22:07:58,651 Numpy backend loaded 2.1.3
+2025-06-18 22:07:58,651 Pyspark backend NOT loaded
+2025-06-18 22:07:58,651 Python backend loaded
+2025-06-18 22:08:41,087 Pandas backend loaded 2.2.3
+2025-06-18 22:08:41,089 Numpy backend loaded 2.1.3
+2025-06-18 22:08:41,089 Pyspark backend NOT loaded
+2025-06-18 22:08:41,089 Python backend loaded
+2025-06-18 22:11:35,890 Pandas backend loaded 2.2.3
+2025-06-18 22:11:35,891 Numpy backend loaded 2.1.3
+2025-06-18 22:11:35,891 Pyspark backend NOT loaded
+2025-06-18 22:11:35,891 Python backend loaded
+2025-06-18 22:11:47,001 Pandas backend loaded 2.2.3
+2025-06-18 22:11:47,003 Numpy backend loaded 2.1.3
+2025-06-18 22:11:47,003 Pyspark backend NOT loaded
+2025-06-18 22:11:47,003 Python backend loaded
+2025-06-18 22:13:00,796 get started
+2025-06-18 22:13:00,796 run started
+2025-06-18 22:13:00,819 run finished successfully
+2025-06-18 22:13:00,819 get_answ started
+2025-06-18 22:13:00,819 get_answ finished successfully
+2025-06-18 22:13:00,819 get finished successfully
+2025-06-18 22:38:41,215 Pandas backend loaded 2.2.3
+2025-06-18 22:38:41,217 Numpy backend loaded 2.1.3
+2025-06-18 22:38:41,217 Pyspark backend NOT loaded
+2025-06-18 22:38:41,217 Python backend loaded
+2025-06-18 22:40:25,120 Pandas backend loaded 2.2.3
+2025-06-18 22:40:25,121 Numpy backend loaded 2.1.3
+2025-06-18 22:40:25,121 Pyspark backend NOT loaded
+2025-06-18 22:40:25,121 Python backend loaded
+2025-06-18 22:44:07,188 Pandas backend loaded 2.2.3
+2025-06-18 22:44:07,190 Numpy backend loaded 2.1.3
+2025-06-18 22:44:07,190 Pyspark backend NOT loaded
+2025-06-18 22:44:07,190 Python backend loaded
+2025-06-18 22:44:12,919 Pandas backend loaded 2.2.3
+2025-06-18 22:44:12,921 Numpy backend loaded 2.1.3
+2025-06-18 22:44:12,921 Pyspark backend NOT loaded
+2025-06-18 22:44:12,921 Python backend loaded
+2025-06-18 22:49:20,097 Pandas backend loaded 2.2.3
+2025-06-18 22:49:20,099 Numpy backend loaded 2.1.3
+2025-06-18 22:49:20,099 Pyspark backend NOT loaded
+2025-06-18 22:49:20,099 Python backend loaded
+2025-06-18 22:50:16,635 Pandas backend loaded 2.2.3
+2025-06-18 22:50:16,637 Numpy backend loaded 2.1.3
+2025-06-18 22:50:16,637 Pyspark backend NOT loaded
+2025-06-18 22:50:16,637 Python backend loaded
+2025-06-18 22:50:24,904 get started
+2025-06-18 22:50:24,927 Error in get: 'HandleMissingValues' object has no attribute 'get_answ'
+2025-06-18 22:51:51,919 Pandas backend loaded 2.2.3
+2025-06-18 22:51:51,921 Numpy backend loaded 2.1.3
+2025-06-18 22:51:51,921 Pyspark backend NOT loaded
+2025-06-18 22:51:51,921 Python backend loaded
+2025-06-18 22:52:05,185 get started
+2025-06-18 22:52:05,210 Error in get: 'HandleMissingValues' object has no attribute 'get_answ'
+2025-06-18 22:52:32,333 Pandas backend loaded 2.2.3
+2025-06-18 22:52:32,335 Numpy backend loaded 2.1.3
+2025-06-18 22:52:32,335 Pyspark backend NOT loaded
+2025-06-18 22:52:32,335 Python backend loaded
+2025-06-18 22:52:43,233 get started
+2025-06-18 22:52:43,257 get finished successfully
+2025-06-18 22:53:27,930 get started
+2025-06-18 22:53:27,953 get finished successfully
+2025-06-18 22:54:57,129 Pandas backend loaded 2.2.3
+2025-06-18 22:54:57,131 Numpy backend loaded 2.1.3
+2025-06-18 22:54:57,131 Pyspark backend NOT loaded
+2025-06-18 22:54:57,131 Python backend loaded
+2025-06-18 22:55:07,419 get started
+2025-06-18 22:55:07,443 get finished successfully
+2025-06-18 22:57:27,444 get started
+2025-06-18 22:57:27,468 get finished successfully
+2025-06-18 23:12:34,600 Pandas backend loaded 2.2.3
+2025-06-18 23:12:34,602 Numpy backend loaded 2.1.3
+2025-06-18 23:12:34,603 Pyspark backend NOT loaded
+2025-06-18 23:12:34,603 Python backend loaded
+2025-06-18 23:13:21,219 Pandas backend loaded 2.2.3
+2025-06-18 23:13:21,221 Numpy backend loaded 2.1.3
+2025-06-18 23:13:21,221 Pyspark backend NOT loaded
+2025-06-18 23:13:21,221 Python backend loaded
+2025-06-18 23:14:05,777 get started
+2025-06-18 23:14:05,801 get finished successfully
+2025-06-18 23:16:08,649 Pandas backend loaded 2.2.3
+2025-06-18 23:16:08,651 Numpy backend loaded 2.1.3
+2025-06-18 23:16:08,651 Pyspark backend NOT loaded
+2025-06-18 23:16:08,651 Python backend loaded
+2025-06-18 23:16:34,616 Pandas backend loaded 2.2.3
+2025-06-18 23:16:34,618 Numpy backend loaded 2.1.3
+2025-06-18 23:16:34,618 Pyspark backend NOT loaded
+2025-06-18 23:16:34,618 Python backend loaded
+2025-06-18 23:16:45,499 get started
+2025-06-18 23:16:45,499 run started
+2025-06-18 23:16:45,523 run finished successfully
+2025-06-18 23:16:45,523 get finished successfully
+2025-06-18 23:21:23,419 Pandas backend loaded 2.2.3
+2025-06-18 23:21:23,420 Numpy backend loaded 2.1.3
+2025-06-18 23:21:23,421 Pyspark backend NOT loaded
+2025-06-18 23:21:23,421 Python backend loaded
+2025-06-18 23:22:24,531 Pandas backend loaded 2.2.3
+2025-06-18 23:22:24,533 Numpy backend loaded 2.1.3
+2025-06-18 23:22:24,533 Pyspark backend NOT loaded
+2025-06-18 23:22:24,533 Python backend loaded
+2025-06-18 23:22:37,770 Pandas backend loaded 2.2.3
+2025-06-18 23:22:37,772 Numpy backend loaded 2.1.3
+2025-06-18 23:22:37,772 Pyspark backend NOT loaded
+2025-06-18 23:22:37,772 Python backend loaded
+2025-06-18 23:23:07,188 Pandas backend loaded 2.2.3
+2025-06-18 23:23:07,189 Numpy backend loaded 2.1.3
+2025-06-18 23:23:07,190 Pyspark backend NOT loaded
+2025-06-18 23:23:07,190 Python backend loaded
+2025-06-18 23:23:30,784 get started
+2025-06-18 23:23:30,784 Error in get: Can't instantiate abstract class DetectAndRemoveOutliers without an implementation for abstract methods 'get_answ', 'info'
+2025-06-18 23:23:50,802 Pandas backend loaded 2.2.3
+2025-06-18 23:23:50,804 Numpy backend loaded 2.1.3
+2025-06-18 23:23:50,804 Pyspark backend NOT loaded
+2025-06-18 23:23:50,804 Python backend loaded
+2025-06-18 23:24:00,832 get started
+2025-06-18 23:24:00,841 get finished successfully
+2025-06-18 23:26:43,922 get started
+2025-06-18 23:26:43,933 get finished successfully
+2025-06-18 23:27:56,251 get started
+2025-06-18 23:27:56,263 get finished successfully
+2025-06-18 23:29:14,344 Pandas backend loaded 2.2.3
+2025-06-18 23:29:14,346 Numpy backend loaded 2.1.3
+2025-06-18 23:29:14,346 Pyspark backend NOT loaded
+2025-06-18 23:29:14,346 Python backend loaded
+2025-06-18 23:29:45,450 Pandas backend loaded 2.2.3
+2025-06-18 23:29:45,452 Numpy backend loaded 2.1.3
+2025-06-18 23:29:45,452 Pyspark backend NOT loaded
+2025-06-18 23:29:45,452 Python backend loaded
+2025-06-18 23:29:52,773 get started
+2025-06-18 23:29:52,775 get finished successfully
+2025-06-18 23:30:14,589 get started
+2025-06-18 23:30:14,590 get finished successfully
+2025-06-18 23:30:45,890 Pandas backend loaded 2.2.3
+2025-06-18 23:30:45,892 Numpy backend loaded 2.1.3
+2025-06-18 23:30:45,892 Pyspark backend NOT loaded
+2025-06-18 23:30:45,892 Python backend loaded
+2025-06-18 23:30:53,126 Pandas backend loaded 2.2.3
+2025-06-18 23:30:53,127 Numpy backend loaded 2.1.3
+2025-06-18 23:30:53,128 Pyspark backend NOT loaded
+2025-06-18 23:30:53,128 Python backend loaded
+2025-06-18 23:30:59,933 get started
+2025-06-18 23:31:00,001 get finished successfully
+2025-06-18 23:39:07,098 get started
+2025-06-18 23:39:07,101 get finished successfully
+2025-06-18 23:40:04,227 get started
+2025-06-18 23:40:04,229 get finished successfully
+2025-06-18 23:44:25,654 get started
+2025-06-18 23:44:25,656 get finished successfully
+2025-06-18 23:47:05,121 Pandas backend loaded 2.2.3
+2025-06-18 23:47:05,123 Numpy backend loaded 2.1.3
+2025-06-18 23:47:05,123 Pyspark backend NOT loaded
+2025-06-18 23:47:05,123 Python backend loaded
+2025-06-18 23:47:32,893 Pandas backend loaded 2.2.3
+2025-06-18 23:47:32,895 Numpy backend loaded 2.1.3
+2025-06-18 23:47:32,895 Pyspark backend NOT loaded
+2025-06-18 23:47:32,895 Python backend loaded
+2025-06-18 23:48:01,106 Pandas backend loaded 2.2.3
+2025-06-18 23:48:01,108 Numpy backend loaded 2.1.3
+2025-06-18 23:48:01,108 Pyspark backend NOT loaded
+2025-06-18 23:48:01,108 Python backend loaded
+2025-06-18 23:48:11,736 get started
+2025-06-18 23:48:11,832 Error in get: Input X contains NaN.
+LocalOutlierFactor does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values
+2025-06-18 23:49:35,289 stared
+2025-06-18 23:51:30,055 Pandas backend loaded 2.2.3
+2025-06-18 23:51:30,057 Numpy backend loaded 2.1.3
+2025-06-18 23:51:30,057 Pyspark backend NOT loaded
+2025-06-18 23:51:30,057 Python backend loaded
+2025-06-18 23:51:31,262 Pandas backend loaded 2.2.3
+2025-06-18 23:51:31,264 Numpy backend loaded 2.1.3
+2025-06-18 23:51:31,264 Pyspark backend NOT loaded
+2025-06-18 23:51:31,264 Python backend loaded
+2025-06-18 23:51:39,698 get started
+2025-06-18 23:51:39,699 Error in get: DataFrame constructor not properly called!
+2025-06-18 23:52:22,703 Pandas backend loaded 2.2.3
+2025-06-18 23:52:22,705 Numpy backend loaded 2.1.3
+2025-06-18 23:52:22,705 Pyspark backend NOT loaded
+2025-06-18 23:52:22,705 Python backend loaded
+2025-06-18 23:52:33,275 get started
+2025-06-18 23:52:33,344 get finished successfully
+2025-06-18 23:57:03,021 get started
+2025-06-18 23:57:03,024 get finished successfully
+>>>>>>> bd02d9eada5ca7b4fb21d2053850eb042c2da35d

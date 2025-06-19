@@ -100,10 +100,12 @@
         .cell-action:hover {
             color: #333;
         }
-        #plot-container {
+        #smiley-container {
             width: 100%;
-            height: 400px;
             margin: 10px 0;
+            text-align: center;
+            font-size: 24px;
+            line-height: 1.5;
         }
         #file-input {
             display: none;
@@ -128,33 +130,43 @@
     <div id="header">
         <div id="notebook-name">{{ notebook_name }}</div>
         <div id="header-buttons">
-            <button class="toolbar-button"><i class="fas fa-save"></i> Save</button>
+            <button class="toolbar-button" onclick ="document.getElementById('save-btn').click()">
+                <i class="fas fa-save"></i> Save</button>
         </div>
     </div>
 
-    <div id="toolbar">
-        <input type="file" id="file-input" accept=".csv,.xlsx">
-        <button class="toolbar-button" onclick="document.getElementById('file-input').click()">
-            <i class="fas fa-file-upload"></i> Загрузить файл
-        <button class="toolbar-button" onclick="cleanData()">
+    <input type="file" id="file-input" accept=".csv,.xlsx">
+    <button class="toolbar-button" onclick="document.getElementById('file-input').click()">
+        <i class="fas fa-file-upload"></i> Загрузить файл
+        <button class="toolbar-button" onclick="CleanData()">
             <i class="fas fa-broom"></i> Очистить данные
+        </button>
+        <button class="toolbar-button" onclick="HandleMissingValues()">
+            <i class="fas fa-broom"></i> Заполнить пропущенные значения
+        </button>
+        <button class="toolbar-button" onclick="NormalizeData()">
+            <i class="fas fa-broom"></i> Нормализовать данные
+        </button>
+        <button class="toolbar-button" onclick="StandardizeData()">
+            <i class="fas fa-broom"></i> Стандартизировать данные
+        </button>
+        <button class="toolbar-button" onclick="DetectAndRemoveOutliers()">
+            <i class="fas fa-broom"></i> Обработка выбросов
         </button>
         <button class="toolbar-button" onclick="generateReport()">
             <i class="fas fa-chart-bar"></i> Сгенерировать отчет
         </button>
-    </div>
 
-    <div id="notebook-container">
+        <div id="notebook-container">
         <div class="cell">
             <div class="cell-header">
-                <span>Data Visualization</span>
+                <span>Machine Learning is very fun</span>
             </div>
             <div class="cell-content">
-                <div id="plot-container">
-                    <!-- Здесь будет график -->
-                    <div style="display: flex; justify-content: center; align-items: center; height: 100%; color: #666;">
-                        Данные не загружены. Загрузите файл для визуализации.
-                    </div>
+                <div id="smiley-container">
+                    (づ｡◕‿‿◕｡)づ 〜(꒪꒳꒪)〜 (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧<br>
+                    (っ˘ω˘ς ) (◠‿◠✿) (ﾉ´ヮ`)ﾉ*: ･ﾟ<br>
+                    (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ ٩(◕‿◕｡)۶ (●ˊωˋ●)
                 </div>
                 <div class="data-info" id="data-info">
                     Данные не загружены.
@@ -200,7 +212,6 @@
                     alert(`Файл успешно загружен. Размер данных: ${result.shape[0]} строк, ${result.shape[1]} столбцов`);
                     currentData = result;
                     updateDataInfo(result);
-                    visualizeData();
                 } else {
                     alert(`Ошибка: ${result.error}`);
                 }
@@ -208,7 +219,46 @@
                 alert(`Ошибка при загрузке файла: ${error}`);
             }
         });
+        // Обработчик кнопки сохранения файла
+        document.getElementById('save-btn').addEventListener('click', function() {
+            if (!currentData) {
+                alert('Нет данных для сохранения');
+                return;
+            }
 
+            try {
+                // Преобразуем данные в CSV формат (пример для массива объектов)
+                let csvContent = '';
+
+                // Заголовки столбцов
+                const headers = Object.keys(currentData[0]);
+                csvContent += headers.join(',') + '\n';
+
+                // Данные
+                currentData.forEach(row => {
+                    const values = headers.map(header => row[header]);
+                    csvContent += values.join(',') + '\n';
+                });
+
+                // Создаем Blob с CSV данными
+                const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+
+                // Создаем ссылку для скачивания
+                const link = document.createElement('a');
+                const url = URL.createObjectURL(blob);
+
+                link.setAttribute('href', url);
+                link.setAttribute('download', 'data.csv');
+                link.style.visibility = 'hidden';
+
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+            } catch (error) {
+                alert(`Ошибка при сохранении файла: ${error}`);
+            }
+        });
         // Отправка данных на сервер
         async function sendDataFrame() {
             if (!currentData) {
@@ -238,7 +288,7 @@
         }
 
         // Очистка данных
-        async function cleanData() {
+        async function CleanData() {
             try {
                 const response = await fetch('/DataFrame/?id=0', {
                     method: 'GET'
@@ -250,7 +300,6 @@
                     alert(`Данные очищены. Размер: ${result.shape[0]} строк, ${result.shape[1]} столбцов`);
                     currentData = result.data;
                     updateDataInfo(result);
-                    visualizeData();
                 } else {
                     alert(`Ошибка: ${result.error}`);
                 }
@@ -259,25 +308,107 @@
             }
         }
 
-        // Генерация отчета
-        async function generateReport() {
-            if (!currentData || !currentData.data || currentData.data.length === 0) {
-                alert('Нет данных для генерации отчета');
-                return;
-            }
-
+        // Заполнение пропущенных значений
+        async function HandleMissingValues() {
             try {
-                const response = await fetch('/generate_report/', {
+                const response = await fetch('/DataFrame/?id=1', {
                     method: 'GET'
                 });
 
                 const result = await response.json();
 
                 if (response.ok) {
-                    document.getElementById('report-cell').style.display = 'block';
-                    document.getElementById('report-container').innerHTML = result.report;
+                    alert(`Данные заполнены. Размер: ${result.shape[0]} строк, ${result.shape[1]} столбцов`);
+                    currentData = result.data;
+                    updateDataInfo(result);
                 } else {
                     alert(`Ошибка: ${result.error}`);
+                }
+            } catch (error) {
+                alert(`Ошибка при заполнении данных: ${error}`);
+            }
+        }
+
+        // Нормализация данных
+        async function NormalizeData() {
+            try {
+                const response = await fetch('/DataFrame/?id=2', {
+                    method: 'GET'
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    alert(`Данные нормализованы. Размер: ${result.shape[0]} строк, ${result.shape[1]} столбцов`);
+                    currentData = result.data;
+                    updateDataInfo(result);
+                } else {
+                    alert(`Ошибка: ${result.error}`);
+                }
+            } catch (error) {
+                alert(`Ошибка при нормализация данных: ${error}`);
+            }
+        }
+
+        // Стандартизация данных
+        async function StandardizeData() {
+            try {
+                const response = await fetch('/DataFrame/?id=3', {
+                    method: 'GET'
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    alert(`Данные стандартизованы. Размер: ${result.shape[0]} строк, ${result.shape[1]} столбцов`);
+                    currentData = result.data;
+                    updateDataInfo(result);
+                } else {
+                    alert(`Ошибка: ${result.error}`);
+                }
+            } catch (error) {
+                alert(`Ошибка при стандартизировании данных: ${error}`);
+            }
+        }
+
+        // Обработка выбросов
+        async function DetectAndRemoveOutliers() {
+            try {
+                const response = await fetch('/DataFrame/?id=4', {
+                    method: 'GET'
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    alert(`Выбросы обработаны. Размер: ${result.shape[0]} строк, ${result.shape[1]} столбцов`);
+                    currentData = result.data;
+                    updateDataInfo(result);
+                } else {
+                    alert(`Ошибка: ${result.error}`);
+                }
+            } catch (error) {
+                alert(`Ошибка при обработке выбросов: ${error}`);
+            }
+        }
+        // Генерация отчета
+        async function generateReport() {
+            try {
+                const response = await fetch('/generate_report/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(currentData)
+                });
+
+                if (response.ok) {
+                    const reportHtml = await response.text();
+                    document.getElementById('report-container').innerHTML = reportHtml;
+                    document.getElementById('report-cell').style.display = 'block';
+                } else {
+                    const error = await response.json();
+                    alert(`Ошибка при генерации отчета: ${error.detail}`);
                 }
             } catch (error) {
                 alert(`Ошибка при генерации отчета: ${error}`);
@@ -288,51 +419,6 @@
         function closeReport() {
             document.getElementById('report-cell').style.display = 'none';
             document.getElementById('report-container').innerHTML = '';
-        }
-
-        // Визуализация данных
-        function visualizeData() {
-            if (!currentData || !currentData.data || currentData.data.length === 0) {
-                return;
-            }
-
-            // Простая визуализация первых 10 строк
-            const data = currentData.data.slice(0, 10);
-            const columns = Object.keys(data[0]);
-
-            // Создаем таблицу для визуализации
-            const tableData = {
-                type: 'table',
-                header: {
-                    values: columns,
-                    align: "center",
-                    fill: {
-                        color: "rgb(234, 234, 234)"
-                    },
-                    font: {
-                        family: "Arial",
-                        size: 12,
-                        color: "black"
-                    }
-                },
-                cells: {
-                    values: columns.map(col => data.map(row => row[col])),
-                    align: "center",
-                    fill: {
-                        color: "rgb(255, 255, 255)"
-                    },
-                    font: {
-                        family: "Arial",
-                        size: 11,
-                        color: ["black"]
-                    }
-                }
-            };
-
-            Plotly.newPlot('plot-container', [tableData], {
-                title: 'Первые 10 строк данных',
-                margin: { t: 30, l: 10, r: 10, b: 10 }
-            });
         }
 
         // Обновление информации о данных
@@ -349,5 +435,5 @@
             }
         }
     </script>
-</body>
+    </body>
 </html>

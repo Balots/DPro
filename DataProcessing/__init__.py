@@ -1,5 +1,15 @@
-from .base import DataProcessing
 from .cleaning import CleanData
 from .missing_values import HandleMissingValues
-from .scaling import NormalizeData, StandardizeData
 from .outliers import DetectAndRemoveOutliers
+from .scaling import NormalizeData
+from .scaling import StandardizeData
+from .io.loader import DataLoader
+
+__all__ = [
+    'CleanData',
+    'HandleMissingValues',
+    'DetectAndRemoveOutliers',
+    'NormalizeData',
+    'StandardizeData',
+    'DataLoader'
+]
