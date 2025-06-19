@@ -154,6 +154,9 @@
         <button class="toolbar-button" onclick="DetectAndRemoveOutliers()">
             <i class="fas fa-broom"></i> Обработка выбросов
         </button>
+        <button class="toolbar-button" onclick="AutoProcess()">
+            <i class="fas fa-broom"></i> Авто
+        </button>
         <button class="toolbar-button" onclick="generateReport()">
             <i class="fas fa-chart-bar"></i> Сгенерировать отчет
         </button>
@@ -340,6 +343,26 @@
                 }
             } catch (error) {
                 alert(`Ошибка при обработке выбросов: ${error}`);
+            }
+        }
+        // Автоматическая обработка
+        async function AutoProcess() {
+            try {
+                const response = await fetch('/DataFrame/?id=5', {
+                    method: 'GET'
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    alert(`Автоматически обработан. Размер: ${result.shape[0]} строк, ${result.shape[1]} столбцов`);
+                    currentData = result.data;
+                    updateDataInfo(result);
+                } else {
+                    alert(`Ошибка: ${result.error}`);
+                }
+            } catch (error) {
+                alert(`Ошибка при обработке: ${error}`);
             }
         }
         // Генерация отчета
