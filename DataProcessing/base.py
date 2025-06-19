@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 from typing import Union, Optional
 from flaml import AutoML
 from sklearn.model_selection import train_test_split
-from io.loader import DataLoader
+#from io.loader import DataLoader
 
 class DataProcessing(ABC):
     def __init__(self, data: Union[pd.DataFrame, str], file_type: Optional[str] = None):
