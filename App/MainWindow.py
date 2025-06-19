@@ -79,8 +79,8 @@ class DataProcessingApp(QMainWindow):
         
         # Панель управления
         control_panel = QHBoxLayout()
-        self.btn_load = QPushButton("Загрузить данные (*.csv *.xlsx *.json *.parquet)")
-        self.btn_load_text = QPushButton("Загрузить текст")
+        self.btn_load = QPushButton("📊Загрузить табличные данные (*.csv *.xlsx *.json *.parquet)")
+        self.btn_load_text = QPushButton("📄Загрузить текстовые данные (*.txt *.csv *.xlsx *.json)")
         self.btn_save = QPushButton("Сохранить результат")
         self.btn_save.setEnabled(False)
         
@@ -200,7 +200,7 @@ class DataProcessingApp(QMainWindow):
         clean_layout.addWidget(self.btn_clean)
         clean_layout.addStretch()
         self.tab_clean.setLayout(clean_layout)
-        self.tabs.addTab(self.tab_clean, "Очистка")
+        self.tabs.addTab(self.tab_clean, "Дубликаты")
     
     def init_missing_tab(self):
         self.tab_missing = QWidget()
@@ -675,12 +675,56 @@ class DataProcessingApp(QMainWindow):
                     check_scaling=True
                 )
                 outcome, abnormal, scaling = detector.check_dataframe(temp_file)
+                
+                # Формируем отчет
                 report = "=== Анализ данных ===\n"
                 report += f"Пропуски: {outcome['Missing values/Пропущенные значения']}\n"
                 report += f"Дубликаты: {outcome['Duplicate values/Дубликаты значений ']}\n"
-                report += "Рекомендации по масштабированию:\n"
+                
+                # Добавляем рекомендации по методам удаления выбросов
+                report += "\n--- Рекомендации по обработке выбросов ---\n"
+                for col, methods in abnormal.items():
+                    report += f"\nСтолбец: {col}\n"
+                    
+                    # Собираем информацию о методах
+                    method_info = []
+                    for method_name, method_data in methods.items():
+                        if method_data['count'] > 0:
+                            percent = method_data['count'] / len(self.current_data) * 100
+                            method_info.append((
+                                method_name,
+                                method_data['count'],
+                                percent,
+                                method_data.get('threshold', ''),
+                                method_data.get('direction', '')
+                            ))
+                    
+                    # Сортируем методы по количеству найденных выбросов (по убыванию)
+                    method_info.sort(key=lambda x: x[1], reverse=True)
+                    
+                    # Формируем рекомендации
+                    if method_info:
+                        best_method = method_info[0]
+                        report += f"Рекомендуемый метод: {best_method[0]}\n"
+                        report += f" - Найдено выбросов: {best_method[1]} ({best_method[2]:.1f}%)\n"
+                        if best_method[3]:
+                            report += f" - Порог: {best_method[3]}\n"
+                        if best_method[4]:
+                            report += f" - Направление: {best_method[4]}\n"
+                        
+                        # Добавляем альтернативные методы
+                        if len(method_info) > 1:
+                            report += "Альтернативные методы:\n"
+                            for method in method_info[1:]:
+                                report += f" - {method[0]}: {method[1]} выбросов ({method[2]:.1f}%)\n"
+                    else:
+                        report += "Выбросы не обнаружены\n"
+                
+                # Добавляем рекомендации по масштабированию
+                report += "\n--- Рекомендации по масштабированию ---\n"
                 for col, rec in scaling.items():
                     report += f"- {col}: {rec['Рекомендация']} ({', '.join(rec['причина'])})\n"
+                
                 self.analysis_report.setPlainText(report)
                 self.plot_data()
                 self.log_message("Автоанализ завершен")

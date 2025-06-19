@@ -1,7 +1,8 @@
 import pandas as pd
 from abc import ABC, abstractmethod
 from typing import Union, Optional
-from .io.loader import DataLoader
+# Правильный абсолютный путь от корня проекта
+#from io.loader import DataLoader
 
 class DataProcessing(ABC):
     def __init__(self, data: Union[pd.DataFrame, str], file_type: Optional[str] = None):
