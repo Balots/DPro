@@ -83,5 +83,6 @@
 
 ## 📌 Пример использования
 
+[ЗАПИСЬ1.mov](https://github.com/Balots/DPro/blob/main/ЗАПИСЬ1.mov)
 
-
+[ЗАПИСЬ2.mov](https://github.com/Balots/DPro/blob/main/ЗАПИСЬ2.mov)
