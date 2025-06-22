@@ -62,6 +62,10 @@
 
 ## ⚙️ Установка и запуск
 
+### PyPI установка библиотеки
+`pip install DPro`
+Страничка проекта: https://pypi.org/project/DPro/0.1/
+
 ### Ubuntu/Debian
    ```bash
    # Клонировать репозиторий
