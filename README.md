@@ -62,14 +62,19 @@
 
 ## ⚙️ Установка и запуск
 
-### Для приложения:
-
+### Ubuntu/Debian
    ```bash
    # Клонировать репозиторий
    git clone https://github.com/Balots/DPro.git
 
   # Перейти в папку с репозиторием
    cd DPro
+   
+  # Создать окруждение
+  python -m venv .venv
+  
+  # Активировать окружение
+  source .venv/bin/activate
 
   # Установить зависисмости
    pip install -r requirements.txt
