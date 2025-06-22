@@ -6,7 +6,7 @@ setup(
     author="30team",
     author_email="balotsgar@gmail.com",
     version="0.1",
-    packages=find_packages(),
+    packages=["DPro"],
     install_requires=[
         "pandas~=2.2.3",
         "uvicorn~=0.34.3",
