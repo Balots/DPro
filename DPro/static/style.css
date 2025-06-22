@@ -1,0 +1,118 @@
+:root {
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --primary-color: #4CAF50;
+    --primary-hover: #45a049;
+    --secondary-color: #2196F3;
+    --secondary-hover: #0b7dda;
+    --container-bg: #2d2d2d;
+    --border-color: #444;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--container-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+}
+
+#reportContainer {
+    width: 100%;
+    overflow-x: auto;
+    background-color: var(--container-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 10px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+#uploadForm label {
+    padding: 10px 15px;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+#uploadForm label:hover {
+    background-color: var(--secondary-hover);
+}
+
+/* Dark mode for ydata profiling report */
+#reportContainer .header {
+    background-color: var(--container-bg) !important;
+    color: var(--text-color) !important;
+}
+
+#reportContainer .nav-tabs,
+#reportContainer .tab-content,
+#reportContainer .card,
+#reportContainer .table {
+    background-color: var(--container-bg) !important;
+    color: var(--text-color) !important;
+    border-color: var(--border-color) !important;
+}
+
+#reportContainer th,
+#reportContainer td,
+#reportContainer .variable-name,
+#reportContainer .variable-type {
+    color: var(--text-color) !important;
+    border-color: var(--border-color) !important;
+}
+
+#reportContainer .nav-link {
+    color: var(--text-color) !important;
+}
+
+#reportContainer .nav-link.active {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+}
+
+#reportContainer .progress {
+    background-color: #444 !important;
+}
