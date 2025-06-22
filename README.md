@@ -65,7 +65,7 @@
 ### PyPI установка библиотеки
 `pip install DPro`
 
-Страничка проекта: https://pypi.org/project/DPro/0.1/
+![Наш проект на PyPI](https://pypi.org/project/DPro/0.1/) *
 
 ### Ubuntu/Debian
    ```bash
